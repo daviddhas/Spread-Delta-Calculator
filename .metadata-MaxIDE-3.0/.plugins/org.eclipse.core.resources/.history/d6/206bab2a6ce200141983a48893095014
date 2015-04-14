@@ -1,0 +1,26 @@
+/**
+ * Document: MaxCompiler tutorial (maxcompiler-tutorial.pdf)
+ * Chapter: 4      Example: 2      Name: Simple
+ * MaxFile name: Simple
+ * Summary:
+ *     Manager for the simple x*x + x kernel design.
+ *   All IO is between the CPU and the DFE.
+ */
+package simple;
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager.IOType;
+
+class SimpleManager {
+	public static void main(String[] args) {
+		EngineParameters params = new EngineParameters(args);
+		Manager manager = new Manager(params);
+		Kernel kernel = new SimpleKernel(manager.makeKernelParameters());
+		manager.setKernel(kernel);
+		manager.setIO(IOType.ALL_CPU);
+		manager.createSLiCinterface();
+		manager.build();
+	}
+}

@@ -1,0 +1,19 @@
+# --- User's custom definitions
+#This text will be included verbatim in the build process.Put here
+#anything you like - that said, it has be valid Make syntax
+USE_SLIC := 1
+# ---
+
+MAXCOMPILER_QUOTE   := $(shell printf %q "$(MAXCOMPILERDIR)")
+
+RUNRULE_ARGS        := 
+RUNRULE_RUNENV      := LD_LIBRARY_PATH="$(MAXELEROSDIR)/lib:$(LD_LIBRARY_PATH)" 
+RUNRULE_MAXFILES    := Simple.max  
+RUNRULE_MAXFILES_H  := Simple.h 
+RUNRULE_CFLAGS      := 
+RUNRULE_LDFLAGS     := 
+
+TARGET_EXEC         := Simple
+TARGET_LIBRARY      := 
+
+

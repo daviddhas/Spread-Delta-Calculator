@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1428991239873_0" label="spread" location="/home/demo/Desktop/project/spread" maxcompiler="true" name="spread" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spread_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spread_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spread_RunRules" type="4"/>
+</workingSet>
+</workingSetManager>

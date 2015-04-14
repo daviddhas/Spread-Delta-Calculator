@@ -1,0 +1,70 @@
+!SESSION 2015-04-13 22:59:24.611 -----------------------------------------------
+eclipse.buildId=I20100608-0911
+java.version=1.6.0_26
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.common 1 0 2015-04-13 22:59:40.176
+!MESSAGE .metadata renamed to .metadata_to_be_removed
+
+!ENTRY org.eclipse.equinox.common 1 0 2015-04-13 22:59:40.180
+!MESSAGE .metadata symlinked
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-04-13 23:00:52.823
+!MESSAGE Indexed 'tutorial-chap04-example2-simplekernel_CPUCode' (1 sources, 96 headers) in 8.19 sec: 3,163 declarations; 2,626 references; 3 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-04-13 23:01:37.901
+!MESSAGE Indexed 'tutorial-chap04-example2-simplekernel_CPUCode' (1 sources, 96 headers) in 1.04 sec: 3,163 declarations; 2,626 references; 3 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-04-13 23:02:06.994
+!MESSAGE Indexed 'tutorial-chap04-example2-simplekernel_CPUCode' (1 sources, 96 headers) in 0.96 sec: 3,163 declarations; 2,626 references; 3 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.maxeler.build.profiles 4 10001 2015-04-13 23:05:21.778
+!MESSAGE Internal Error
+!STACK 0
+com.maxeler.build.profile.builder.BuildError
+	at com.maxeler.internal.build.profile.builder.EngineBuilder$6.launchesTerminated(EngineBuilder.java:676)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.notify(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(Unknown Source)
+	at org.eclipse.debug.core.Launch.fireTerminate(Unknown Source)
+	at org.eclipse.debug.core.Launch.handleDebugEvents(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-04-13 23:05:22.513
+!MESSAGE Indexed 'tutorial-chap04-example2-simplekernel_CPUCode' (1 sources, 96 headers) in 0.72 sec: 3,163 declarations; 2,626 references; 3 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.maxeler.build.profiles 4 10001 2015-04-13 23:05:27.541
+!MESSAGE Internal Error
+!STACK 0
+com.maxeler.build.profile.builder.BuildError
+	at com.maxeler.internal.build.profile.builder.EngineBuilder$6.launchesTerminated(EngineBuilder.java:676)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.notify(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(Unknown Source)
+	at org.eclipse.debug.core.Launch.fireTerminate(Unknown Source)
+	at org.eclipse.debug.core.Launch.handleDebugEvents(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(Unknown Source)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-04-13 23:05:28.097
+!MESSAGE Indexed 'tutorial-chap04-example2-simplekernel_CPUCode' (1 sources, 96 headers) in 0.55 sec: 3,163 declarations; 2,626 references; 3 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.maxeler.build.profiles 4 10001 2015-04-13 23:08:37.653
+!MESSAGE Internal Error
+!STACK 0
+com.maxeler.build.profile.builder.BuildError: Make command failed with status = 2
+	at com.maxeler.internal.build.profile.builder.CPUBuilder.runMake(CPUBuilder.java:210)
+	at com.maxeler.internal.build.profile.builder.CPUBuilder.build(CPUBuilder.java:145)
+	at com.maxeler.internal.build.profile.builder.ProfileBuilder$1.run(ProfileBuilder.java:313)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

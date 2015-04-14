@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="MAXCOMPILER_ACTIVITY_FILE" value="/home/demo/Desktop/project/spread/RunRules/Simulation/.maxcompiler-activity.be"/>
+<mapEntry key="MAXCOMPILER_BUILD_CONF" value="build.copy_results_to=/home/demo/Desktop/project/spread/RunRules/Simulation/maxfiles"/>
+<mapEntry key="MAXCOMPILER_BUILD_DIR" value="/home/demo/Desktop/project/spread/RunRules/Simulation/maxfiles"/>
+<mapEntry key="MAX_BUILDPARAMS" value="DFEModel='VECTIS' target='DFE_SIM' maxFileName='Spread'  "/>
+</mapAttribute>
+<booleanAttribute key="org.eclipse.debug.ui.private" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.AUTO_HEAP_SIZE" value="2"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="spread.SpreadManager"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAX_FILE_BUILD_NAME" value="Spread"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROFILE_FOLDER" value="Simulation"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROFILE_PROJECT" value="spread_RunRules"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="spread_EngineCode"/>
+</launchConfiguration>

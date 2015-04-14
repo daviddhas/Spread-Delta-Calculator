@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/tutorial-chap04-example2-simplekernel_EngineCode/src/spread/SpreadManager.maxj"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="MAX_BUILDPARAMS" value="DFEModel='VECTIS' target='VECTIS' maxFileName='Simple' "/>
+</mapAttribute>
+<booleanAttribute key="org.eclipse.debug.ui.private" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.AUTO_HEAP_SIZE" value="2"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="spread.SpreadManager"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAX_FILE_BUILD_NAME" value="Simple"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROFILE_FOLDER" value="Simulation"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROFILE_PROJECT" value="tutorial-chap04-example2-simplekernel_RunRules"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="tutorial-chap04-example2-simplekernel_EngineCode"/>
+</launchConfiguration>
