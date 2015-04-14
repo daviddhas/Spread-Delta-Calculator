@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>spread-hft_EngineCode</name>
+	<comment></comment>
+	<manageMaxCompiler>true</manageMaxCompiler>
+	<manageMaxGenFD>true</manageMaxGenFD>
+	<manageMaxBlox>true</manageMaxBlox>
+	<maxelerVersion>1.0</maxelerVersion>
+	<maxelerBuildSystemVersion>2</maxelerBuildSystemVersion>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.maxeler.maxcompiler.core.MaxCompilerFragmentNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>

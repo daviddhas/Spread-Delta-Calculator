@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<maxCompilerManager version="2">
-<enginePart internalEngineSubproject="tutorial-chap04-example2-simplekernel_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/tutorial-chap04-example2-simplekernel_EngineCode/bin" projectName="tutorial-chap04-example2-simplekernel"/>
-<cpuPart internalCpuSubproject="tutorial-chap04-example2-simplekernel_CPUCode"/>
-</maxCompilerManager>

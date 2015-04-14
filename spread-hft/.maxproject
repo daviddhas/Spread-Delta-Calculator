@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="spread-hft_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/spread-hft_EngineCode/bin" projectName="spread-hft"/>
+<cpuPart internalCpuSubproject="spread-hft_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>

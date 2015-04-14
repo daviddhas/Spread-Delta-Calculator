@@ -1,0 +1,1327 @@
+#ifdef MAXCOMPILER_VERSION_INFO
+#define MAXCOMPILER_VERSION_INFO_PRESENT 1
+#define MAXFILE_MAXCOMPILER_VERSION_YEAR         2014
+#define MAXFILE_MAXCOMPILER_VERSION_NUM          2
+#define MAXFILE_MAXCOMPILER_VERSION_POINT        0
+#define MAXFILE_MAXCOMPILER_VERSION_PATCH        ""
+#define MAXFILE_MAXCOMPILER_VERSION_REV          44158
+#define MAXFILE_MAXCOMPILER_VERSION_RELEASE_DATE "2015-01-23"
+#define MAXFILE_MAXCOMPILER_VERSION_RELEASE_MODE true
+#endif
+
+#ifdef MAXFILE_BUILD_INFO
+#define MAXFILE_BUILD_INFO_PRESENT 1
+#define MAXFILE_BUILD_NAME "SpreadHft"
+#define MAXFILE_BUILD_DIR  "/home/demo/Desktop/MaxCompiler-Builds/SpreadHft_VECTIS_DFE_SIM"
+#define MAXFILE_BUILD_DATE  20150414
+#define MAXFILE_BUILD_REV   1
+#endif
+
+#ifdef PARAM
+#define PARAM_PRESENT 1
+PARAM(APP_ID, 0)
+PARAM(REV_ID, 0)
+PARAM(CHAIN_LENGTH, 35)
+PARAM(IS_SIMULATION, 1)
+PARAM(MEC_SUPPORTED, 1)
+PARAM(PCIE_SLAVE_STREAMING, 0)
+PARAM(PCIE_ALIGNMENT, 16)
+PARAM(NUM_IFPGA_LINKS, 0)
+#endif
+
+#ifdef STRING_PARAM
+#define STRING_PARAM_PRESENT 1
+STRING_PARAM(BOARD_MODEL, "MAX3424A")
+#endif
+
+
+
+#ifdef INCLUDE_GENERATED_CPP_HEADERS
+#include "SpreadHftKernel.h"
+#endif
+
+
+
+
+
+
+
+
+
+
+#ifdef MANAGER_NODE
+#define MANAGER_NODE_PRESENT 1
+MANAGER_NODE(SpreadHftKernel, Kernel)
+MANAGER_NODE(sv, PCIe_From_Host_fwd)
+MANAGER_NODE(y, PCIe_To_Host_fwd)
+MANAGER_NODE(Stream_1, DualAspectMux)
+MANAGER_NODE(Stream_6, DualAspectReg)
+MANAGER_NODE(Stream_14, StreamPullPushAdapter)
+MANAGER_NODE(Stream_10, Fifo)
+MANAGER_NODE(Stream_12, Fifo)
+#endif
+
+#ifdef MANAGER_NODE_IO
+#define MANAGER_NODE_IO_PRESENT 1
+MANAGER_NODE_IO(SpreadHftKernel, sv, IN, STREAM, 32, PULL)
+MANAGER_NODE_IO(SpreadHftKernel, y, OUT, STREAM, 32, PUSH)
+MANAGER_NODE_IO(sv, sv, OUT, STREAM, 128, PULL)
+MANAGER_NODE_IO(y, y, IN, STREAM, 128, PUSH)
+MANAGER_NODE_IO(Stream_1, input, IN, STREAM, 128, PULL)
+MANAGER_NODE_IO(Stream_1, output, OUT, STREAM, 32, PUSH)
+MANAGER_NODE_IO(Stream_6, input, IN, STREAM, 32, PULL)
+MANAGER_NODE_IO(Stream_6, output, OUT, STREAM, 128, PULL)
+MANAGER_NODE_IO(Stream_14, input, IN, STREAM, 128, PULL)
+MANAGER_NODE_IO(Stream_14, output, OUT, STREAM, 128, PUSH)
+MANAGER_NODE_IO(Stream_10, input, IN, STREAM, 32, PUSH)
+MANAGER_NODE_IO(Stream_10, output, OUT, STREAM, 32, PULL)
+MANAGER_NODE_IO(Stream_12, input, IN, STREAM, 32, PUSH)
+MANAGER_NODE_IO(Stream_12, output, OUT, STREAM, 32, PULL)
+#endif
+
+#ifdef MANAGER_STREAM
+#define MANAGER_STREAM_PRESENT 1
+MANAGER_STREAM(sv, sv, Stream_1, input, 128)
+MANAGER_STREAM(SpreadHftKernel, y, Stream_12, input, 32)
+MANAGER_STREAM(Stream_1, output, Stream_10, input, 32)
+MANAGER_STREAM(Stream_6, output, Stream_14, input, 128)
+MANAGER_STREAM(Stream_14, output, y, y, 128)
+MANAGER_STREAM(Stream_10, output, SpreadHftKernel, sv, 32)
+MANAGER_STREAM(Stream_12, output, Stream_6, input, 32)
+#endif
+
+#ifdef MANAGER_NODE_STACK_TRACE
+#define MANAGER_NODE_STACK_TRACE_PRESENT 1
+MANAGER_NODE_STACK_TRACE(SpreadHftKernel, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+MANAGER_NODE_STACK_TRACE(sv, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+MANAGER_NODE_STACK_TRACE(y, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+MANAGER_NODE_STACK_TRACE(Stream_1, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+MANAGER_NODE_STACK_TRACE(Stream_6, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+MANAGER_NODE_STACK_TRACE(Stream_14, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+MANAGER_NODE_STACK_TRACE(Stream_10, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+MANAGER_NODE_STACK_TRACE(Stream_12, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+#endif
+
+
+#ifdef MANAGER_NODE_PROPERTY
+#define MANAGER_NODE_PROPERTY_PRESENT 1
+MANAGER_NODE_PROPERTY(SpreadHftKernel, control_pipelining_depth, 2)
+#endif
+
+
+#ifdef KERNEL_CORE
+#define KERNEL_CORE_PRESENT 1
+KERNEL_CORE(SpreadHftKernel)
+#endif
+
+#ifdef KERNEL_HOST_CONTROLLED
+#define KERNEL_HOST_CONTROLLED_PRESENT 1
+KERNEL_HOST_CONTROLLED(SpreadHftKernel, SpreadHftKernel)
+#endif
+
+#ifdef DEBUG_INPUT_BITS
+#define DEBUG_INPUT_BITS_PRESENT 1
+DEBUG_INPUT_BITS(SpreadHftKernel, sv, 0)
+#endif
+
+#ifdef DEBUG_OUTPUT_BITS
+#define DEBUG_OUTPUT_BITS_PRESENT 1
+DEBUG_OUTPUT_BITS(SpreadHftKernel, y, 0)
+#endif
+
+#ifdef MANAGER_NODE_CPP_SIM_MODEL_CTOR
+#define MANAGER_NODE_CPP_SIM_MODEL_CTOR_PRESENT 1
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(sv, PCIePullSourceSyncMax3, "sv")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_1, DualAspectMuxSync, "Stream_1", 32, 4)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_10, FifoPushToPullSync, "Stream_10", false, 512, 32)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(SpreadHftKernel, SpreadHftKernel, "SpreadHftKernel")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_12, FifoPushToPullSync, "Stream_12", false, 512, 32)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_6, DualAspectRegSync, "Stream_6", 32, 4)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_14, PullToPushAdapterSync, "Stream_14")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(y, PCIePushSinkSyncMax3, "y")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(CapabilityReg, CapRegs, "CapabilityReg", 0, 1, 1, 0, 0, 0, 0, 0, 35)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(ifpga, IFPGARegs)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(sfa, SFARegs)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(ChecksumMemory, ChecksumMem, "ChecksumMemory", "a3135403e1e0106a34ecabdfb234e14fc3d064b3449be779de9f9a28d9410cd2")
+#endif
+
+#ifdef MANAGER_NODE_CPP_SIM_MODEL_SETUP
+#define MANAGER_NODE_CPP_SIM_MODEL_SETUP_PRESENT 1
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_ctld_almost_empty, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_ctld_done, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_ctld_empty, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_ctld_read, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_ctld_read_pipe_dbg, 3, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_ctld_request, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_done_out, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_fill_level, 6, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_flush_level, 6, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_flush_start, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_flush_start_level, 6, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_flushing, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_full_level, 6, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_out_stall, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_out_valid, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(SpreadHftKernel, addDebugRegister, reg_dbg_stall_vector, 1, 0)
+#endif
+
+#ifdef PCIE_STREAM
+#define PCIE_STREAM_PRESENT 1
+PCIE_STREAM(sv, STREAM_FROM_HOST, 0)
+PCIE_STREAM(y, STREAM_TO_HOST, 0)
+#endif
+
+#ifdef REG
+#define REG_PRESENT 1
+REG(SpreadHftKernel.io_sv_force_disabled, 0x0, 1, hwOffsetFix(1, 0, UNSIGNED))
+REG(SpreadHftKernel.io_y_force_disabled, 0x1, 1, hwOffsetFix(1, 0, UNSIGNED))
+REG(SpreadHftKernel.run_cycle_count, 0x2, 6, hwOffsetFix(48, 0, UNSIGNED))
+REG(SpreadHftKernel.current_run_cycle_count, 0x8, 6, hwOffsetFix(48, 0, UNSIGNED))
+REG(SpreadHftKernel.dbg_ctld_almost_empty, 0xe, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_ctld_done, 0xf, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_ctld_empty, 0x10, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_ctld_read, 0x11, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_ctld_read_pipe_dbg, 0x12, 1, hwBits(3))
+REG(SpreadHftKernel.dbg_ctld_request, 0x13, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_done_out, 0x14, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_fill_level, 0x15, 1, hwBits(6))
+REG(SpreadHftKernel.dbg_flush_level, 0x16, 1, hwBits(6))
+REG(SpreadHftKernel.dbg_flush_start, 0x17, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_flush_start_level, 0x18, 1, hwBits(6))
+REG(SpreadHftKernel.dbg_flushing, 0x19, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_full_level, 0x1a, 1, hwBits(6))
+REG(SpreadHftKernel.dbg_out_stall, 0x1b, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_out_valid, 0x1c, 1, hwBits(1))
+REG(SpreadHftKernel.dbg_stall_vector, 0x1d, 1, hwBits(1))
+REG(ifpga.ifpga_ctrl, 0x1e, 1, hwBits(8))
+REG(SignalForwardingAdapter.SFA_FORWARD_EN, 0x1f, 4, hwBits(32))
+#endif
+
+#ifdef REG_V2
+#define REG_V2_PRESENT 1
+REG_V2(SpreadHftKernel.io_sv_force_disabled, 0x0, 1, hwOffsetFix(1, 0, UNSIGNED), HOST_WRITE_ONLY, true)
+REG_V2(SpreadHftKernel.io_y_force_disabled, 0x1, 1, hwOffsetFix(1, 0, UNSIGNED), HOST_WRITE_ONLY, true)
+REG_V2(SpreadHftKernel.run_cycle_count, 0x2, 6, hwOffsetFix(48, 0, UNSIGNED), HOST_WRITE_ONLY, false)
+REG_V2(SpreadHftKernel.current_run_cycle_count, 0x8, 6, hwOffsetFix(48, 0, UNSIGNED), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_ctld_almost_empty, 0xe, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_ctld_done, 0xf, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_ctld_empty, 0x10, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_ctld_read, 0x11, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_ctld_read_pipe_dbg, 0x12, 1, hwBits(3), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_ctld_request, 0x13, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_done_out, 0x14, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_fill_level, 0x15, 1, hwBits(6), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_flush_level, 0x16, 1, hwBits(6), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_flush_start, 0x17, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_flush_start_level, 0x18, 1, hwBits(6), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_flushing, 0x19, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_full_level, 0x1a, 1, hwBits(6), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_out_stall, 0x1b, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_out_valid, 0x1c, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(SpreadHftKernel.dbg_stall_vector, 0x1d, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(ifpga.ifpga_ctrl, 0x1e, 1, hwBits(8), HOST_READ_WRITE, false)
+REG_V2(SignalForwardingAdapter.SFA_FORWARD_EN, 0x1f, 4, hwBits(32), HOST_READ_WRITE, false)
+#endif
+
+
+
+
+#ifdef CHECKSUM
+#define CHECKSUM_PRESENT 1
+CHECKSUM("a3135403e1e0106a34ecabdfb234e14fc3d064b3449be779de9f9a28d9410cd2")
+#endif
+
+#ifdef CAPABILITY
+#define CAPABILITY_PRESENT 1
+CAPABILITY(MAX3REV, MAX3REVA)
+CAPABILITY(MAX3RAM, DDR3_24GB)
+CAPABILITY(MAX3FPGA, SXT475_2ES)
+#endif
+
+#ifdef DEFINE_DESIGN_NAME
+#define DESIGN_NAME SpreadHft
+#endif /* DEFINE_DESIGN_NAME */
+
+#ifndef SLIC_NO_DECLARATIONS
+/**\file */
+#ifndef SLIC_DECLARATIONS_SpreadHft_H
+#define SLIC_DECLARATIONS_SpreadHft_H
+#include "MaxSLiCInterface.h"
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
+#define SpreadHft_PCIE_ALIGNMENT (16)
+
+
+/*----------------------------------------------------------------------------*/
+/*---------------------------- Interface default -----------------------------*/
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * \brief Basic static function for the interface 'default'.
+ * 
+ * \param [in] param_N Interface Parameter "N".: Number of data items to process
+ * \param [in] instream_sv The stream should be of size (param_N * 4) bytes.
+ * \param [out] outstream_y The stream should be of size (param_N * 4) bytes.
+ */
+void SpreadHft(
+	int32_t param_N,
+	const float *instream_sv,
+	float *outstream_y);
+
+/**
+ * \brief Basic static non-blocking function for the interface 'default'.
+ * 
+ * Schedule to run on an engine and return immediately.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ * 
+ * 
+ * \param [in] param_N Interface Parameter "N".: Number of data items to process
+ * \param [in] instream_sv The stream should be of size (param_N * 4) bytes.
+ * \param [out] outstream_y The stream should be of size (param_N * 4) bytes.
+ * \return A handle on the execution status, or NULL in case of error.
+ */
+max_run_t *SpreadHft_nonblock(
+	int32_t param_N,
+	const float *instream_sv,
+	float *outstream_y);
+
+/**
+ * \brief Advanced static interface, structure for the engine interface 'default'
+ * 
+ */
+typedef struct { 
+	int32_t param_N; /**<  [in] Interface Parameter "N".: Number of data items to process */
+	const float *instream_sv; /**<  [in] The stream should be of size (param_N * 4) bytes. */
+	float *outstream_y; /**<  [out] The stream should be of size (param_N * 4) bytes. */
+} SpreadHft_actions_t;
+
+/**
+ * \brief Advanced static function for the interface 'default'.
+ * 
+ * \param [in] engine The engine on which the actions will be executed.
+ * \param [in,out] interface_actions Actions to be executed.
+ */
+void SpreadHft_run(
+	max_engine_t *engine,
+	SpreadHft_actions_t *interface_actions);
+
+/**
+ * \brief Advanced static non-blocking function for the interface 'default'.
+ *
+ * Schedule the actions to run on the engine and return immediately.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * 
+ * \param [in] engine The engine on which the actions will be executed.
+ * \param [in] interface_actions Actions to be executed.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *SpreadHft_run_nonblock(
+	max_engine_t *engine,
+	SpreadHft_actions_t *interface_actions);
+
+/**
+ * \brief Group run advanced static function for the interface 'default'.
+ * 
+ * \param [in] group Group to use.
+ * \param [in,out] interface_actions Actions to run.
+ *
+ * Run the actions on the first device available in the group.
+ */
+void SpreadHft_run_group(max_group_t *group, SpreadHft_actions_t *interface_actions);
+
+/**
+ * \brief Group run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule the actions to run on the first device available in the group and return immediately.
+ * The status of the run must be checked with ::max_wait. 
+ * Note that use of ::max_nowait is prohibited with non-blocking running on groups:
+ * see the ::max_run_group_nonblock documentation for more explanation.
+ *
+ * \param [in] group Group to use.
+ * \param [in] interface_actions Actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *SpreadHft_run_group_nonblock(max_group_t *group, SpreadHft_actions_t *interface_actions);
+
+/**
+ * \brief Array run advanced static function for the interface 'default'.
+ * 
+ * \param [in] engarray The array of devices to use.
+ * \param [in,out] interface_actions The array of actions to run.
+ *
+ * Run the array of actions on the array of engines.  The length of interface_actions
+ * must match the size of engarray.
+ */
+void SpreadHft_run_array(max_engarray_t *engarray, SpreadHft_actions_t *interface_actions[]);
+
+/**
+ * \brief Array run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule to run the array of actions on the array of engines, and return immediately.
+ * The length of interface_actions must match the size of engarray.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * \param [in] engarray The array of devices to use.
+ * \param [in] interface_actions The array of actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *SpreadHft_run_array_nonblock(max_engarray_t *engarray, SpreadHft_actions_t *interface_actions[]);
+
+/**
+ * \brief Converts a static-interface action struct into a dynamic-interface max_actions_t struct.
+ *
+ * Note that this is an internal utility function used by other functions in the static interface.
+ *
+ * \param [in] maxfile The maxfile to use.
+ * \param [in] interface_actions The interface-specific actions to run.
+ * \return The dynamic-interface actions to run, or NULL in case of error.
+ */
+max_actions_t* SpreadHft_convert(max_file_t *maxfile, SpreadHft_actions_t *interface_actions);
+
+/**
+ * \brief Initialise a maxfile.
+ */
+max_file_t* SpreadHft_init(void);
+
+/* Error handling functions */
+int SpreadHft_has_errors(void);
+const char* SpreadHft_get_errors(void);
+void SpreadHft_clear_errors(void);
+/* Free statically allocated maxfile data */
+void SpreadHft_free(void);
+/* returns: -1 = error running command; 0 = no error reported */
+int SpreadHft_simulator_start(void);
+/* returns: -1 = error running command; 0 = no error reported */
+int SpreadHft_simulator_stop(void);
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
+#endif /* SLIC_DECLARATIONS_SpreadHft_H */
+
+#endif /* SLIC_NO_DECLARATIONS */
+
+#ifdef PHOTON_NODE_DATA
+#define PHOTON_NODE_DATA_PRESENT 1
+PHOTON_NODE_DATA(SpreadHftKernel, 8, NodeInputMappedReg, "Scalar input (io_y_force_disabled)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:26)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 9, NodeNot, "~", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:26)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 0, NodeInputMappedReg, "Scalar input (io_sv_force_disabled)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:606)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:19)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 1, NodeNot, "~", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:606)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:19)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 2, NodeInput, "Input(sv)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:606)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:19)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 24, NodeFIFO, "FIFO(1)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 3, NodeStreamOffset, "stream offset: 1", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:21)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 5, NodeSub, "-", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:914)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:23)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 4, NodeStreamOffset, "stream offset: 2", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:22)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 26, NodeFIFO, "FIFO(10)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 6, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:868)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:23)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 11, NodeOutput, "Output(y)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)\nspreadhft.SpreadHftKernel.<init>(SpreadHftKernel.maxj:26)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:20)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 16, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 28, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 13, NodeConstantRawBits, "{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 14, NodeCounterV1, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 15, NodeStreamOffset, "stream offset: 1", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 17, NodeOutputMappedReg, "Scalar output (current_run_cycle_count)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 27, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 19, NodeConstantRawBits, "{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 20, NodeCounterV1, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 22, NodeInputMappedReg, "Scalar input (run_cycle_count)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 23, NodeEq, "==", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+PHOTON_NODE_DATA(SpreadHftKernel, 21, NodeFlush, "flush on trigger", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\nspreadhft.SpreadHftManager.main(SpreadHftManager.maxj:24)\n")
+#endif
+
+#ifdef SLIC_USE_DEFINITIONS
+#include <stdio.h>
+#include <math.h>
+#include <pthread.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+static max_file_t *stored_maxfile = NULL;
+static max_engine_t *stored_engine = NULL;
+static char *stored_error = NULL;
+static int stored_has_error = 0;
+static pthread_once_t slic_bs_is_initialised = PTHREAD_ONCE_INIT;
+
+static void set_error(const char *error_str)
+{
+	stored_has_error = 1; 
+	if(stored_error == NULL) {
+		stored_error = strdup(error_str);
+	} else {
+		char *nerr = malloc(strlen(stored_error) + strlen(error_str) + 2);
+		sprintf(nerr, "%s\n%s", stored_error, error_str);
+		free(stored_error);
+		stored_error = nerr;
+	}
+}
+static void set_error_and_free(char *error_str){
+	set_error(error_str);
+	free(error_str);
+}
+int SpreadHft_has_errors(void)
+{	return stored_has_error; }
+const char* SpreadHft_get_errors(void)
+{	return stored_error; }
+void SpreadHft_clear_errors(void)
+{
+	free(stored_error);
+	stored_error = NULL;
+	stored_has_error = 0;
+}
+
+static char SpreadHft_use_simulation[16];
+static void SpreadHft_def_use_simulation(void)
+{
+	long pid = ((long) getpid()) % 100000;
+	snprintf(SpreadHft_use_simulation, 16, "SpreadHf_%05ld_", pid);
+}
+static const char *SpreadHft_check_use_simulation(void)
+{
+	SpreadHft_def_use_simulation();
+	const char *use_sim = max_config_get_string(MAX_CONFIG_USE_SIMULATION);
+	if (use_sim == NULL) {
+		use_sim = SpreadHft_use_simulation;
+		max_config_set_string(MAX_CONFIG_USE_SIMULATION, use_sim);
+	}
+	return use_sim;
+}
+
+static int SpreadHft_simulation_launch = 0;
+int SpreadHft_simulator_start(void)
+{
+	int retval = 0;
+	const char *use_sim = SpreadHft_check_use_simulation();
+	char buff[1024];
+	snprintf(buff, 1024, "PATH=simutils:$PATH maxcompilersim -d 1 -n %s -c MAX3424A -S simutils restart", use_sim);
+	FILE *pipe_fp = popen(buff, "r");
+	if (pipe_fp == NULL) {
+		strncat(buff, " : failed to execute.", (1024 - strlen(buff)));
+		set_error(buff);
+		return -1;
+	}
+	while (fgets(buff, 1024, pipe_fp) != NULL) {
+		/* Uncomment this to get simulator command output */
+		/* fprintf(stderr, buff); */
+		if (strstr(buff, "Error")) {
+			set_error(buff);
+			retval = -1;
+		}
+	}
+	pclose(pipe_fp);
+	return retval;
+}
+
+int SpreadHft_simulator_stop(void)
+{
+	const char *use_sim = SpreadHft_check_use_simulation();
+	char buff[1024];
+	snprintf(buff, 1024, "PATH=simutils:$PATH maxcompilersim -d 1 -n %s -c MAX3424A -S simutils stop", use_sim);
+	FILE *pipe_fp = popen(buff, "r");
+	if (pipe_fp == NULL) {
+		strncat(buff, " : failed to execute.", (1024 - strlen(buff)));
+		set_error(buff);
+		return -1;
+	}
+	while (fgets(buff, 1024, pipe_fp) != NULL) {
+		/* Uncomment this to get simulator command output */
+		/* fprintf(stderr, buff); */
+		;
+	}
+	pclose(pipe_fp);
+	return 0;
+}
+
+static void SpreadHft_static_init(void) 
+{
+	stored_maxfile = SpreadHft_init();
+	if (stored_maxfile == NULL || !max_ok(stored_maxfile->errors)) {
+		stored_maxfile = NULL;
+		if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) abort();
+		else { set_error("Unable to load maxfile"); return; }
+	}
+	if(!max_ok(max_global_errors())) {
+		set_error_and_free(max_errors_trace(max_global_errors()));
+		return;
+	}
+	if(!max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR))
+		max_errors_mode(stored_maxfile->errors, 0);
+	time_t timeout_previous = max_load_timeout(stored_maxfile, 30);
+	const char *use_sim = SpreadHft_check_use_simulation();
+	if (max_ping_daemon(stored_maxfile, use_sim) == 0) {
+		int sim_stat = SpreadHft_simulator_start();
+		if ((sim_stat == 0) && (max_ping_daemon(stored_maxfile, use_sim) == 1)) {
+			SpreadHft_simulation_launch = 1;
+		} else {
+			set_error("Error: An error occurred while trying to start the simulation infrastructure automatically.");
+			set_error("Error: Check that 'use_simulation=<simulator_name>' is set correctly in your SLiC configuration");
+			set_error("Error: and that the associated simulated system daemon is running.");
+			max_file_free(stored_maxfile);
+			stored_maxfile = NULL;
+			return;
+		}
+	}
+	stored_engine = max_load(stored_maxfile, "*");
+	if (!max_ok(stored_maxfile->errors)) {
+		if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) {
+			fprintf(stderr, "\nUnable to load engine: aborting now.\n\n");
+			fflush(stderr);
+			abort();
+		} else {
+			set_error_and_free(max_errors_trace(stored_maxfile->errors));
+			max_file_free(stored_maxfile);
+			stored_maxfile = NULL;
+			return;
+		} 
+	} 
+	max_load_timeout(stored_maxfile, timeout_previous);
+}
+void SpreadHft_free(void)
+{
+	if (stored_engine != NULL) {
+		max_unload(stored_engine);
+		stored_engine = NULL;
+	}
+	if (stored_maxfile != NULL) {
+		max_file_free(stored_maxfile);
+		stored_maxfile = NULL;
+	}
+	if (stored_error != NULL) {
+		free(stored_error);
+		stored_error = NULL;
+	}
+	if (SpreadHft_simulation_launch == 1) {
+		int sim_stat = SpreadHft_simulator_stop();
+		if (sim_stat != 0 ) {
+			fprintf(stderr, "Error stopping simulator.");
+		}
+		SpreadHft_simulation_launch = 0;
+	}
+}
+
+static int SpreadHft_get_pcie_alignment(void)
+{
+#ifdef SpreadHft_PCIE_ALIGNMENT
+	return ((SpreadHft_PCIE_ALIGNMENT < 1) ? 16 : SpreadHft_PCIE_ALIGNMENT);
+#else
+	return 16;
+#endif
+}
+
+static int SpreadHft_check_aligned(const void *data)
+{
+	uintptr_t pointer = (uintptr_t) data;
+	int alignment = SpreadHft_get_pcie_alignment();
+	return (pointer % alignment) ? 1 : 0;
+}
+
+static void *SpreadHft_malloc_aligned(const size_t size)
+{
+	void *ptr;
+	int alignment = SpreadHft_get_pcie_alignment();
+	posix_memalign(&ptr, alignment, size);
+	return ptr;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*---------------------------- Interface default -----------------------------*/
+/*----------------------------------------------------------------------------*/
+
+
+
+#define CHECK_ERRORS_ST(ST, RET) if(!max_ok(ST->errors)) { if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) { fprintf(stderr, "%s\n", max_errors_trace(ST->errors)); abort(); } set_error_and_free(max_errors_trace(ST->errors)); return RET; } 
+#define CHECK_NULL(VALUE, MESSAGE, RET) if(VALUE == NULL) { if (max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) { fprintf(stderr, "%s\n%s\n", (stored_error == NULL) ? "" : stored_error, MESSAGE); abort(); } set_error(MESSAGE); return RET; }
+
+ 
+typedef struct SpreadHft_callback_stream {
+	uint8_t *user_ptr;
+	uint8_t *aligned_ptr;
+	size_t   size;
+	int      is_output;
+} SpreadHft_callback_stream_t;
+
+typedef struct SpreadHft_callback_data {
+	SpreadHft_callback_stream_t stream[2]; 
+	int count;
+	int max_count;
+} SpreadHft_callback_data_t;
+
+static void SpreadHft_callback_internal(void *cb_data)
+{
+	SpreadHft_callback_data_t *data = (SpreadHft_callback_data_t*) cb_data;
+	for (int i = 0 ; i < data->count ; i++ ) {
+		SpreadHft_callback_stream_t *s = &data->stream[i];
+		if (s->is_output && (s->size > 0)) {
+			memcpy(s->user_ptr, s->aligned_ptr, s->size);
+		}
+		free(s->aligned_ptr);
+	}
+	free(data);
+}
+
+static max_actions_t* SpreadHft_convert_internal(
+	max_file_t *maxfile,
+	SpreadHft_actions_t *interface_actions,
+	int  is_internal_call,
+	void (**callback_func)(void*),
+	void **callback_data)
+{
+	max_actions_t *actions = max_actions_init(maxfile, NULL);
+	if(actions == NULL) return NULL;
+
+#define CHECK_ERRORS if(!max_ok(actions->errors)) { set_error_and_free(max_errors_trace(actions->errors)); return NULL; } 
+
+	SpreadHft_callback_data_t *cb_data = NULL;
+	int use_callback = (callback_func != NULL) && (callback_data != NULL);
+	if (use_callback) {
+		cb_data = malloc(sizeof(SpreadHft_callback_data_t));
+		if (cb_data == NULL) {
+			fprintf(stderr, "Unable to allocate memory for stream callback data in function SpreadHft_convert_internal\n");
+			return NULL;
+		}
+		cb_data->max_count = 2;
+		cb_data->count     = 0;
+		*callback_data     = cb_data;
+		*callback_func     = &SpreadHft_callback_internal;
+	}
+
+	int32_t param_N = interface_actions->param_N;
+	
+	/* code for scalar SpreadHftKernel.run_cycle_count */
+	uint64_t ticks_SpreadHftKernel = param_N;
+	max_set_ticks(actions, "SpreadHftKernel", param_N);
+	CHECK_ERRORS;
+	/* end of code for scalar SpreadHftKernel.run_cycle_count*/
+	
+	int64_t tmp_0 = (param_N * 4);
+	
+	/* code for stream sv */
+	size_t instream_size_sv = tmp_0;
+	if (instream_size_sv > 0) {
+		const float *stream_ptr = interface_actions->instream_sv;
+		if (use_callback && (1 == SpreadHft_check_aligned(interface_actions->instream_sv))) {
+			float *aligned_instream_sv = malloc(instream_size_sv);
+			if (aligned_instream_sv == NULL) {
+				max_report_error_slic(actions->errors, __FILE__, __LINE__, 526, "Failed to allocate aligned memory for stream 'sv'");
+				CHECK_ERRORS;
+			}
+			(&cb_data->stream[cb_data->count])->user_ptr    = (uint8_t*) interface_actions->instream_sv;
+			(&cb_data->stream[cb_data->count])->aligned_ptr = (uint8_t*) aligned_instream_sv;
+			(&cb_data->stream[cb_data->count])->size        = instream_size_sv;
+			(&cb_data->stream[cb_data->count])->is_output   = 0;
+			cb_data->count += 1;
+			memcpy(aligned_instream_sv, interface_actions->instream_sv, instream_size_sv);
+			stream_ptr = aligned_instream_sv;
+		}
+		max_queue_input(actions, "sv", stream_ptr, instream_size_sv);
+		CHECK_ERRORS;
+	}
+	/* end of code for stream sv */
+	
+	int64_t tmp_1 = (param_N * 4);
+	
+	/* code for stream y */
+	size_t outstream_size_y = tmp_1;
+	if (outstream_size_y > 0) {
+		float *stream_ptr = interface_actions->outstream_y;
+		if (use_callback && (1 == SpreadHft_check_aligned(interface_actions->outstream_y))) {
+			float *aligned_outstream_y = malloc(outstream_size_y);
+			if (aligned_outstream_y == NULL) {
+				max_report_error_slic(actions->errors, __FILE__, __LINE__, 526, "Failed to allocate aligned memory for stream 'y'");
+				CHECK_ERRORS;
+			}
+			(&cb_data->stream[cb_data->count])->user_ptr    = (uint8_t*) interface_actions->outstream_y;
+			(&cb_data->stream[cb_data->count])->aligned_ptr = (uint8_t*) aligned_outstream_y;
+			(&cb_data->stream[cb_data->count])->size        = outstream_size_y;
+			(&cb_data->stream[cb_data->count])->is_output   = 1;
+			cb_data->count += 1;
+			stream_ptr = aligned_outstream_y;
+		}
+		max_queue_output(actions, "y", stream_ptr, outstream_size_y);
+		CHECK_ERRORS;
+	}
+	/* end of code for stream y */
+	
+	if (use_callback && cb_data->count == 0) {
+		*callback_data = NULL;
+		*callback_func = NULL;
+		free(cb_data);
+	}
+	return actions;
+#undef CHECK_ERRORS
+}
+
+void SpreadHft(
+	int32_t param_N,
+	const float *instream_sv,
+	float *outstream_y)
+{
+	(void) pthread_once(&slic_bs_is_initialised, SpreadHft_static_init);
+	CHECK_NULL(stored_maxfile, "Maxfile was not loaded", );
+	max_run_t *run = SpreadHft_nonblock(param_N, instream_sv, outstream_y);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+max_run_t *SpreadHft_nonblock(
+	int32_t param_N,
+	const float *instream_sv,
+	float *outstream_y)
+{
+	SpreadHft_actions_t interface_actions;
+	interface_actions.param_N = param_N;
+	interface_actions.instream_sv = instream_sv;
+	interface_actions.outstream_y = outstream_y;
+	(void) pthread_once(&slic_bs_is_initialised, SpreadHft_static_init);
+	CHECK_NULL(stored_maxfile, "Maxfile was not loaded", NULL);
+	void (*cb_func)(void*) = NULL;
+	void  *cb_data         = NULL;
+	max_actions_t *actions = SpreadHft_convert_internal(stored_maxfile, &interface_actions, 1, &cb_func, &cb_data);
+	CHECK_NULL(actions, "Unable to build actions", NULL);
+	max_validate(actions);
+	CHECK_ERRORS_ST(actions, NULL);
+	CHECK_ERRORS_ST(stored_engine, NULL);
+	max_run_t *run;
+	if (cb_func == NULL) {
+		run = max_run_nonblock(stored_engine, actions);
+	} else {
+		run = max_run_nonblock_with_cb(stored_engine, actions, cb_func, cb_data);
+	}
+	CHECK_NULL(run, "Unable to run actions", NULL);
+	CHECK_ERRORS_ST(actions, NULL);
+	max_actions_free(actions);
+	return run;
+}
+
+void SpreadHft_run(
+	max_engine_t *engine,
+	SpreadHft_actions_t *interface_actions)
+{
+	max_run_t *run = SpreadHft_run_nonblock(engine, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+max_run_t *SpreadHft_run_nonblock(
+	max_engine_t *engine,
+	SpreadHft_actions_t *interface_actions)
+{
+	max_file_t *maxfile = max_engine_get_max_file(engine); 
+	void (*cb_func)(void*) = NULL;
+	void  *cb_data         = NULL;
+	max_actions_t *actions = SpreadHft_convert_internal(maxfile, interface_actions, 1, &cb_func, &cb_data);
+	CHECK_ERRORS_ST(actions, NULL);
+	max_run_t *run;
+	if (cb_func == NULL) {
+		run = max_run_nonblock(engine, actions);
+	} else {
+		run = max_run_nonblock_with_cb(engine, actions, cb_func, cb_data);
+	}
+	CHECK_NULL(run, "Unable to run actions", NULL);
+	max_actions_free(actions);
+	return run;
+}
+
+
+/**
+ * \brief Group run advanced static function for the interface 'default'.
+ * 
+ * \param [in] group Group to use.
+ * \param [in,out] interface_actions Actions to run.
+ *
+ * Run the actions on the first device available in the group.
+ */
+void SpreadHft_run_group(max_group_t *group, SpreadHft_actions_t *interface_actions)
+{
+	max_run_t *run = SpreadHft_run_group_nonblock(group, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+
+/**
+ * \brief Group run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule the actions to run on the first device available in the group and return immediately.
+ * The status of the run must be checked with ::max_wait. 
+ * Note that use of ::max_nowait is prohibited with non-blocking running on groups:
+ * see the ::max_run_group_nonblock documentation for more explanation.
+ *
+ * \param [in] group Group to use.
+ * \param [in] interface_actions Actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *SpreadHft_run_group_nonblock(max_group_t *group, SpreadHft_actions_t *interface_actions)
+{
+	max_file_t *maxfile = max_group_get_max_file(group);
+	max_actions_t *actions = SpreadHft_convert_internal(maxfile, interface_actions, 1, NULL, NULL);
+	if(actions == NULL) return NULL;
+	if(!max_ok(actions->errors)) return NULL;
+	max_validate(actions);
+	max_run_t *run = max_run_group_nonblock(group, actions);
+	max_actions_free(actions);
+	return run;
+}
+
+
+/**
+ * \brief Array run advanced static function for the interface 'default'.
+ * 
+ * \param [in] engarray The array of devices to use.
+ * \param [in,out] interface_actions The array of actions to run.
+ *
+ * Run the array of actions on the array of engines.  The length of interface_actions
+ * must match the size of engarray.
+ */
+void SpreadHft_run_array(max_engarray_t *engarray, SpreadHft_actions_t *interface_actions[])
+{
+	max_run_t *run = SpreadHft_run_array_nonblock(engarray, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+
+/**
+ * \brief Array run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule to run the array of actions on the array of engines, and return immediately.
+ * The length of interface_actions must match the size of engarray.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * \param [in] engarray The array of devices to use.
+ * \param [in] interface_actions The array of actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *SpreadHft_run_array_nonblock(max_engarray_t *engarray, SpreadHft_actions_t *interface_actions[])
+{
+	max_file_t *maxfile = max_engarray_get_max_file(engarray, 0);
+	int i;
+	max_actarray_t *actarray = max_actarray_init(maxfile, engarray->size);
+	if (actarray == NULL) return NULL;
+	max_actions_t **arr_actions = malloc(engarray->size * sizeof(max_actions_t*));
+	for ( i = 0 ; i < actarray->size; i++ ) {
+		max_actions_t *actions = SpreadHft_convert_internal(maxfile, interface_actions[i], 1, NULL, NULL);
+		if (actions == NULL) return NULL;
+		arr_actions[i] = actions;
+		max_set_action(actarray, i, actions);
+	}
+	max_run_t *run = max_run_array_nonblock(engarray, actarray);
+	for ( i = 0 ; i < actarray->size ; i++ ) { max_actions_free(arr_actions[i]); }
+	max_actarray_free(actarray);
+	free(arr_actions);
+	return run;
+}
+
+
+/**
+ * \brief Converts a static-interface action struct into a dynamic-interface max_actions_t struct.
+ *
+ * Note that this is an internal utility function used by other functions in the static interface.
+ *
+ * \param [in] maxfile The maxfile to use.
+ * \param [in] interface_actions The interface-specific actions to run.
+ * \return The dynamic-interface actions to run, or NULL in case of error.
+ */
+max_actions_t* SpreadHft_convert(max_file_t *maxfile, SpreadHft_actions_t *interface_actions)
+{
+	return SpreadHft_convert_internal(maxfile, interface_actions, 0, NULL, NULL);
+}
+
+#undef CHECK_ERRORS_ST
+#undef CHECK_NULL
+
+
+
+#endif /* SLIC_USE_DEFINITIONS */
+
+#ifdef SLIC_DYNAMIC_CODE
+SLIC_MODE_START(default)	
+SLIC_PARAMETER_UINT64(int32_t, N, param_N)	
+SLIC_SET_TICKS(SpreadHftKernel, param_N)	
+SLIC_TEMP_VAR(int64_t tmp_0 = (param_N * 4);)	
+SLIC_STREAM(sv, tmp_0)	
+SLIC_TEMP_VAR(int64_t tmp_1 = (param_N * 4);)	
+SLIC_STREAM(y, tmp_1)	
+SLIC_MODE_END(default)
+
+#endif /* SLIC_DYNAMIC_CODE */
+
+#ifdef SKIN_META_DATA
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PG1h
+eGZpbGUgZm9ybWF0LXZlcnNpb249IjIwMTIwMjAwIiBoZWFkZXI9IlNwcmVhZEhmdC5oIiBuYW1l
+PSJTcHJlYWRIZnQiPjxjb25zdGFudCBuYW1lPSJQQ0lFX0FMSUdOTUVOVCIgdHlwZT0ibG9uZyIg
+dmFsdWU9IjE2Ii8+PGVuZ2luZW1vZGUgbmFtZT0iZGVmYXVsdCI+PGZ1bmN0aW9uIG5hbWU9IlNw
+cmVhZEhmdCIgcmV0dXJuLXZhbHVlPSJ2b2lkIj48c2NhbGFyIGRlc2M9IkludGVyZmFjZSBQYXJh
+bWV0ZXIgJnF1b3Q7TiZxdW90Oy46IE51bWJlciBvZiBkYXRhIGl0ZW1zIHRvIHByb2Nlc3MiIGRp
+cmVjdGlvbj0iSW5wdXQiIG5hbWU9InBhcmFtX04iIHR5cGU9ImludDMyX3QiLz48YXJyYXkgZGVz
+Yz0iVGhlIHN0cmVhbSBzaG91bGQgYmUgb2Ygc2l6ZSAocGFyYW1fTiAqIDQpIGJ5dGVzLiIgZGly
+ZWN0aW9uPSJJbnB1dCIgbmFtZT0iaW5zdHJlYW1fc3YiIHNpemU9IihwYXJhbV9OICogNCkiIHRy
+YW5zcG9zZT0idHJ1ZSIgdHlwZT0iZmxvYXQiPjxkaW1lbnNpb24gaW5kZXg9IjAiPjxsZW5ndGg+
+PGZ1bmN0aW9uQ2FsbD48bnVtQmluYXJ5T3BlcmF0b3Igb3BlcmF0b3I9Ii8iIHZhbHVlPSIoKHBh
+cmFtX04gKiA0KSAvIDQpIj48ZnVuY3Rpb25DYWxsPjxudW1CaW5hcnlPcGVyYXRvciBvcGVyYXRv
+cj0iKiIgdmFsdWU9IihwYXJhbV9OICogNCkiPjx1c2VyUGFyYW0gdmFsdWU9InBhcmFtX04iLz48
+Y29uc3RhbnRWYWx1ZSB2YWx1ZT0iNCIvPjwvbnVtQmluYXJ5T3BlcmF0b3I+PC9mdW5jdGlvbkNh
+bGw+PGNvbnN0YW50VmFsdWUgdmFsdWU9IjQiLz48L251bUJpbmFyeU9wZXJhdG9yPjwvZnVuY3Rp
+b25DYWxsPjwvbGVuZ3RoPjwvZGltZW5zaW9uPjwvYXJyYXk+PGFycmF5IGRlc2M9IlRoZSBzdHJl
+YW0gc2hvdWxkIGJlIG9mIHNpemUgKHBhcmFtX04gKiA0KSBieXRlcy4iIGRpcmVjdGlvbj0iT3V0
+cHV0IiBuYW1lPSJvdXRzdHJlYW1feSIgc2l6ZT0iKHBhcmFtX04gKiA0KSIgdHJhbnNwb3NlPSJ0
+cnVlIiB0eXBlPSJmbG9hdCI+PGRpbWVuc2lvbiBpbmRleD0iMCI+PGxlbmd0aD48ZnVuY3Rpb25D
+YWxsPjxudW1CaW5hcnlPcGVyYXRvciBvcGVyYXRvcj0iLyIgdmFsdWU9IigocGFyYW1fTiAqIDQp
+IC8gNCkiPjxmdW5jdGlvbkNhbGw+PG51bUJpbmFyeU9wZXJhdG9yIG9wZXJhdG9yPSIqIiB2YWx1
+ZT0iKHBhcmFtX04gKiA0KSI+PHVzZXJQYXJhbSB2YWx1ZT0icGFyYW1fTiIvPjxjb25zdGFudFZh
+bHVlIHZhbHVlPSI0Ii8+PC9udW1CaW5hcnlPcGVyYXRvcj48L2Z1bmN0aW9uQ2FsbD48Y29uc3Rh
+bnRWYWx1ZSB2YWx1ZT0iNCIvPjwvbnVtQmluYXJ5T3BlcmF0b3I+PC9mdW5jdGlvbkNhbGw+PC9s
+ZW5ndGg+PC9kaW1lbnNpb24+PC9hcnJheT48L2Z1bmN0aW9uPjwvZW5naW5lbW9kZT48L21heGZp
+bGU+
+#endif /* SKIN_META_DATA */
+
+#ifdef SLIC_B64_DEFINITIONS
+I2luY2x1ZGUgPHN0ZGlvLmg+CiNpbmNsdWRlIDxtYXRoLmg+CiNpbmNsdWRlIDxwdGhyZWFkLmg+
+CiNpbmNsdWRlIDxzdHJpbmcuaD4KI2luY2x1ZGUgPHVuaXN0ZC5oPgojaW5jbHVkZSA8c3RkbGli
+Lmg+CnN0YXRpYyBtYXhfZmlsZV90ICpzdG9yZWRfbWF4ZmlsZSA9IE5VTEw7CnN0YXRpYyBtYXhf
+ZW5naW5lX3QgKnN0b3JlZF9lbmdpbmUgPSBOVUxMOwpzdGF0aWMgY2hhciAqc3RvcmVkX2Vycm9y
+ID0gTlVMTDsKc3RhdGljIGludCBzdG9yZWRfaGFzX2Vycm9yID0gMDsKc3RhdGljIHB0aHJlYWRf
+b25jZV90IHNsaWNfYnNfaXNfaW5pdGlhbGlzZWQgPSBQVEhSRUFEX09OQ0VfSU5JVDsKCnN0YXRp
+YyB2b2lkIHNldF9lcnJvcihjb25zdCBjaGFyICplcnJvcl9zdHIpCnsKCXN0b3JlZF9oYXNfZXJy
+b3IgPSAxOyAKCWlmKHN0b3JlZF9lcnJvciA9PSBOVUxMKSB7CgkJc3RvcmVkX2Vycm9yID0gc3Ry
+ZHVwKGVycm9yX3N0cik7Cgl9IGVsc2UgewoJCWNoYXIgKm5lcnIgPSBtYWxsb2Moc3RybGVuKHN0
+b3JlZF9lcnJvcikgKyBzdHJsZW4oZXJyb3Jfc3RyKSArIDIpOwoJCXNwcmludGYobmVyciwgIiVz
+XG4lcyIsIHN0b3JlZF9lcnJvciwgZXJyb3Jfc3RyKTsKCQlmcmVlKHN0b3JlZF9lcnJvcik7CgkJ
+c3RvcmVkX2Vycm9yID0gbmVycjsKCX0KfQpzdGF0aWMgdm9pZCBzZXRfZXJyb3JfYW5kX2ZyZWUo
+Y2hhciAqZXJyb3Jfc3RyKXsKCXNldF9lcnJvcihlcnJvcl9zdHIpOwoJZnJlZShlcnJvcl9zdHIp
+Owp9CmludCBTcHJlYWRIZnRfaGFzX2Vycm9ycyh2b2lkKQp7CXJldHVybiBzdG9yZWRfaGFzX2Vy
+cm9yOyB9CmNvbnN0IGNoYXIqIFNwcmVhZEhmdF9nZXRfZXJyb3JzKHZvaWQpCnsJcmV0dXJuIHN0
+b3JlZF9lcnJvcjsgfQp2b2lkIFNwcmVhZEhmdF9jbGVhcl9lcnJvcnModm9pZCkKewoJZnJlZShz
+dG9yZWRfZXJyb3IpOwoJc3RvcmVkX2Vycm9yID0gTlVMTDsKCXN0b3JlZF9oYXNfZXJyb3IgPSAw
+Owp9CgpzdGF0aWMgY2hhciBTcHJlYWRIZnRfdXNlX3NpbXVsYXRpb25bMTZdOwpzdGF0aWMgdm9p
+ZCBTcHJlYWRIZnRfZGVmX3VzZV9zaW11bGF0aW9uKHZvaWQpCnsKCWxvbmcgcGlkID0gKChsb25n
+KSBnZXRwaWQoKSkgJSAxMDAwMDA7CglzbnByaW50ZihTcHJlYWRIZnRfdXNlX3NpbXVsYXRpb24s
+IDE2LCAiU3ByZWFkSGZfJTA1bGRfIiwgcGlkKTsKfQpzdGF0aWMgY29uc3QgY2hhciAqU3ByZWFk
+SGZ0X2NoZWNrX3VzZV9zaW11bGF0aW9uKHZvaWQpCnsKCVNwcmVhZEhmdF9kZWZfdXNlX3NpbXVs
+YXRpb24oKTsKCWNvbnN0IGNoYXIgKnVzZV9zaW0gPSBtYXhfY29uZmlnX2dldF9zdHJpbmcoTUFY
+X0NPTkZJR19VU0VfU0lNVUxBVElPTik7CglpZiAodXNlX3NpbSA9PSBOVUxMKSB7CgkJdXNlX3Np
+bSA9IFNwcmVhZEhmdF91c2Vfc2ltdWxhdGlvbjsKCQltYXhfY29uZmlnX3NldF9zdHJpbmcoTUFY
+X0NPTkZJR19VU0VfU0lNVUxBVElPTiwgdXNlX3NpbSk7Cgl9CglyZXR1cm4gdXNlX3NpbTsKfQoK
+c3RhdGljIGludCBTcHJlYWRIZnRfc2ltdWxhdGlvbl9sYXVuY2ggPSAwOwppbnQgU3ByZWFkSGZ0
+X3NpbXVsYXRvcl9zdGFydCh2b2lkKQp7CglpbnQgcmV0dmFsID0gMDsKCWNvbnN0IGNoYXIgKnVz
+ZV9zaW0gPSBTcHJlYWRIZnRfY2hlY2tfdXNlX3NpbXVsYXRpb24oKTsKCWNoYXIgYnVmZlsxMDI0
+XTsKCXNucHJpbnRmKGJ1ZmYsIDEwMjQsICJQQVRIPXNpbXV0aWxzOiRQQVRIIG1heGNvbXBpbGVy
+c2ltIC1kIDEgLW4gJXMgLWMgTUFYMzQyNEEgLVMgc2ltdXRpbHMgcmVzdGFydCIsIHVzZV9zaW0p
+OwoJRklMRSAqcGlwZV9mcCA9IHBvcGVuKGJ1ZmYsICJyIik7CglpZiAocGlwZV9mcCA9PSBOVUxM
+KSB7CgkJc3RybmNhdChidWZmLCAiIDogZmFpbGVkIHRvIGV4ZWN1dGUuIiwgKDEwMjQgLSBzdHJs
+ZW4oYnVmZikpKTsKCQlzZXRfZXJyb3IoYnVmZik7CgkJcmV0dXJuIC0xOwoJfQoJd2hpbGUgKGZn
+ZXRzKGJ1ZmYsIDEwMjQsIHBpcGVfZnApICE9IE5VTEwpIHsKCQkvKiBVbmNvbW1lbnQgdGhpcyB0
+byBnZXQgc2ltdWxhdG9yIGNvbW1hbmQgb3V0cHV0ICovCgkJLyogZnByaW50ZihzdGRlcnIsIGJ1
+ZmYpOyAqLwoJCWlmIChzdHJzdHIoYnVmZiwgIkVycm9yIikpIHsKCQkJc2V0X2Vycm9yKGJ1ZmYp
+OwoJCQlyZXR2YWwgPSAtMTsKCQl9Cgl9CglwY2xvc2UocGlwZV9mcCk7CglyZXR1cm4gcmV0dmFs
+Owp9CgppbnQgU3ByZWFkSGZ0X3NpbXVsYXRvcl9zdG9wKHZvaWQpCnsKCWNvbnN0IGNoYXIgKnVz
+ZV9zaW0gPSBTcHJlYWRIZnRfY2hlY2tfdXNlX3NpbXVsYXRpb24oKTsKCWNoYXIgYnVmZlsxMDI0
+XTsKCXNucHJpbnRmKGJ1ZmYsIDEwMjQsICJQQVRIPXNpbXV0aWxzOiRQQVRIIG1heGNvbXBpbGVy
+c2ltIC1kIDEgLW4gJXMgLWMgTUFYMzQyNEEgLVMgc2ltdXRpbHMgc3RvcCIsIHVzZV9zaW0pOwoJ
+RklMRSAqcGlwZV9mcCA9IHBvcGVuKGJ1ZmYsICJyIik7CglpZiAocGlwZV9mcCA9PSBOVUxMKSB7
+CgkJc3RybmNhdChidWZmLCAiIDogZmFpbGVkIHRvIGV4ZWN1dGUuIiwgKDEwMjQgLSBzdHJsZW4o
+YnVmZikpKTsKCQlzZXRfZXJyb3IoYnVmZik7CgkJcmV0dXJuIC0xOwoJfQoJd2hpbGUgKGZnZXRz
+KGJ1ZmYsIDEwMjQsIHBpcGVfZnApICE9IE5VTEwpIHsKCQkvKiBVbmNvbW1lbnQgdGhpcyB0byBn
+ZXQgc2ltdWxhdG9yIGNvbW1hbmQgb3V0cHV0ICovCgkJLyogZnByaW50ZihzdGRlcnIsIGJ1ZmYp
+OyAqLwoJCTsKCX0KCXBjbG9zZShwaXBlX2ZwKTsKCXJldHVybiAwOwp9CgpzdGF0aWMgdm9pZCBT
+cHJlYWRIZnRfc3RhdGljX2luaXQodm9pZCkgCnsKCXN0b3JlZF9tYXhmaWxlID0gU3ByZWFkSGZ0
+X2luaXQoKTsKCWlmIChzdG9yZWRfbWF4ZmlsZSA9PSBOVUxMIHx8ICFtYXhfb2soc3RvcmVkX21h
+eGZpbGUtPmVycm9ycykpIHsKCQlzdG9yZWRfbWF4ZmlsZSA9IE5VTEw7CgkJaWYobWF4X2NvbmZp
+Z19nZXRfYm9vbChNQVhfQ09ORklHX1NUQVRJQ19JTlRFUkZBQ0VfQUJPUlRfT05fRVJST1IpKSBh
+Ym9ydCgpOwoJCWVsc2UgeyBzZXRfZXJyb3IoIlVuYWJsZSB0byBsb2FkIG1heGZpbGUiKTsgcmV0
+dXJuOyB9Cgl9CglpZighbWF4X29rKG1heF9nbG9iYWxfZXJyb3JzKCkpKSB7CgkJc2V0X2Vycm9y
+X2FuZF9mcmVlKG1heF9lcnJvcnNfdHJhY2UobWF4X2dsb2JhbF9lcnJvcnMoKSkpOwoJCXJldHVy
+bjsKCX0KCWlmKCFtYXhfY29uZmlnX2dldF9ib29sKE1BWF9DT05GSUdfU1RBVElDX0lOVEVSRkFD
+RV9BQk9SVF9PTl9FUlJPUikpCgkJbWF4X2Vycm9yc19tb2RlKHN0b3JlZF9tYXhmaWxlLT5lcnJv
+cnMsIDApOwoJdGltZV90IHRpbWVvdXRfcHJldmlvdXMgPSBtYXhfbG9hZF90aW1lb3V0KHN0b3Jl
+ZF9tYXhmaWxlLCAzMCk7Cgljb25zdCBjaGFyICp1c2Vfc2ltID0gU3ByZWFkSGZ0X2NoZWNrX3Vz
+ZV9zaW11bGF0aW9uKCk7CglpZiAobWF4X3BpbmdfZGFlbW9uKHN0b3JlZF9tYXhmaWxlLCB1c2Vf
+c2ltKSA9PSAwKSB7CgkJaW50IHNpbV9zdGF0ID0gU3ByZWFkSGZ0X3NpbXVsYXRvcl9zdGFydCgp
+OwoJCWlmICgoc2ltX3N0YXQgPT0gMCkgJiYgKG1heF9waW5nX2RhZW1vbihzdG9yZWRfbWF4Zmls
+ZSwgdXNlX3NpbSkgPT0gMSkpIHsKCQkJU3ByZWFkSGZ0X3NpbXVsYXRpb25fbGF1bmNoID0gMTsK
+CQl9IGVsc2UgewoJCQlzZXRfZXJyb3IoIkVycm9yOiBBbiBlcnJvciBvY2N1cnJlZCB3aGlsZSB0
+cnlpbmcgdG8gc3RhcnQgdGhlIHNpbXVsYXRpb24gaW5mcmFzdHJ1Y3R1cmUgYXV0b21hdGljYWxs
+eS4iKTsKCQkJc2V0X2Vycm9yKCJFcnJvcjogQ2hlY2sgdGhhdCAndXNlX3NpbXVsYXRpb249PHNp
+bXVsYXRvcl9uYW1lPicgaXMgc2V0IGNvcnJlY3RseSBpbiB5b3VyIFNMaUMgY29uZmlndXJhdGlv
+biIpOwoJCQlzZXRfZXJyb3IoIkVycm9yOiBhbmQgdGhhdCB0aGUgYXNzb2NpYXRlZCBzaW11bGF0
+ZWQgc3lzdGVtIGRhZW1vbiBpcyBydW5uaW5nLiIpOwoJCQltYXhfZmlsZV9mcmVlKHN0b3JlZF9t
+YXhmaWxlKTsKCQkJc3RvcmVkX21heGZpbGUgPSBOVUxMOwoJCQlyZXR1cm47CgkJfQoJfQoJc3Rv
+cmVkX2VuZ2luZSA9IG1heF9sb2FkKHN0b3JlZF9tYXhmaWxlLCAiKiIpOwoJaWYgKCFtYXhfb2so
+c3RvcmVkX21heGZpbGUtPmVycm9ycykpIHsKCQlpZihtYXhfY29uZmlnX2dldF9ib29sKE1BWF9D
+T05GSUdfU1RBVElDX0lOVEVSRkFDRV9BQk9SVF9PTl9FUlJPUikpIHsKCQkJZnByaW50ZihzdGRl
+cnIsICJcblVuYWJsZSB0byBsb2FkIGVuZ2luZTogYWJvcnRpbmcgbm93LlxuXG4iKTsKCQkJZmZs
+dXNoKHN0ZGVycik7CgkJCWFib3J0KCk7CgkJfSBlbHNlIHsKCQkJc2V0X2Vycm9yX2FuZF9mcmVl
+KG1heF9lcnJvcnNfdHJhY2Uoc3RvcmVkX21heGZpbGUtPmVycm9ycykpOwoJCQltYXhfZmlsZV9m
+cmVlKHN0b3JlZF9tYXhmaWxlKTsKCQkJc3RvcmVkX21heGZpbGUgPSBOVUxMOwoJCQlyZXR1cm47
+CgkJfSAKCX0gCgltYXhfbG9hZF90aW1lb3V0KHN0b3JlZF9tYXhmaWxlLCB0aW1lb3V0X3ByZXZp
+b3VzKTsKfQp2b2lkIFNwcmVhZEhmdF9mcmVlKHZvaWQpCnsKCWlmIChzdG9yZWRfZW5naW5lICE9
+IE5VTEwpIHsKCQltYXhfdW5sb2FkKHN0b3JlZF9lbmdpbmUpOwoJCXN0b3JlZF9lbmdpbmUgPSBO
+VUxMOwoJfQoJaWYgKHN0b3JlZF9tYXhmaWxlICE9IE5VTEwpIHsKCQltYXhfZmlsZV9mcmVlKHN0
+b3JlZF9tYXhmaWxlKTsKCQlzdG9yZWRfbWF4ZmlsZSA9IE5VTEw7Cgl9CglpZiAoc3RvcmVkX2Vy
+cm9yICE9IE5VTEwpIHsKCQlmcmVlKHN0b3JlZF9lcnJvcik7CgkJc3RvcmVkX2Vycm9yID0gTlVM
+TDsKCX0KCWlmIChTcHJlYWRIZnRfc2ltdWxhdGlvbl9sYXVuY2ggPT0gMSkgewoJCWludCBzaW1f
+c3RhdCA9IFNwcmVhZEhmdF9zaW11bGF0b3Jfc3RvcCgpOwoJCWlmIChzaW1fc3RhdCAhPSAwICkg
+ewoJCQlmcHJpbnRmKHN0ZGVyciwgIkVycm9yIHN0b3BwaW5nIHNpbXVsYXRvci4iKTsKCQl9CgkJ
+U3ByZWFkSGZ0X3NpbXVsYXRpb25fbGF1bmNoID0gMDsKCX0KfQoKc3RhdGljIGludCBTcHJlYWRI
+ZnRfZ2V0X3BjaWVfYWxpZ25tZW50KHZvaWQpCnsKI2lmZGVmIFNwcmVhZEhmdF9QQ0lFX0FMSUdO
+TUVOVAoJcmV0dXJuICgoU3ByZWFkSGZ0X1BDSUVfQUxJR05NRU5UIDwgMSkgPyAxNiA6IFNwcmVh
+ZEhmdF9QQ0lFX0FMSUdOTUVOVCk7CiNlbHNlCglyZXR1cm4gMTY7CiNlbmRpZgp9CgpzdGF0aWMg
+aW50IFNwcmVhZEhmdF9jaGVja19hbGlnbmVkKGNvbnN0IHZvaWQgKmRhdGEpCnsKCXVpbnRwdHJf
+dCBwb2ludGVyID0gKHVpbnRwdHJfdCkgZGF0YTsKCWludCBhbGlnbm1lbnQgPSBTcHJlYWRIZnRf
+Z2V0X3BjaWVfYWxpZ25tZW50KCk7CglyZXR1cm4gKHBvaW50ZXIgJSBhbGlnbm1lbnQpID8gMSA6
+IDA7Cn0KCnN0YXRpYyB2b2lkICpTcHJlYWRIZnRfbWFsbG9jX2FsaWduZWQoY29uc3Qgc2l6ZV90
+IHNpemUpCnsKCXZvaWQgKnB0cjsKCWludCBhbGlnbm1lbnQgPSBTcHJlYWRIZnRfZ2V0X3BjaWVf
+YWxpZ25tZW50KCk7Cglwb3NpeF9tZW1hbGlnbigmcHRyLCBhbGlnbm1lbnQsIHNpemUpOwoJcmV0
+dXJuIHB0cjsKfQoKCgovKi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0qLwovKi0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0gSW50ZXJmYWNlIGRlZmF1bHQgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0qLwovKi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0qLwoKCgojZGVmaW5lIENIRUNLX0VSUk9SU19TVChT
+VCwgUkVUKSBpZighbWF4X29rKFNULT5lcnJvcnMpKSB7IGlmKG1heF9jb25maWdfZ2V0X2Jvb2wo
+TUFYX0NPTkZJR19TVEFUSUNfSU5URVJGQUNFX0FCT1JUX09OX0VSUk9SKSkgeyBmcHJpbnRmKHN0
+ZGVyciwgIiVzXG4iLCBtYXhfZXJyb3JzX3RyYWNlKFNULT5lcnJvcnMpKTsgYWJvcnQoKTsgfSBz
+ZXRfZXJyb3JfYW5kX2ZyZWUobWF4X2Vycm9yc190cmFjZShTVC0+ZXJyb3JzKSk7IHJldHVybiBS
+RVQ7IH0gCiNkZWZpbmUgQ0hFQ0tfTlVMTChWQUxVRSwgTUVTU0FHRSwgUkVUKSBpZihWQUxVRSA9
+PSBOVUxMKSB7IGlmIChtYXhfY29uZmlnX2dldF9ib29sKE1BWF9DT05GSUdfU1RBVElDX0lOVEVS
+RkFDRV9BQk9SVF9PTl9FUlJPUikpIHsgZnByaW50ZihzdGRlcnIsICIlc1xuJXNcbiIsIChzdG9y
+ZWRfZXJyb3IgPT0gTlVMTCkgPyAiIiA6IHN0b3JlZF9lcnJvciwgTUVTU0FHRSk7IGFib3J0KCk7
+IH0gc2V0X2Vycm9yKE1FU1NBR0UpOyByZXR1cm4gUkVUOyB9CgogCnR5cGVkZWYgc3RydWN0IFNw
+cmVhZEhmdF9jYWxsYmFja19zdHJlYW0gewoJdWludDhfdCAqdXNlcl9wdHI7Cgl1aW50OF90ICph
+bGlnbmVkX3B0cjsKCXNpemVfdCAgIHNpemU7CglpbnQgICAgICBpc19vdXRwdXQ7Cn0gU3ByZWFk
+SGZ0X2NhbGxiYWNrX3N0cmVhbV90OwoKdHlwZWRlZiBzdHJ1Y3QgU3ByZWFkSGZ0X2NhbGxiYWNr
+X2RhdGEgewoJU3ByZWFkSGZ0X2NhbGxiYWNrX3N0cmVhbV90IHN0cmVhbVsyXTsgCglpbnQgY291
+bnQ7CglpbnQgbWF4X2NvdW50Owp9IFNwcmVhZEhmdF9jYWxsYmFja19kYXRhX3Q7CgpzdGF0aWMg
+dm9pZCBTcHJlYWRIZnRfY2FsbGJhY2tfaW50ZXJuYWwodm9pZCAqY2JfZGF0YSkKewoJU3ByZWFk
+SGZ0X2NhbGxiYWNrX2RhdGFfdCAqZGF0YSA9IChTcHJlYWRIZnRfY2FsbGJhY2tfZGF0YV90Kikg
+Y2JfZGF0YTsKCWZvciAoaW50IGkgPSAwIDsgaSA8IGRhdGEtPmNvdW50IDsgaSsrICkgewoJCVNw
+cmVhZEhmdF9jYWxsYmFja19zdHJlYW1fdCAqcyA9ICZkYXRhLT5zdHJlYW1baV07CgkJaWYgKHMt
+PmlzX291dHB1dCAmJiAocy0+c2l6ZSA+IDApKSB7CgkJCW1lbWNweShzLT51c2VyX3B0ciwgcy0+
+YWxpZ25lZF9wdHIsIHMtPnNpemUpOwoJCX0KCQlmcmVlKHMtPmFsaWduZWRfcHRyKTsKCX0KCWZy
+ZWUoZGF0YSk7Cn0KCnN0YXRpYyBtYXhfYWN0aW9uc190KiBTcHJlYWRIZnRfY29udmVydF9pbnRl
+cm5hbCgKCW1heF9maWxlX3QgKm1heGZpbGUsCglTcHJlYWRIZnRfYWN0aW9uc190ICppbnRlcmZh
+Y2VfYWN0aW9ucywKCWludCAgaXNfaW50ZXJuYWxfY2FsbCwKCXZvaWQgKCoqY2FsbGJhY2tfZnVu
+Yykodm9pZCopLAoJdm9pZCAqKmNhbGxiYWNrX2RhdGEpCnsKCW1heF9hY3Rpb25zX3QgKmFjdGlv
+bnMgPSBtYXhfYWN0aW9uc19pbml0KG1heGZpbGUsIE5VTEwpOwoJaWYoYWN0aW9ucyA9PSBOVUxM
+KSByZXR1cm4gTlVMTDsKCiNkZWZpbmUgQ0hFQ0tfRVJST1JTIGlmKCFtYXhfb2soYWN0aW9ucy0+
+ZXJyb3JzKSkgeyBzZXRfZXJyb3JfYW5kX2ZyZWUobWF4X2Vycm9yc190cmFjZShhY3Rpb25zLT5l
+cnJvcnMpKTsgcmV0dXJuIE5VTEw7IH0gCgoJU3ByZWFkSGZ0X2NhbGxiYWNrX2RhdGFfdCAqY2Jf
+ZGF0YSA9IE5VTEw7CglpbnQgdXNlX2NhbGxiYWNrID0gKGNhbGxiYWNrX2Z1bmMgIT0gTlVMTCkg
+JiYgKGNhbGxiYWNrX2RhdGEgIT0gTlVMTCk7CglpZiAodXNlX2NhbGxiYWNrKSB7CgkJY2JfZGF0
+YSA9IG1hbGxvYyhzaXplb2YoU3ByZWFkSGZ0X2NhbGxiYWNrX2RhdGFfdCkpOwoJCWlmIChjYl9k
+YXRhID09IE5VTEwpIHsKCQkJZnByaW50ZihzdGRlcnIsICJVbmFibGUgdG8gYWxsb2NhdGUgbWVt
+b3J5IGZvciBzdHJlYW0gY2FsbGJhY2sgZGF0YSBpbiBmdW5jdGlvbiBTcHJlYWRIZnRfY29udmVy
+dF9pbnRlcm5hbFxuIik7CgkJCXJldHVybiBOVUxMOwoJCX0KCQljYl9kYXRhLT5tYXhfY291bnQg
+PSAyOwoJCWNiX2RhdGEtPmNvdW50ICAgICA9IDA7CgkJKmNhbGxiYWNrX2RhdGEgICAgID0gY2Jf
+ZGF0YTsKCQkqY2FsbGJhY2tfZnVuYyAgICAgPSAmU3ByZWFkSGZ0X2NhbGxiYWNrX2ludGVybmFs
+OwoJfQoKCWludDMyX3QgcGFyYW1fTiA9IGludGVyZmFjZV9hY3Rpb25zLT5wYXJhbV9OOwoJCgkv
+KiBjb2RlIGZvciBzY2FsYXIgU3ByZWFkSGZ0S2VybmVsLnJ1bl9jeWNsZV9jb3VudCAqLwoJdWlu
+dDY0X3QgdGlja3NfU3ByZWFkSGZ0S2VybmVsID0gcGFyYW1fTjsKCW1heF9zZXRfdGlja3MoYWN0
+aW9ucywgIlNwcmVhZEhmdEtlcm5lbCIsIHBhcmFtX04pOwoJQ0hFQ0tfRVJST1JTOwoJLyogZW5k
+IG9mIGNvZGUgZm9yIHNjYWxhciBTcHJlYWRIZnRLZXJuZWwucnVuX2N5Y2xlX2NvdW50Ki8KCQoJ
+aW50NjRfdCB0bXBfMCA9IChwYXJhbV9OICogNCk7CgkKCS8qIGNvZGUgZm9yIHN0cmVhbSBzdiAq
+LwoJc2l6ZV90IGluc3RyZWFtX3NpemVfc3YgPSB0bXBfMDsKCWlmIChpbnN0cmVhbV9zaXplX3N2
+ID4gMCkgewoJCWNvbnN0IGZsb2F0ICpzdHJlYW1fcHRyID0gaW50ZXJmYWNlX2FjdGlvbnMtPmlu
+c3RyZWFtX3N2OwoJCWlmICh1c2VfY2FsbGJhY2sgJiYgKDEgPT0gU3ByZWFkSGZ0X2NoZWNrX2Fs
+aWduZWQoaW50ZXJmYWNlX2FjdGlvbnMtPmluc3RyZWFtX3N2KSkpIHsKCQkJZmxvYXQgKmFsaWdu
+ZWRfaW5zdHJlYW1fc3YgPSBtYWxsb2MoaW5zdHJlYW1fc2l6ZV9zdik7CgkJCWlmIChhbGlnbmVk
+X2luc3RyZWFtX3N2ID09IE5VTEwpIHsKCQkJCW1heF9yZXBvcnRfZXJyb3Jfc2xpYyhhY3Rpb25z
+LT5lcnJvcnMsIF9fRklMRV9fLCBfX0xJTkVfXywgNTI2LCAiRmFpbGVkIHRvIGFsbG9jYXRlIGFs
+aWduZWQgbWVtb3J5IGZvciBzdHJlYW0gJ3N2JyIpOwoJCQkJQ0hFQ0tfRVJST1JTOwoJCQl9CgkJ
+CSgmY2JfZGF0YS0+c3RyZWFtW2NiX2RhdGEtPmNvdW50XSktPnVzZXJfcHRyICAgID0gKHVpbnQ4
+X3QqKSBpbnRlcmZhY2VfYWN0aW9ucy0+aW5zdHJlYW1fc3Y7CgkJCSgmY2JfZGF0YS0+c3RyZWFt
+W2NiX2RhdGEtPmNvdW50XSktPmFsaWduZWRfcHRyID0gKHVpbnQ4X3QqKSBhbGlnbmVkX2luc3Ry
+ZWFtX3N2OwoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT5zaXplICAgICAg
+ICA9IGluc3RyZWFtX3NpemVfc3Y7CgkJCSgmY2JfZGF0YS0+c3RyZWFtW2NiX2RhdGEtPmNvdW50
+XSktPmlzX291dHB1dCAgID0gMDsKCQkJY2JfZGF0YS0+Y291bnQgKz0gMTsKCQkJbWVtY3B5KGFs
+aWduZWRfaW5zdHJlYW1fc3YsIGludGVyZmFjZV9hY3Rpb25zLT5pbnN0cmVhbV9zdiwgaW5zdHJl
+YW1fc2l6ZV9zdik7CgkJCXN0cmVhbV9wdHIgPSBhbGlnbmVkX2luc3RyZWFtX3N2OwoJCX0KCQlt
+YXhfcXVldWVfaW5wdXQoYWN0aW9ucywgInN2Iiwgc3RyZWFtX3B0ciwgaW5zdHJlYW1fc2l6ZV9z
+dik7CgkJQ0hFQ0tfRVJST1JTOwoJfQoJLyogZW5kIG9mIGNvZGUgZm9yIHN0cmVhbSBzdiAqLwoJ
+CglpbnQ2NF90IHRtcF8xID0gKHBhcmFtX04gKiA0KTsKCQoJLyogY29kZSBmb3Igc3RyZWFtIHkg
+Ki8KCXNpemVfdCBvdXRzdHJlYW1fc2l6ZV95ID0gdG1wXzE7CglpZiAob3V0c3RyZWFtX3NpemVf
+eSA+IDApIHsKCQlmbG9hdCAqc3RyZWFtX3B0ciA9IGludGVyZmFjZV9hY3Rpb25zLT5vdXRzdHJl
+YW1feTsKCQlpZiAodXNlX2NhbGxiYWNrICYmICgxID09IFNwcmVhZEhmdF9jaGVja19hbGlnbmVk
+KGludGVyZmFjZV9hY3Rpb25zLT5vdXRzdHJlYW1feSkpKSB7CgkJCWZsb2F0ICphbGlnbmVkX291
+dHN0cmVhbV95ID0gbWFsbG9jKG91dHN0cmVhbV9zaXplX3kpOwoJCQlpZiAoYWxpZ25lZF9vdXRz
+dHJlYW1feSA9PSBOVUxMKSB7CgkJCQltYXhfcmVwb3J0X2Vycm9yX3NsaWMoYWN0aW9ucy0+ZXJy
+b3JzLCBfX0ZJTEVfXywgX19MSU5FX18sIDUyNiwgIkZhaWxlZCB0byBhbGxvY2F0ZSBhbGlnbmVk
+IG1lbW9yeSBmb3Igc3RyZWFtICd5JyIpOwoJCQkJQ0hFQ0tfRVJST1JTOwoJCQl9CgkJCSgmY2Jf
+ZGF0YS0+c3RyZWFtW2NiX2RhdGEtPmNvdW50XSktPnVzZXJfcHRyICAgID0gKHVpbnQ4X3QqKSBp
+bnRlcmZhY2VfYWN0aW9ucy0+b3V0c3RyZWFtX3k7CgkJCSgmY2JfZGF0YS0+c3RyZWFtW2NiX2Rh
+dGEtPmNvdW50XSktPmFsaWduZWRfcHRyID0gKHVpbnQ4X3QqKSBhbGlnbmVkX291dHN0cmVhbV95
+OwoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT5zaXplICAgICAgICA9IG91
+dHN0cmVhbV9zaXplX3k7CgkJCSgmY2JfZGF0YS0+c3RyZWFtW2NiX2RhdGEtPmNvdW50XSktPmlz
+X291dHB1dCAgID0gMTsKCQkJY2JfZGF0YS0+Y291bnQgKz0gMTsKCQkJc3RyZWFtX3B0ciA9IGFs
+aWduZWRfb3V0c3RyZWFtX3k7CgkJfQoJCW1heF9xdWV1ZV9vdXRwdXQoYWN0aW9ucywgInkiLCBz
+dHJlYW1fcHRyLCBvdXRzdHJlYW1fc2l6ZV95KTsKCQlDSEVDS19FUlJPUlM7Cgl9CgkvKiBlbmQg
+b2YgY29kZSBmb3Igc3RyZWFtIHkgKi8KCQoJaWYgKHVzZV9jYWxsYmFjayAmJiBjYl9kYXRhLT5j
+b3VudCA9PSAwKSB7CgkJKmNhbGxiYWNrX2RhdGEgPSBOVUxMOwoJCSpjYWxsYmFja19mdW5jID0g
+TlVMTDsKCQlmcmVlKGNiX2RhdGEpOwoJfQoJcmV0dXJuIGFjdGlvbnM7CiN1bmRlZiBDSEVDS19F
+UlJPUlMKfQoKdm9pZCBTcHJlYWRIZnQoCglpbnQzMl90IHBhcmFtX04sCgljb25zdCBmbG9hdCAq
+aW5zdHJlYW1fc3YsCglmbG9hdCAqb3V0c3RyZWFtX3kpCnsKCSh2b2lkKSBwdGhyZWFkX29uY2Uo
+JnNsaWNfYnNfaXNfaW5pdGlhbGlzZWQsIFNwcmVhZEhmdF9zdGF0aWNfaW5pdCk7CglDSEVDS19O
+VUxMKHN0b3JlZF9tYXhmaWxlLCAiTWF4ZmlsZSB3YXMgbm90IGxvYWRlZCIsICk7CgltYXhfcnVu
+X3QgKnJ1biA9IFNwcmVhZEhmdF9ub25ibG9jayhwYXJhbV9OLCBpbnN0cmVhbV9zdiwgb3V0c3Ry
+ZWFtX3kpOwoJQ0hFQ0tfTlVMTChydW4sICJVbmFibGUgdG8gcnVuIGFjdGlvbnMiLCApOwoJbWF4
+X3dhaXQocnVuKTsKfQoKbWF4X3J1bl90ICpTcHJlYWRIZnRfbm9uYmxvY2soCglpbnQzMl90IHBh
+cmFtX04sCgljb25zdCBmbG9hdCAqaW5zdHJlYW1fc3YsCglmbG9hdCAqb3V0c3RyZWFtX3kpCnsK
+CVNwcmVhZEhmdF9hY3Rpb25zX3QgaW50ZXJmYWNlX2FjdGlvbnM7CglpbnRlcmZhY2VfYWN0aW9u
+cy5wYXJhbV9OID0gcGFyYW1fTjsKCWludGVyZmFjZV9hY3Rpb25zLmluc3RyZWFtX3N2ID0gaW5z
+dHJlYW1fc3Y7CglpbnRlcmZhY2VfYWN0aW9ucy5vdXRzdHJlYW1feSA9IG91dHN0cmVhbV95OwoJ
+KHZvaWQpIHB0aHJlYWRfb25jZSgmc2xpY19ic19pc19pbml0aWFsaXNlZCwgU3ByZWFkSGZ0X3N0
+YXRpY19pbml0KTsKCUNIRUNLX05VTEwoc3RvcmVkX21heGZpbGUsICJNYXhmaWxlIHdhcyBub3Qg
+bG9hZGVkIiwgTlVMTCk7Cgl2b2lkICgqY2JfZnVuYykodm9pZCopID0gTlVMTDsKCXZvaWQgICpj
+Yl9kYXRhICAgICAgICAgPSBOVUxMOwoJbWF4X2FjdGlvbnNfdCAqYWN0aW9ucyA9IFNwcmVhZEhm
+dF9jb252ZXJ0X2ludGVybmFsKHN0b3JlZF9tYXhmaWxlLCAmaW50ZXJmYWNlX2FjdGlvbnMsIDEs
+ICZjYl9mdW5jLCAmY2JfZGF0YSk7CglDSEVDS19OVUxMKGFjdGlvbnMsICJVbmFibGUgdG8gYnVp
+bGQgYWN0aW9ucyIsIE5VTEwpOwoJbWF4X3ZhbGlkYXRlKGFjdGlvbnMpOwoJQ0hFQ0tfRVJST1JT
+X1NUKGFjdGlvbnMsIE5VTEwpOwoJQ0hFQ0tfRVJST1JTX1NUKHN0b3JlZF9lbmdpbmUsIE5VTEwp
+OwoJbWF4X3J1bl90ICpydW47CglpZiAoY2JfZnVuYyA9PSBOVUxMKSB7CgkJcnVuID0gbWF4X3J1
+bl9ub25ibG9jayhzdG9yZWRfZW5naW5lLCBhY3Rpb25zKTsKCX0gZWxzZSB7CgkJcnVuID0gbWF4
+X3J1bl9ub25ibG9ja193aXRoX2NiKHN0b3JlZF9lbmdpbmUsIGFjdGlvbnMsIGNiX2Z1bmMsIGNi
+X2RhdGEpOwoJfQoJQ0hFQ0tfTlVMTChydW4sICJVbmFibGUgdG8gcnVuIGFjdGlvbnMiLCBOVUxM
+KTsKCUNIRUNLX0VSUk9SU19TVChhY3Rpb25zLCBOVUxMKTsKCW1heF9hY3Rpb25zX2ZyZWUoYWN0
+aW9ucyk7CglyZXR1cm4gcnVuOwp9Cgp2b2lkIFNwcmVhZEhmdF9ydW4oCgltYXhfZW5naW5lX3Qg
+KmVuZ2luZSwKCVNwcmVhZEhmdF9hY3Rpb25zX3QgKmludGVyZmFjZV9hY3Rpb25zKQp7CgltYXhf
+cnVuX3QgKnJ1biA9IFNwcmVhZEhmdF9ydW5fbm9uYmxvY2soZW5naW5lLCBpbnRlcmZhY2VfYWN0
+aW9ucyk7CglDSEVDS19OVUxMKHJ1biwgIlVuYWJsZSB0byBydW4gYWN0aW9ucyIsICk7CgltYXhf
+d2FpdChydW4pOwp9CgptYXhfcnVuX3QgKlNwcmVhZEhmdF9ydW5fbm9uYmxvY2soCgltYXhfZW5n
+aW5lX3QgKmVuZ2luZSwKCVNwcmVhZEhmdF9hY3Rpb25zX3QgKmludGVyZmFjZV9hY3Rpb25zKQp7
+CgltYXhfZmlsZV90ICptYXhmaWxlID0gbWF4X2VuZ2luZV9nZXRfbWF4X2ZpbGUoZW5naW5lKTsg
+Cgl2b2lkICgqY2JfZnVuYykodm9pZCopID0gTlVMTDsKCXZvaWQgICpjYl9kYXRhICAgICAgICAg
+PSBOVUxMOwoJbWF4X2FjdGlvbnNfdCAqYWN0aW9ucyA9IFNwcmVhZEhmdF9jb252ZXJ0X2ludGVy
+bmFsKG1heGZpbGUsIGludGVyZmFjZV9hY3Rpb25zLCAxLCAmY2JfZnVuYywgJmNiX2RhdGEpOwoJ
+Q0hFQ0tfRVJST1JTX1NUKGFjdGlvbnMsIE5VTEwpOwoJbWF4X3J1bl90ICpydW47CglpZiAoY2Jf
+ZnVuYyA9PSBOVUxMKSB7CgkJcnVuID0gbWF4X3J1bl9ub25ibG9jayhlbmdpbmUsIGFjdGlvbnMp
+OwoJfSBlbHNlIHsKCQlydW4gPSBtYXhfcnVuX25vbmJsb2NrX3dpdGhfY2IoZW5naW5lLCBhY3Rp
+b25zLCBjYl9mdW5jLCBjYl9kYXRhKTsKCX0KCUNIRUNLX05VTEwocnVuLCAiVW5hYmxlIHRvIHJ1
+biBhY3Rpb25zIiwgTlVMTCk7CgltYXhfYWN0aW9uc19mcmVlKGFjdGlvbnMpOwoJcmV0dXJuIHJ1
+bjsKfQoKCi8qKgogKiBcYnJpZWYgR3JvdXAgcnVuIGFkdmFuY2VkIHN0YXRpYyBmdW5jdGlvbiBm
+b3IgdGhlIGludGVyZmFjZSAnZGVmYXVsdCcuCiAqIAogKiBccGFyYW0gW2luXSBncm91cCBHcm91
+cCB0byB1c2UuCiAqIFxwYXJhbSBbaW4sb3V0XSBpbnRlcmZhY2VfYWN0aW9ucyBBY3Rpb25zIHRv
+IHJ1bi4KICoKICogUnVuIHRoZSBhY3Rpb25zIG9uIHRoZSBmaXJzdCBkZXZpY2UgYXZhaWxhYmxl
+IGluIHRoZSBncm91cC4KICovCnZvaWQgU3ByZWFkSGZ0X3J1bl9ncm91cChtYXhfZ3JvdXBfdCAq
+Z3JvdXAsIFNwcmVhZEhmdF9hY3Rpb25zX3QgKmludGVyZmFjZV9hY3Rpb25zKQp7CgltYXhfcnVu
+X3QgKnJ1biA9IFNwcmVhZEhmdF9ydW5fZ3JvdXBfbm9uYmxvY2soZ3JvdXAsIGludGVyZmFjZV9h
+Y3Rpb25zKTsKCUNIRUNLX05VTEwocnVuLCAiVW5hYmxlIHRvIHJ1biBhY3Rpb25zIiwgKTsKCW1h
+eF93YWl0KHJ1bik7Cn0KCgovKioKICogXGJyaWVmIEdyb3VwIHJ1biBhZHZhbmNlZCBzdGF0aWMg
+bm9uLWJsb2NraW5nIGZ1bmN0aW9uIGZvciB0aGUgaW50ZXJmYWNlICdkZWZhdWx0Jy4KICogCiAq
+CiAqIFNjaGVkdWxlIHRoZSBhY3Rpb25zIHRvIHJ1biBvbiB0aGUgZmlyc3QgZGV2aWNlIGF2YWls
+YWJsZSBpbiB0aGUgZ3JvdXAgYW5kIHJldHVybiBpbW1lZGlhdGVseS4KICogVGhlIHN0YXR1cyBv
+ZiB0aGUgcnVuIG11c3QgYmUgY2hlY2tlZCB3aXRoIDo6bWF4X3dhaXQuIAogKiBOb3RlIHRoYXQg
+dXNlIG9mIDo6bWF4X25vd2FpdCBpcyBwcm9oaWJpdGVkIHdpdGggbm9uLWJsb2NraW5nIHJ1bm5p
+bmcgb24gZ3JvdXBzOgogKiBzZWUgdGhlIDo6bWF4X3J1bl9ncm91cF9ub25ibG9jayBkb2N1bWVu
+dGF0aW9uIGZvciBtb3JlIGV4cGxhbmF0aW9uLgogKgogKiBccGFyYW0gW2luXSBncm91cCBHcm91
+cCB0byB1c2UuCiAqIFxwYXJhbSBbaW5dIGludGVyZmFjZV9hY3Rpb25zIEFjdGlvbnMgdG8gcnVu
+LgogKiBccmV0dXJuIEEgaGFuZGxlIG9uIHRoZSBleGVjdXRpb24gc3RhdHVzIG9mIHRoZSBhY3Rp
+b25zLCBvciBOVUxMIGluIGNhc2Ugb2YgZXJyb3IuCiAqLwptYXhfcnVuX3QgKlNwcmVhZEhmdF9y
+dW5fZ3JvdXBfbm9uYmxvY2sobWF4X2dyb3VwX3QgKmdyb3VwLCBTcHJlYWRIZnRfYWN0aW9uc190
+ICppbnRlcmZhY2VfYWN0aW9ucykKewoJbWF4X2ZpbGVfdCAqbWF4ZmlsZSA9IG1heF9ncm91cF9n
+ZXRfbWF4X2ZpbGUoZ3JvdXApOwoJbWF4X2FjdGlvbnNfdCAqYWN0aW9ucyA9IFNwcmVhZEhmdF9j
+b252ZXJ0X2ludGVybmFsKG1heGZpbGUsIGludGVyZmFjZV9hY3Rpb25zLCAxLCBOVUxMLCBOVUxM
+KTsKCWlmKGFjdGlvbnMgPT0gTlVMTCkgcmV0dXJuIE5VTEw7CglpZighbWF4X29rKGFjdGlvbnMt
+PmVycm9ycykpIHJldHVybiBOVUxMOwoJbWF4X3ZhbGlkYXRlKGFjdGlvbnMpOwoJbWF4X3J1bl90
+ICpydW4gPSBtYXhfcnVuX2dyb3VwX25vbmJsb2NrKGdyb3VwLCBhY3Rpb25zKTsKCW1heF9hY3Rp
+b25zX2ZyZWUoYWN0aW9ucyk7CglyZXR1cm4gcnVuOwp9CgoKLyoqCiAqIFxicmllZiBBcnJheSBy
+dW4gYWR2YW5jZWQgc3RhdGljIGZ1bmN0aW9uIGZvciB0aGUgaW50ZXJmYWNlICdkZWZhdWx0Jy4K
+ICogCiAqIFxwYXJhbSBbaW5dIGVuZ2FycmF5IFRoZSBhcnJheSBvZiBkZXZpY2VzIHRvIHVzZS4K
+ICogXHBhcmFtIFtpbixvdXRdIGludGVyZmFjZV9hY3Rpb25zIFRoZSBhcnJheSBvZiBhY3Rpb25z
+IHRvIHJ1bi4KICoKICogUnVuIHRoZSBhcnJheSBvZiBhY3Rpb25zIG9uIHRoZSBhcnJheSBvZiBl
+bmdpbmVzLiAgVGhlIGxlbmd0aCBvZiBpbnRlcmZhY2VfYWN0aW9ucwogKiBtdXN0IG1hdGNoIHRo
+ZSBzaXplIG9mIGVuZ2FycmF5LgogKi8Kdm9pZCBTcHJlYWRIZnRfcnVuX2FycmF5KG1heF9lbmdh
+cnJheV90ICplbmdhcnJheSwgU3ByZWFkSGZ0X2FjdGlvbnNfdCAqaW50ZXJmYWNlX2FjdGlvbnNb
+XSkKewoJbWF4X3J1bl90ICpydW4gPSBTcHJlYWRIZnRfcnVuX2FycmF5X25vbmJsb2NrKGVuZ2Fy
+cmF5LCBpbnRlcmZhY2VfYWN0aW9ucyk7CglDSEVDS19OVUxMKHJ1biwgIlVuYWJsZSB0byBydW4g
+YWN0aW9ucyIsICk7CgltYXhfd2FpdChydW4pOwp9CgoKLyoqCiAqIFxicmllZiBBcnJheSBydW4g
+YWR2YW5jZWQgc3RhdGljIG5vbi1ibG9ja2luZyBmdW5jdGlvbiBmb3IgdGhlIGludGVyZmFjZSAn
+ZGVmYXVsdCcuCiAqIAogKgogKiBTY2hlZHVsZSB0byBydW4gdGhlIGFycmF5IG9mIGFjdGlvbnMg
+b24gdGhlIGFycmF5IG9mIGVuZ2luZXMsIGFuZCByZXR1cm4gaW1tZWRpYXRlbHkuCiAqIFRoZSBs
+ZW5ndGggb2YgaW50ZXJmYWNlX2FjdGlvbnMgbXVzdCBtYXRjaCB0aGUgc2l6ZSBvZiBlbmdhcnJh
+eS4KICogVGhlIHN0YXR1cyBvZiB0aGUgcnVuIGNhbiBiZSBjaGVja2VkIGVpdGhlciBieSA6Om1h
+eF93YWl0IG9yIDo6bWF4X25vd2FpdDsKICogbm90ZSB0aGF0IG9uZSBvZiB0aGVzZSAqbXVzdCog
+YmUgY2FsbGVkLCBzbyB0aGF0IGFzc29jaWF0ZWQgbWVtb3J5IGNhbiBiZSByZWxlYXNlZC4KICoK
+ICogXHBhcmFtIFtpbl0gZW5nYXJyYXkgVGhlIGFycmF5IG9mIGRldmljZXMgdG8gdXNlLgogKiBc
+cGFyYW0gW2luXSBpbnRlcmZhY2VfYWN0aW9ucyBUaGUgYXJyYXkgb2YgYWN0aW9ucyB0byBydW4u
+CiAqIFxyZXR1cm4gQSBoYW5kbGUgb24gdGhlIGV4ZWN1dGlvbiBzdGF0dXMgb2YgdGhlIGFjdGlv
+bnMsIG9yIE5VTEwgaW4gY2FzZSBvZiBlcnJvci4KICovCm1heF9ydW5fdCAqU3ByZWFkSGZ0X3J1
+bl9hcnJheV9ub25ibG9jayhtYXhfZW5nYXJyYXlfdCAqZW5nYXJyYXksIFNwcmVhZEhmdF9hY3Rp
+b25zX3QgKmludGVyZmFjZV9hY3Rpb25zW10pCnsKCW1heF9maWxlX3QgKm1heGZpbGUgPSBtYXhf
+ZW5nYXJyYXlfZ2V0X21heF9maWxlKGVuZ2FycmF5LCAwKTsKCWludCBpOwoJbWF4X2FjdGFycmF5
+X3QgKmFjdGFycmF5ID0gbWF4X2FjdGFycmF5X2luaXQobWF4ZmlsZSwgZW5nYXJyYXktPnNpemUp
+OwoJaWYgKGFjdGFycmF5ID09IE5VTEwpIHJldHVybiBOVUxMOwoJbWF4X2FjdGlvbnNfdCAqKmFy
+cl9hY3Rpb25zID0gbWFsbG9jKGVuZ2FycmF5LT5zaXplICogc2l6ZW9mKG1heF9hY3Rpb25zX3Qq
+KSk7Cglmb3IgKCBpID0gMCA7IGkgPCBhY3RhcnJheS0+c2l6ZTsgaSsrICkgewoJCW1heF9hY3Rp
+b25zX3QgKmFjdGlvbnMgPSBTcHJlYWRIZnRfY29udmVydF9pbnRlcm5hbChtYXhmaWxlLCBpbnRl
+cmZhY2VfYWN0aW9uc1tpXSwgMSwgTlVMTCwgTlVMTCk7CgkJaWYgKGFjdGlvbnMgPT0gTlVMTCkg
+cmV0dXJuIE5VTEw7CgkJYXJyX2FjdGlvbnNbaV0gPSBhY3Rpb25zOwoJCW1heF9zZXRfYWN0aW9u
+KGFjdGFycmF5LCBpLCBhY3Rpb25zKTsKCX0KCW1heF9ydW5fdCAqcnVuID0gbWF4X3J1bl9hcnJh
+eV9ub25ibG9jayhlbmdhcnJheSwgYWN0YXJyYXkpOwoJZm9yICggaSA9IDAgOyBpIDwgYWN0YXJy
+YXktPnNpemUgOyBpKysgKSB7IG1heF9hY3Rpb25zX2ZyZWUoYXJyX2FjdGlvbnNbaV0pOyB9Cglt
+YXhfYWN0YXJyYXlfZnJlZShhY3RhcnJheSk7CglmcmVlKGFycl9hY3Rpb25zKTsKCXJldHVybiBy
+dW47Cn0KCgovKioKICogXGJyaWVmIENvbnZlcnRzIGEgc3RhdGljLWludGVyZmFjZSBhY3Rpb24g
+c3RydWN0IGludG8gYSBkeW5hbWljLWludGVyZmFjZSBtYXhfYWN0aW9uc190IHN0cnVjdC4KICoK
+ICogTm90ZSB0aGF0IHRoaXMgaXMgYW4gaW50ZXJuYWwgdXRpbGl0eSBmdW5jdGlvbiB1c2VkIGJ5
+IG90aGVyIGZ1bmN0aW9ucyBpbiB0aGUgc3RhdGljIGludGVyZmFjZS4KICoKICogXHBhcmFtIFtp
+bl0gbWF4ZmlsZSBUaGUgbWF4ZmlsZSB0byB1c2UuCiAqIFxwYXJhbSBbaW5dIGludGVyZmFjZV9h
+Y3Rpb25zIFRoZSBpbnRlcmZhY2Utc3BlY2lmaWMgYWN0aW9ucyB0byBydW4uCiAqIFxyZXR1cm4g
+VGhlIGR5bmFtaWMtaW50ZXJmYWNlIGFjdGlvbnMgdG8gcnVuLCBvciBOVUxMIGluIGNhc2Ugb2Yg
+ZXJyb3IuCiAqLwptYXhfYWN0aW9uc190KiBTcHJlYWRIZnRfY29udmVydChtYXhfZmlsZV90ICpt
+YXhmaWxlLCBTcHJlYWRIZnRfYWN0aW9uc190ICppbnRlcmZhY2VfYWN0aW9ucykKewoJcmV0dXJu
+IFNwcmVhZEhmdF9jb252ZXJ0X2ludGVybmFsKG1heGZpbGUsIGludGVyZmFjZV9hY3Rpb25zLCAw
+LCBOVUxMLCBOVUxMKTsKfQoKI3VuZGVmIENIRUNLX0VSUk9SU19TVAojdW5kZWYgQ0hFQ0tfTlVM
+TAoKCg==
+#endif /* SLIC_B64_DEFINITIONS */
+
+#ifdef SLIC_EXTRA_FILES
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHVz
+ZXJmaWxlcyBmb3JtYXQtdmVyc2lvbj0iMjAxMjAyMDAiLz4=
+#endif /* SLIC_EXTRA_FILES */
+
+#ifdef PHOTON_NODE_ADD_DATA
+#define PHOTON_NODE_ADD_DATA_PRESENT 1
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 8, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 9, "SquashFactor", 1.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 0, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 1, "SquashFactor", 1.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 2, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 24, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 3, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 5, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 4, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 26, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 6, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 11, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 16, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 28, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 13, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 14, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 15, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 17, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 27, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 19, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 20, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 22, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 23, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(SpreadHftKernel, 21, "SquashFactor", 0.0)
+#endif
+
+#ifdef MAXFILE_SIGNATURE
+#define MAXFILE_SIGNATURE_PRESENT 1
+MAXFILE_SIGNATURE("302c0214223390b32a205ea984dd4a40c595c1cec0a860d40214372d44fa3f4f7f82a0c8de3c9d1f6cd72e1168e7")
+#endif
+

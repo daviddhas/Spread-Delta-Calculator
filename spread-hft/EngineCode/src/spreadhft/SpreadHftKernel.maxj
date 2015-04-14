@@ -1,0 +1,29 @@
+/**
+ * Document: MaxCompiler tutorial (maxcompiler-tutorial.pdf)
+ * Chapter: 4      Example: 2      Name: Simple
+ * MaxFile name: Simple
+ * Summary:
+ * 	 Takes a stream and for each value x calculates x^2 + x.
+ */
+package spreadhft;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+
+class SpreadHftKernel extends Kernel {
+	SpreadHftKernel(KernelParameters parameters) {
+		super(parameters);
+
+		// Input
+		DFEVar sv = io.input("sv", dfeFloat(8, 24));
+
+		DFEVar bl = stream.offset(sv, 1);
+		DFEVar sl = stream.offset(sv, 2);
+		DFEVar result = sv - bl + sl;
+
+		// Output
+		io.output("y", result, dfeFloat(8, 24));
+	}
+}
+
