@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<maxCompilerManager version="2">
-<enginePart internalEngineSubproject="spread_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/spread_EngineCode/bin" projectName="spread"/>
-<cpuPart internalCpuSubproject="spread_CPUCode"/>
-<watchedFiles/>
-</maxCompilerManager>
