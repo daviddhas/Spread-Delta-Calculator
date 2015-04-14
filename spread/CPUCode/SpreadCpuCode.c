@@ -7,8 +7,8 @@
  */
 #include <stdint.h>
 #include <stdio.h>
-//#include <MaxSLiCInterface.h>
-//#include "Maxfiles.h"
+#include <MaxSLiCInterface.h>
+#include "Maxfiles.h"
 
 #define SPREADCOUNT 8
 
@@ -32,48 +32,47 @@ main()
 
     for(int i=0; i<SPREADCOUNT; i++)
     {
-	printf("Delta: %f Expected %f\n ", dataOut[i*3], expected[i*3]);
+    	printf("Delta: %f Expected %f\n ", dataOut[i*3], expected[i*3]);
     }
         
     printf("Running DFE.\n");
     return 0;
 }
 
-
-void 
+void
 GenerateTestData(int size, float *dataIn)
 {
-    float a, b, c, d;
+    float a, b, d;
 
     a = 43;
     b = 29;
     d = -.5;
-    
+
     for (int i=0; i<size; i=i+3)
     {
-	dataIn[i] = a-b+d;
-	dataIn[i+1] = a;
-	dataIn[i+2] = b;
-	
-	a = a + b*.3;
-	b = b + a*.1;
-	d = d + .1;
+    	dataIn[i] = a-b+d;
+    	dataIn[i+1] = a;
+    	dataIn[i+2] = b;
+
+    	a = a + b*.3;
+    	b = b + a*.1;
+    	d = d + .1;
     }
 }
 
-void 
+void
 ExpectedValue(int size, float *dataIn, float *dataOut)
 {
     float spreadval, buyval, sellval;
 
-    for (int i=0 ; i<size ; i=i+3) 
+    for (int i=0 ; i<size ; i=i+3)
     {
-	spreadval = dataIn[i];
-	buyval = dataIn[i+1];
-	sellval = dataIn[i+2];
+    	spreadval = dataIn[i];
+    	buyval = dataIn[i+1];
+    	sellval = dataIn[i+2];
 
-	dataOut[i] = spreadval - buyval + sellval;
-	dataOut[i+1] = -999;
-	dataOut[i+2] = -999;
+    	dataOut[i] = spreadval - buyval + sellval;
+    	dataOut[i+1] = -999;
+    	dataOut[i+2] = -999;
     }
 }

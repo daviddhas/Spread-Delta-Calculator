@@ -1,51 +1,14 @@
-Mon 23:09: ########################################## 
-Mon 23:09: Compiling.
-Mon 23:09: ########################################## 
+Tue 01:03: ########################################## 
+Tue 01:03: Compiling.
+Tue 01:03: ########################################## 
 
-Mon 23:09: MaxCompiler version: 2014.2 (simulation only).
-Mon 23:09: Build Simulation run rule for spread start time: Mon Apr 13 23:09:17 PDT 2015.
-Mon 23:09: Project location: /home/demo/Desktop/project/spread.
-Mon 23:09: Detailed build log: /home/demo/Desktop/project/spread/RunRules/Simulation/build.log.
+Tue 01:03: MaxCompiler version: 2014.2 (simulation only).
+Tue 01:03: Build Simulation run rule for spread start time: Tue Apr 14 01:03:04 PDT 2015.
+Tue 01:03: Project location: /home/demo/Desktop/project/spread.
+Tue 01:03: Detailed build log: /home/demo/Desktop/project/spread/RunRules/Simulation/build.log.
 
-Mon 23:09: Compiling Engine Code.
-Mon 23:09: Engine building skipped (no changes on .max files).
-Mon 23:09: Compiling CPU Code.
-Mon 23:09: Run CPU project make files updating
-Mon 23:09: Executing command:
-Mon 23:09: java -jar /opt/maxeler/maxcompiler/lib/MaxIDE/projectAdmin.jar -u /home/demo/Desktop/project/spread Simulation 
-Mon 23:09: Command output:
-
-Mon 23:09: MaxCompiler Project Admin Tool Version 2014.2
-Mon 23:09:  Copyright Maxeler Technologies 2010 - 2014. All rights reserved.
-
-Mon 23:09: Handler version 2
-Mon 23:09: Updating RunRule dependent Makefiles for RunRule 'Simulation'
-Mon 23:09: 	Updating: Simulation
-Mon 23:09: Found makefiles: 1
-Mon 23:09: 	Updated: Simulation
-Mon 23:09: Run CPU make.
-Mon 23:09: make RUNRULE=Simulation 
-Mon 23:09: Command output:
-Mon 23:09: make -f Makefile.rules build
-Mon 23:09: make[1]: Entering directory `/home/demo/Desktop/project/spread/CPUCode'
-Mon 23:09: set -e; rm -f ../RunRules/Simulation/objects/c/SpreadCpuCode.d ;                                                             \
-Mon 23:09: 	  cc -M -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxeler/maxcompiler/include/slic'  -Wno-error SpreadCpuCode.c > ../RunRules/Simulation/objects/c/SpreadCpuCode.d.$$ ;                                 \
-Mon 23:09:       sed 's,\(SpreadCpuCode\)\.o[ :]*,../RunRules/Simulation/objects/c/\1.o ../RunRules/Simulation/objects/c/SpreadCpuCode.d : ,g' < ../RunRules/Simulation/objects/c/SpreadCpuCode.d.$$ > ../RunRules/Simulation/objects/c/SpreadCpuCode.d; \
-Mon 23:09:       rm -f ../RunRules/Simulation/objects/c/SpreadCpuCode.d.$$
-Mon 23:09: make[1]: Leaving directory `/home/demo/Desktop/project/spread/CPUCode'
-Mon 23:09: make[1]: Entering directory `/home/demo/Desktop/project/spread/CPUCode'
-Mon 23:09: cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxeler/maxcompiler/include/slic'  -c SpreadCpuCode.c -o ../RunRules/Simulation/objects/c/SpreadCpuCode.o
-Mon 23:09: cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxeler/maxcompiler/include/slic'  -o ../RunRules/Simulation/binaries/Spread ../RunRules/Simulation/objects/maxfiles/slic_Spread.o ../RunRules/Simulation/objects/c/SpreadCpuCode.o -g -O3  -L '/opt/maxeler/maxcompiler/lib' -lslic -L '/opt/maxeler/maxcompiler/lib/maxeleros-sim/lib' -lmaxeleros -lpthread -lm -lrt 
-Mon 23:09: make[1]: Leaving directory `/home/demo/Desktop/project/spread/CPUCode'
-Mon 23:09: Build completed: Mon Apr 13 23:09:18 PDT 2015
+Tue 01:03: Compiling Engine Code.
+Tue 01:03: null
+Tue 01:03: Build failed: Tue Apr 14 01:03:04 PDT 2015
 
 
-Mon 23:09: ########################################## 
-Mon 23:09: Running
-Mon 23:09: ########################################## 
-Mon 23:09: Executing command:
-Mon 23:09: '/home/demo/Desktop/project/spread/RunRules/Simulation/binaries/Spread' 
-Mon 23:09: Command output:
-Mon 23:09: Running DFE.
-Mon 23:09: Test passed OK!
-Mon 23:09: Process terminated with exit code 0.

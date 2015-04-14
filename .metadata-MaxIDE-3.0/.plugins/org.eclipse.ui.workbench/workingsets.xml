@@ -2,7 +2,16 @@
 <workingSetManager>
 <workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1428991239873_0" label="spread" location="/home/demo/Desktop/project/spread" maxcompiler="true" name="spread" shared="false" state="true">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spread_EngineCode" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spread_CPUCode" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spread_RunRules" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spread_CPUCode" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1428998529484_4" label="tutorial-chap04-example2-simplekernel" location="/home/demo/Desktop/project/tutorial-chap04-example2-simplekernel" maxcompiler="true" name="tutorial-chap04-example2-simplekernel" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/tutorial-chap04-example2-simplekernel_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/tutorial-chap04-example2-simplekernel_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/tutorial-chap04-example2-simplekernel_RunRules" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1428998529491_5" label="Multiple Working Sets" name="Aggregate:spread:network-chap07-example1-keyvalue:tutorial-chap03-example1-movingaveragesimple:tutorial-chap04-example2-simplekernel:">
+<workingSet IMemento.internal.id="spread"/>
+<workingSet IMemento.internal.id="tutorial-chap04-example2-simplekernel"/>
 </workingSet>
 </workingSetManager>

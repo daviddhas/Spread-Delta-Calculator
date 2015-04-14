@@ -16,9 +16,11 @@ class SpreadKernel extends Kernel {
 		super(parameters);
 
 		// Input
-		DFEVar x = io.input("x", dfeFloat(8, 24));
+		DFEVar sv = io.input("sv", dfeFloat(8, 24));
 
-		DFEVar result = x*x + x;
+		DFEVar bl = stream.offset(sv, 1);
+		DFEVar sl = stream.offset(sv, 2);
+		DFEVar result = sv - bl + sl;
 
 		// Output
 		io.output("y", result, dfeFloat(8, 24));
