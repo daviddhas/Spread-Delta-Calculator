@@ -6,50 +6,74 @@
  * 	 Takes a stream and for each value x calculates x^2 + x.
  */
 #include <stdint.h>
-#include <MaxSLiCInterface.h>
-#include "Maxfiles.h"
+#include <stdio.h>
+//#include <MaxSLiCInterface.h>
+//#include "Maxfiles.h"
 
-int check(float *dataOut, float *expected, int size)
+#define SPREADCOUNT 8
+
+void GenerateTestData(int, float *);
+void ExpectedValue(int, float *, float *);
+
+/* DataIn Format:
+ *   [ SpreadVal1, BuyLeg1, SellLeg1, SpreadVal2, BuyLeg2, ... etc. ] 
+ */
+float dataIn [3*SPREADCOUNT];
+float dataOut [3*SPREADCOUNT];
+float expected [3*SPREADCOUNT];
+const int size = 3*SPREADCOUNT;
+
+int 
+main()
 {
-	int status = 0;
-	for(int i=0; i < size; i++)
-	{
-		if(dataOut[i] != expected[i]) {
-			fprintf(stderr, "Output data @ %d = %1.8g (expected %1.8g)\n",
-				i, dataOut[i], expected[i]);
-			status = 1;
-		}
-	}
-	return status;
+    GenerateTestData(size, dataIn);
+    ExpectedValue(size,dataIn,expected);
+    Spread(size, dataIn, dataOut);
+
+    for(int i=0; i<SPREADCOUNT; i++)
+    {
+	printf("Delta: %f Expected %f\n ", dataOut[i*3], expected[i*3]);
+    }
+        
+    printf("Running DFE.\n");
+    return 0;
 }
 
-void SimpleCPU(int size, float *dataIn, float *dataOut)
+
+void 
+GenerateTestData(int size, float *dataIn)
 {
-	for (int i=0 ; i<size ; i++) {
-		dataOut[i] = dataIn[i]*dataIn[i] + dataIn[i];
-	}
+    float a, b, c, d;
+
+    a = 43;
+    b = 29;
+    d = -.5;
+    
+    for (int i=0; i<size; i=i+3)
+    {
+	dataIn[i] = a-b+d;
+	dataIn[i+1] = a;
+	dataIn[i+2] = b;
+	
+	a = a + b*.3;
+	b = b + a*.1;
+	d = d + .1;
+    }
 }
 
-float dataIn[1024];
-float dataOut[1024];
-float expected[1024];
-const int size = 1024;
-
-int main()
+void 
+ExpectedValue(int size, float *dataIn, float *dataOut)
 {
-	for(int i = 0; i < size; i++) {
-		dataIn[i] = i + 1;
-		dataOut[i] = 0;
-	}
+    float spreadval, buyval, sellval;
 
-	SimpleCPU(size, dataIn, expected);
-	Spread(size, dataIn, dataOut);
+    for (int i=0 ; i<size ; i=i+3) 
+    {
+	spreadval = dataIn[i];
+	buyval = dataIn[i+1];
+	sellval = dataIn[i+2];
 
-	printf("Running DFE.\n");
-	int status = check(dataOut, expected, size);
-	if (status)
-		printf("Test failed.\n");
-	else
-		printf("Test passed OK!\n");
-	return status;
+	dataOut[i] = spreadval - buyval + sellval;
+	dataOut[i+1] = -999;
+	dataOut[i+2] = -999;
+    }
 }

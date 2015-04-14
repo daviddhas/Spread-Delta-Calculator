@@ -1,0 +1,28 @@
+/**
+ * Document: MaxCompiler tutorial (maxcompiler-tutorial.pdf)
+ * Chapter: 4      Example: 2      Name: Simple
+ * MaxFile name: Simple
+ * Summary:
+ * 	 Takes a stream and for each value x calculates x^2 + x.
+ */
+package spread;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+
+class SpreadKernel extends Kernel 
+{
+    SpreadKernel(KernelParameters parameters) 
+    {
+	super(parameters);
+	
+	// Input
+	DFEVar s = io.input("s", dfeFloat(8, 24));
+	DFEVar result = s.spreadval - s.leg_b + s.leg_s;
+	
+	// Output
+	io.output("delta", result, dfeFloat(8, 24));
+    }
+}
+
