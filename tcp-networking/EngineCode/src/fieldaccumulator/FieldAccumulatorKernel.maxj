@@ -1,0 +1,65 @@
+package fieldaccumulator;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.networking.v1.framed_kernels.ByteOrder;
+import com.maxeler.networking.v1.framed_kernels.FrameData;
+import com.maxeler.networking.v1.framed_kernels.FrameFormat;
+import com.maxeler.networking.v1.framed_kernels.FramedKernel;
+import com.maxeler.networking.v1.kernel_types.TCPType;
+
+public class FieldAccumulatorKernel extends FramedKernel {
+	static class DataIn extends FrameFormat {
+		DataIn() {
+			super(ByteOrder.LITTLE_ENDIAN);
+			addField("numItems", dfeUInt(8));
+			addVariableLengthField("items", dfeUInt(8), 1, 255, 2);
+		}
+	}
+
+	static class DataOut extends FrameFormat {
+		DataOut() {
+			super(ByteOrder.LITTLE_ENDIAN);
+			addField("totalItems", dfeUInt(32));
+			addField("sum", dfeUInt(32));
+		}
+	}
+
+	FieldAccumulatorKernel(KernelParameters parameters) {
+		super(parameters);
+
+		FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new TCPType());
+
+		frameIn.setSizeForVariableField("items", frameIn["numItems"]);
+
+		DFEVar cycleCount = control.count.simpleCounter(8);
+		DFEVar beyondLastItem = cycleCount > ((frameIn["numItems"] - 1) >> 1);
+
+		DFEVar currentSum = frameIn.getAsVector("items")[0].cast(dfeUInt(32)) + frameIn.getAsVector("items")[1].cast(dfeUInt(32));
+
+		Params sumAccParams =
+			Reductions.accumulator.makeAccumulatorConfig(dfeUInt(32)).withEnable(~beyondLastItem);
+
+		DFEVar sum = Reductions.accumulator.makeAccumulator(currentSum, sumAccParams);
+
+		Params itemsAccParams =
+			Reductions.accumulator.makeAccumulatorConfig(dfeUInt(32)).withEnable(cycleCount === 0);
+
+		pushResetBetweenFrames(false);
+		DFEVar totalItems = Reductions.accumulator.makeAccumulator(
+			frameIn["numItems"].cast(dfeUInt(32)),
+			itemsAccParams);
+		popResetBetweenFrames();
+
+		FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new TCPType());
+
+		frameOut["sum"] <== sum;
+		frameOut["totalItems"] <== totalItems;
+		frameOut.linkfield[TCPType.SOCKET] <==
+			frameIn.linkfield[TCPType.SOCKET];
+
+		io.frameOutput("frameOut", frameOut, constant.var(true), beyondLastItem);
+	}
+}
