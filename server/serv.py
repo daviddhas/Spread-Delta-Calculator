@@ -21,7 +21,7 @@ if __name__ == '__main__':
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Bind the socket to the address given on the command line
-    server_address = ('', 5554)
+    server_address = ('', 5556)
     sock.bind(server_address)
     sys.stderr.write('starting up on port {}\n'.format(sock.getsockname()))
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     while True:
         sys.stderr.write('Waiting for a connection...\n')
-        f = open(sys.argv[1], 'rt')
+        f = open(sys.argv[1], 'rU')
         try:
             connection, client_address = sock.accept()
         except:
