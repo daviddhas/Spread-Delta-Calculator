@@ -23,7 +23,7 @@ class SpreadHftKernel extends Kernel {
 		DFEVar result = sv - bl + sl;
 
 		// Output
-		io.output("y", result, dfeFloat(8, 24));
+		io.output("y", result, dfeFloat(8,24));
 	}
 }
 

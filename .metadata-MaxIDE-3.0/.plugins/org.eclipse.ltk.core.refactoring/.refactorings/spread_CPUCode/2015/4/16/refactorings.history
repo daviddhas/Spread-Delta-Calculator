@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;tutorial-chap04-example2-simplekernel_CPUCode/SimpleCpuCode.c&apos; to &apos;SpreadCpuCode.c&apos;" description="Rename resource &apos;SimpleCpuCode.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="SimpleCpuCode.c" name="SpreadCpuCode.c" stamp="1428991462802" updateReferences="true"/>
-</session>

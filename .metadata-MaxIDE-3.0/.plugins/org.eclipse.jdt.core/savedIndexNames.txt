@@ -1,3 +1,0 @@
-INDEX VERSION 1.126+/home/demo/Desktop/project/.metadata-MaxIDE-3.0/.plugins/org.eclipse.jdt.core
-751100455.index
-2357018223.index
