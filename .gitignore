@@ -33,3 +33,7 @@
 
 # Emacs temp files
 *~
+
+# Maxconfig files
+.metadata-MaxIDE-3.0/
+.metadata/
