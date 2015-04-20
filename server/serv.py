@@ -23,7 +23,7 @@ if __name__ == '__main__':
     # Bind the socket to the address given on the command line
     server_address = ('', 5556)
     sock.bind(server_address)
-    sys.stderr.write('starting up on port {}\n'.format(sock.getsockname()))
+    sys.stderr.write('starting up on port {0}\n'.format(sock.getsockname()))
 
     sock.listen(1)
 
@@ -37,7 +37,7 @@ if __name__ == '__main__':
             sys.exit(2)
 
         try:
-            sys.stderr.write('Client [{}] has connected\n'.format(client_address))
+            sys.stderr.write('Client [{0}] has connected\n'.format(client_address))
             reader = csv.DictReader(f)
             for row in reader:
                 data = str(row) +'\n'
