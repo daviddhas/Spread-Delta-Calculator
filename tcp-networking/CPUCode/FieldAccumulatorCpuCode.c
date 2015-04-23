@@ -10,8 +10,8 @@
 #include <MaxSLiCInterface.h>
 #include "FieldAccumulatorTCP.h"
 
-create_cpu_tcp_socket(struct in_addr *, int);
-calculateDeltas(int, const int32_t *, int32_t *);
+static int create_cpu_tcp_socket(struct in_addr *, int);
+static void calculateDeltas(int, const int32_t *, int32_t *);
 
 typedef struct 
 {
