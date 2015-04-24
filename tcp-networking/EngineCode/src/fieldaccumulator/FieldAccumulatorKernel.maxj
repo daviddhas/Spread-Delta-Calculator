@@ -57,10 +57,12 @@ FieldAccumulatorKernel extends FramedKernel
 
 	/* Declare Frame Out */
 	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new TCPType());
-	io.frameOutput("frameOut", frameOut);	
 
 	frameOut["impliedQuantity"] <== impliedSpreadQuantity;
 	frameOut["impliedDelta"] <== constant.var(dfeInt(32), -1);
 	frameOut.linkfield[TCPType.SOCKET] <== frameIn.linkfield[TCPType.SOCKET];
+	
+	io.frameOutput("frameOut", frameOut);
+	// io.framOutput("frameOut", frameOut, constant.var(True), constant.var(True));
     }
 }
