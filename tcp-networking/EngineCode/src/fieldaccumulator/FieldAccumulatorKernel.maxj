@@ -47,17 +47,20 @@ FieldAccumulatorKernel extends FramedKernel
     {
 	super(parameters);
 	
-	/* Declare Frame In and Frame Out */
+	/* Declare Frame In */
 	FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new TCPType());
-	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new TCPType());
 
 	/* Trying to determine if we can get the minimum of two variables */
 	DFEVar impliedSpreadQuantity = frameIn["aBidQuantity"] > frameIn["bAskQuantity"] ?
 	    frameIn["bAskQuantity"] : frameIn["aBidQuantity"];
 
+
+	/* Declare Frame Out */
+	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new TCPType());
+	io.frameOutput("frameOut", frameOut);	
+
 	frameOut["impliedQuantity"] <== impliedSpreadQuantity;
 	frameOut["impliedDelta"] <== constant.var(dfeInt(32), -1);
-	
-	io.frameOutput("frameOut", frameOut);
+	frameOut.Linkfield[TCPType.Socket] <== frameIn.linkfield[TCPType.SOCKET];
     }
 }
