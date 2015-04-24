@@ -10,16 +10,13 @@
 #include <MaxSLiCInterface.h>
 #include "FieldAccumulatorTCP.h"
 
-static int create_cpu_tcp_socket(struct in_addr *, int);
-static void calculateDeltas(int, const int32_t *, int32_t *);
-
 typedef struct output_data
 {
     int32_t spread_quantity;
     int32_t delta;
 } __attribute__ ((__packed__)) frame_t;
 
-typedef struct input_data
+struct input_data
 {
     int32_t aBidQuantity;
     int32_t bAskQuantity;
@@ -29,6 +26,9 @@ typedef struct input_data
     int32_t bAskPrice;
     int32_t abSpreadAskPrice;
 };
+
+static int create_cpu_tcp_socket(struct in_addr *, int);
+static void calculateDeltas(int, struct input_data *, int32_t *);
 
 int 
 main(int argc, char *argv[]) 
