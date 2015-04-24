@@ -61,6 +61,6 @@ FieldAccumulatorKernel extends FramedKernel
 
 	frameOut["impliedQuantity"] <== impliedSpreadQuantity;
 	frameOut["impliedDelta"] <== constant.var(dfeInt(32), -1);
-	frameOut.linkfield[TCPType.Socket] <== frameIn.linkfield[TCPType.SOCKET];
+	frameOut.linkfield[TCPType.SOCKET] <== frameIn.linkfield[TCPType.SOCKET];
     }
 }
