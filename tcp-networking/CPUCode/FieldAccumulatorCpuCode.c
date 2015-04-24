@@ -28,7 +28,7 @@ struct input_data
 };
 
 static int create_cpu_tcp_socket(struct in_addr *, int);
-static void calculateDeltas(int, struct input_data *, int32_t *);
+static void calculateDeltas(int, struct input_data *);
 
 int 
 main(int argc, char *argv[]) 
