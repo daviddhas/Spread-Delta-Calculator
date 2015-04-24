@@ -13,11 +13,22 @@
 static int create_cpu_tcp_socket(struct in_addr *, int);
 static void calculateDeltas(int, const int32_t *, int32_t *);
 
-typedef struct 
+typedef struct output_data
 {
     int32_t spread_quantity;
     int32_t delta;
 } __attribute__ ((__packed__)) frame_t;
+
+typedef struct input_data
+{
+    int32_t aBidQuantity;
+    int32_t bAskQuantity;
+    int32_t abSpreadAskQuantity;
+
+    int32_t aBidPrice;
+    int32_t bAskPrice;
+    int32_t abSpreadAskPrice;
+};
 
 int 
 main(int argc, char *argv[]) 
@@ -48,9 +59,16 @@ main(int argc, char *argv[])
     int cpu_socket = create_cpu_tcp_socket(&dfe_ip, port);
     
     /* Send data */
-    int32_t quantities[] = { 15, 10, 10 };
-    int32_t prices[] = { 74150, 75500, -1300 };
-    calculateDeltas(cpu_socket, quantities, prices);
+    struct input_data data;
+
+    data.aBidQuantity = 15;
+    data.bAskQuantity = 10;
+    data.abSpreadAskQuantity = 10;
+    data.aBidPrice = 74150;
+    data.bAskPrice = 75500;
+    data.abSpreadAskPrice = -1300; 
+
+    calculateDeltas(cpu_socket, &data);
     
     close(cpu_socket);
     
@@ -82,15 +100,10 @@ create_cpu_tcp_socket(struct in_addr *remote_ip, int port)
 }
 
 static void
-calculateDeltas(int sock, const int32_t *quantities, int32_t *prices)
+calculateDeltas(int sock, struct input_data *data_to_send)
 {
-    int num_items = sizeof(quantities);
-    int32_t data_to_send[2*num_items];
-    memcpy(data_to_send, quantities, num_items);
-    memcpy(data_to_send + num_items, prices, num_items);
-
     /* Send Data to Engine via TCP */
-    send(sock, &data_to_send, num_items*2, 0);
+    send(sock, &data_to_send, sizeof(data_to_send), 0);
 
     /* Receive Data from Engine via TCP */
     frame_t data_received;
