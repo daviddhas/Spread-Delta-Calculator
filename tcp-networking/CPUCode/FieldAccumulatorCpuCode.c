@@ -112,10 +112,8 @@ calculateDeltas(int sock, struct input_data *data)
 
     /* -------- Expected Value -------- */
     
-    /* Find Implied Quantity */
+    /* Find Implied Spread Bid Price and Quantity */
     int impliedQuantity = data->aBidQuantity > data->bAskQuantity ? data->bAskQuantity : data->aBidQuantity;
-
-    /* Find the Implied Bid Price */
     int impliedBidPrice = data->aBidPrice - data->bAskPrice;
 
     /* Output Parameters */
