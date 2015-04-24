@@ -100,14 +100,28 @@ create_cpu_tcp_socket(struct in_addr *remote_ip, int port)
 }
 
 static void
-calculateDeltas(int sock, struct input_data *data_to_send)
+calculateDeltas(int sock, struct input_data *data)
 {
     /* Send Data to Engine via TCP */
-    send(sock, &data_to_send, sizeof(data_to_send), 0);
+    send(sock, &data, sizeof(data), 0);
 
     /* Receive Data from Engine via TCP */
     frame_t data_received;
     recv(sock, &data_received, sizeof(data_received), 0);
 
+
+    /* -------- Expected Value -------- */
+    
+    /* Find Implied Quantity */
+    int impliedQuantity = data->aBidQuantity > data->bAskQuantity ? data->bAskQuantity : data->aBidQuantity;
+
+    /* Find the Implied Bid Price */
+    int impliedBidPrice = data->aBidPrice - data->bAskPrice;
+
+    /* Output Parameters */
+    int delta = data->abSpreadAskPrice - impliedBidPrice;
+    int spread_quantity = impliedQuantity > data->abSpreadAskQuantity ? data->abSpreadAskQuantity : impliedQuantity;
+
     printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
+    printf("Expected: Quantity = %d, Delta = %d\n", spread_quantity, delta);
 }
