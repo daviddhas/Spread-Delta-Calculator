@@ -23,7 +23,7 @@ FieldAccumulatorKernel extends FramedKernel
 	    /* Quantities */
 	    addField("aBidQuantity", dfeInt(32));
 	    addField("bAskQuantity", dfeInt(32));
-	    addField("abSpreadBAskQuantity", dfeInt(32));
+	    addField("abSpreadAskQuantity", dfeInt(32));
 
 	    /* Prices */
 	    addField("aBidPrice", dfeInt(32));
