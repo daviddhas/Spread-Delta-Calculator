@@ -4,8 +4,7 @@ import com.maxeler.maxcompiler.v2.build.EngineParameters;
 
 public class 
 FieldAccumulatorEngineParameters extends EngineParameters
-{
-    
+{    
     protected 
     FieldAccumulatorEngineParameters(String[] args) 
     {

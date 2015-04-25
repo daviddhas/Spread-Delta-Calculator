@@ -63,6 +63,6 @@ FieldAccumulatorKernel extends FramedKernel
 	frameOut.linkfield[TCPType.SOCKET] <== frameIn.linkfield[TCPType.SOCKET];
 	
 	io.frameOutput("frameOut", frameOut);
-	// io.framOutput("frameOut", frameOut, constant.var(True), constant.var(True));
+	// io.frameOutput("frameOut", frameOut, constant.var(true), constant.var(true));
     }
 }
