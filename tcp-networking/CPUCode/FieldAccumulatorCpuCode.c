@@ -7,7 +7,7 @@
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 
-#include <MaxSLiCInterface.h>
+//#include <MaxSLiCInterface.h>
 #include "FieldAccumulatorTCP.h"
 
 typedef struct output_data
@@ -130,9 +130,74 @@ calculateDeltas(int sock, struct input_data *data)
     static int32_t regABaskprice = 0;
     static uint8_t regABaskquant = 0;
 
+    /* Prices */
+    regAbidprice  = (data.instrument_id==0 & data.side==0) data.price : regAbidprice;
+    regAaskprice  = (data.instrument_id==0 & data.side==1) data.price : regAaskprice;
 
-    /* Find Implied Spread Bid Price and Quantity */
+    regBbidprice  = (data.instrument_id==1 & data.side==0) data.price : regBbidprice;
+    regBaskprice  = (data.instrument_id==1 & data.side==1) data.price : regBaskprice;
 
+    regABbidprice = (data.instrument_id==2 & data.side==0) data.price : regABbidprice;
+    regABbidprice = (data.instrument_id==2 & data.side==1) data.price : regABaskprice;
+
+    /* Quantities */
+    regAbidquant  = (data.instrument_id==0 & data.side==0) data.quant : regAbidquant;
+    regAaskquant  = (data.instrument_id==0 & data.side==1) data.quant : regAaskquant;
+
+    regBbidquant  = (data.instrument_id==1 & data.side==0) data.quant : regBbidquant;
+    regBaskquant  = (data.instrument_id==1 & data.side==1) data.quant : regBaskquant;
+
+    regABbidquant = (data.instrument_id==2 & data.side==0) data.quant : regABbidquant;
+    regABbidquant = (data.instrument_id==2 & data.side==1) data.quant : regABaskquant;	                   
+
+    /* Nested Ternaries?
+     regAbidprice = data.instrument_id == 0 ? 
+                       data.side == 0 ? data.price : regAbidprice : 
+                       regAbidprice; */
+
+    /*
+    if (data.instrument_id == 0)      // Instrument A
+    {
+	if (!data.side)           // Bidding
+	{
+	    regAbidprice = data.price;
+	    regAbidquant = data.quant;
+	}	   
+	else                      // Asking
+	{
+	    regAaskprice = data.price;
+	    regAaskquant = data.quant;
+	}	
+    }
+    else if (data.instrument_id == 1) // Instrument B
+    {
+	if (!data.side)           // Bidding
+	{
+	    regAbidprice = data.price;
+	    regAbidquant = data.quant;
+	}	   
+	else                      // Asking
+	{
+	    regAaskprice = data.price;
+	    regAaskquant = data.quant;
+	}
+    }
+    else if (data.instrument_id == 2) // Spread A-B
+    {
+	if (!data.side)           // Bidding
+	{
+	    regABbidprice = data.price;
+	    regABbidquant = data.quant;
+	}	   
+	else                      // Asking
+	{
+	    regABaskprice = data.price;
+	    regABaskquant = data.quant;
+	}
+    }
+    */
+
+    /*
     switch(data.instrument_id) 
     {
     case 0:                   // Instrument A
@@ -177,7 +242,8 @@ calculateDeltas(int sock, struct input_data *data)
 	}
 	break;	
     }
-	    
+    */
+
     uint8_t impliedQuantity = regAbidquant < regBaskquant ? regAbidquant : regBaskquant;
     int32_t impliedBidPrice = regAbidprice - regBaskprice;
 
