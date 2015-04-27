@@ -59,12 +59,11 @@ main(int argc, char *argv[])
     /* Send data */
     struct input_data data;
 
-    data.aBidQuantity = 15;
-    data.bAskQuantity = 10;
-    data.abSpreadAskQuantity = 10;
-    data.aBidPrice = 74150;
-    data.bAskPrice = 75500;
-    data.abSpreadAskPrice = -1300; 
+    data.instrument_id = 0;
+    data.level         = 0;
+    data.side          = 0;
+    data.quantity      = 10;
+    data.price         = 32000;
 
     calculateDeltas(cpu_socket, &data);
     
@@ -150,10 +149,6 @@ calculateDeltas(int sock, struct input_data *data)
     regABbidquant = (data.instrument_id==2 && data.side==0) ? data.quantity : regABbidquant;
     regABbidquant = (data.instrument_id==2 && data.side==1) ? data.quantity : regABaskquant;	                   
 
-    /* Nested Ternaries?
-     regAbidprice = data.instrument_id == 0 ? 
-                       data.side == 0 ? data.price : regAbidprice : 
-                       regAbidprice; */
 
     /*
     if (data.instrument_id == 0)      // Instrument A
