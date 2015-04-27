@@ -58,9 +58,9 @@ FieldAccumulatorKernel extends FramedKernel
 	pushResetBetweenFrames(false);
 
 	/* Conditionals */
-	DFEVar a_bid   = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 0));// &
-//                       frameIn["level"]         == constant.var(dfeInt(32), 0) &
-//			           frameIn["side"]          == constant.var(dfeInt(32), 0));
+	DFEVar a_bid   = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 0)) &
+	                 frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
+			         frameIn["side"].eq(constant.var(dfeInt(32), 0));
 
 	a_bidprice = Reductions.streamHold(frameIn["price"], a_bid);
 	a_bidquant = Reductions.streamHold(frameIn["quantity"], a_bid);

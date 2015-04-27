@@ -1,24 +1,4 @@
 *** After kernel graph-pass 'Init Graph' ***
-node "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>" (ID 47) has unconnected outputs: [output]
-stack trace of node origin follows:
-	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:156)
-	com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameData.maxj:626)
-	com.maxeler.networking.v1.framed_kernels.FrameData.<init>(FrameData.maxj:655)
-	com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
-	com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-	fieldaccumulator.FieldAccumulatorKernel.<init>(FieldAccumulatorKernel.maxj:52)
-	fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)
-	
-node "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>" (ID 55) has unconnected outputs: [output]
-stack trace of node origin follows:
-	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:156)
-	com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameData.maxj:626)
-	com.maxeler.networking.v1.framed_kernels.FrameData.<init>(FrameData.maxj:655)
-	com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
-	com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-	fieldaccumulator.FieldAccumulatorKernel.<init>(FieldAccumulatorKernel.maxj:52)
-	fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)
-	
 node "&" (ID 77) has unconnected outputs: [result]
 stack trace of node origin follows:
 	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)

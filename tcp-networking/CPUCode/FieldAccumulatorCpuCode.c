@@ -94,9 +94,9 @@ main(int argc, char *argv[])
     calculateDeltas(cpu_socket, &data);
 
     /* Hold */
-    data.instrument_id = 1;
+    data.instrument_id = 0;
     data.level         = 0;
-    data.side          = 0;
+    data.side          = 1;
     data.quantity      = 5;
     data.price         = 6;
     calculateDeltas(cpu_socket, &data);
