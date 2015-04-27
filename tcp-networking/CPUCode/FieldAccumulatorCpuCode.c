@@ -26,7 +26,7 @@ struct input_data
 };
 
 static int create_cpu_tcp_socket(struct in_addr *, int);
-static void calculateDeltas(int, struct input_data *);
+//static void calculateDeltas(int, struct input_data *);
 static void calculateDeltas2(int, struct input_data *);
 
 int 
@@ -127,68 +127,4 @@ calculateDeltas2(int sock, struct input_data *data)
     recv(sock, &data_received, sizeof(data_received), 0);
 
     printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
-}
-
-
-static void
-calculateDeltas(int sock, struct input_data *data)
-{
-  
-    /* Send Data to Engine via TCP */
-    send(sock, &data, sizeof(data), 0);
-
-    /* Receive Data from Engine via TCP */
-    frame_t data_received;
-    recv(sock, &data_received, sizeof(data_received), 0);
-
-
-    /* -------- Expected Value, Calculated in Software -------- */
-    
-    static int32_t regAbidprice = 0;
-    static uint8_t regAbidquant = 0;
-
-    static int32_t regAaskprice = 0;
-    static uint8_t regAaskquant = 0;
-
-    static int32_t regBbidprice = 0;
-    static uint8_t regBbidquant = 0;
-
-    static int32_t regBaskprice = 0;
-    static uint8_t regBaskquant = 0;
-
-    static int32_t regABbidprice = 0;
-    static uint8_t regABbidquant = 0;
-
-    static int32_t regABaskprice = 0;
-    static uint8_t regABaskquant = 0;
-
-    /* Prices */
-    regAbidprice  = (data->instrument_id==0 && data->side==0) ? data->price : regAbidprice;
-    regAaskprice  = (data->instrument_id==0 && data->side==1) ? data->price : regAaskprice;
-
-    regBbidprice  = (data->instrument_id==1 && data->side==0) ? data->price : regBbidprice;
-    regBaskprice  = (data->instrument_id==1 && data->side==1) ? data->price : regBaskprice;
-
-    regABbidprice = (data->instrument_id==2 && data->side==0) ? data->price : regABbidprice;
-    regABaskprice = (data->instrument_id==2 && data->side==1) ? data->price : regABaskprice;
-
-    /* Quantities */
-    regAbidquant  = (data->instrument_id==0 && data->side==0) ? data->quantity : regAbidquant;
-    regAaskquant  = (data->instrument_id==0 && data->side==1) ? data->quantity : regAaskquant;
-
-    regBbidquant  = (data->instrument_id==1 && data->side==0) ? data->quantity : regBbidquant;
-    regBaskquant  = (data->instrument_id==1 && data->side==1) ? data->quantity : regBaskquant;
-
-    regABbidquant = (data->instrument_id==2 && data->side==0) ? data->quantity : regABbidquant;
-    regABaskquant = (data->instrument_id==2 && data->side==1) ? data->quantity : regABaskquant;	                   
-
-    uint8_t impliedQuantity = regAbidquant < regBaskquant ? regAbidquant : regBaskquant;
-    int32_t impliedBidPrice = regAbidprice - regBaskprice;
-
-    /* Output Parameters */
-    int32_t delta = regABaskprice - impliedBidPrice;
-    uint8_t spread_quantity = regABaskquant < impliedQuantity ? regABaskquant : impliedQuantity;
-
-    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
-    printf("Expected: Quantity = %d, Delta = %d\n", spread_quantity, delta);
 }
