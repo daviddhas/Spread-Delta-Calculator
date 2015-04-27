@@ -119,14 +119,14 @@ static void
 calculateDeltas(int sock, struct input_data *data)
 {
     /* Send Data to Engine via TCP */
-    // send(sock, &data, sizeof(data), 0);
+    send(sock, &data, sizeof(data), 0);
 
     /* Receive Data from Engine via TCP */
     frame_t data_received;
-    // recv(sock, &data_received, sizeof(data_received), 0);
+    recv(sock, &data_received, sizeof(data_received), 0);
 
 
-    /* -------- Expected Value -------- */
+    /* -------- Expected Value, Calculated in Software -------- */
     
     static int32_t regAbidprice = 0;
     static uint8_t regAbidquant = 0;
@@ -166,7 +166,6 @@ calculateDeltas(int sock, struct input_data *data)
     regABbidquant = (data->instrument_id==2 && data->side==0) ? data->quantity : regABbidquant;
     regABaskquant = (data->instrument_id==2 && data->side==1) ? data->quantity : regABaskquant;	                   
 
-
     uint8_t impliedQuantity = regAbidquant < regBaskquant ? regAbidquant : regBaskquant;
     int32_t impliedBidPrice = regAbidprice - regBaskprice;
 
@@ -174,13 +173,6 @@ calculateDeltas(int sock, struct input_data *data)
     int32_t delta = regABaskprice - impliedBidPrice;
     uint8_t spread_quantity = regABaskquant < impliedQuantity ? regABaskquant : impliedQuantity;
 
-
-    printf("Expected: A  price is = %d, quant is %d\n", regAbidprice, regAbidquant);
-    printf("Expected: B  price is = %d, quant is %d\n", regBaskprice, regBaskquant);
-    printf("Expected: AB price is = %d, quant is %d\n", regABaskprice, regABaskquant);
-
-    printf("CALCULATION => Quantity = %d, Delta = %d\n\n", spread_quantity, delta);
-
-//    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
-//    printf("Expected: Quantity = %d, Delta = %d\n", spread_quantity, delta);
+    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
+    printf("Expected: Quantity = %d, Delta = %d\n", spread_quantity, delta);
 }
