@@ -141,14 +141,14 @@ calculateDeltas(int sock, struct input_data *data)
     regABbidprice = (data.instrument_id==2 && data.side==1) ? data.price : regABaskprice;
 
     /* Quantities */
-    regAbidquant  = (data.instrument_id==0 && data.side==0) ? data.quant : regAbidquant;
-    regAaskquant  = (data.instrument_id==0 && data.side==1) ? data.quant : regAaskquant;
+    regAbidquant  = (data.instrument_id==0 && data.side==0) ? data.quantity : regAbidquant;
+    regAaskquant  = (data.instrument_id==0 && data.side==1) ? data.quantity : regAaskquant;
 
-    regBbidquant  = (data.instrument_id==1 && data.side==0) ? data.quant : regBbidquant;
-    regBaskquant  = (data.instrument_id==1 && data.side==1) ? data.quant : regBaskquant;
+    regBbidquant  = (data.instrument_id==1 && data.side==0) ? data.quantity : regBbidquant;
+    regBaskquant  = (data.instrument_id==1 && data.side==1) ? data.quantity : regBaskquant;
 
-    regABbidquant = (data.instrument_id==2 && data.side==0) ? data.quant : regABbidquant;
-    regABbidquant = (data.instrument_id==2 && data.side==1) ? data.quant : regABaskquant;	                   
+    regABbidquant = (data.instrument_id==2 && data.side==0) ? data.quantity : regABbidquant;
+    regABbidquant = (data.instrument_id==2 && data.side==1) ? data.quantity : regABaskquant;	                   
 
     /* Nested Ternaries?
      regAbidprice = data.instrument_id == 0 ? 
