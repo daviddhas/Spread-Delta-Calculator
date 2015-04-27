@@ -12,16 +12,16 @@
 
 typedef struct output_data
 {
-    uint8_t spread_quantity;
+    int32_t spread_quantity;
     int32_t delta;
 } __attribute__ ((__packed__)) frame_t;
 
 struct input_data
 {
-    uint8_t instrument_id;
-    uint8_t level; 
-    uint8_t side;             // 0 is Bidding, 1 is Asking
-    uint8_t quantity;
+    int32_t instrument_id;
+    int32_t level; 
+    int32_t side;             // 0 is Bidding, 1 is Asking
+    int32_t quantity;
     int32_t price;
 };
 
@@ -84,7 +84,7 @@ main(int argc, char *argv[])
     data.quantity      = 10;
     data.price         = -1300;
 
-    calculateDeltas(cpu_socket, &data);
+    calculateDeltas2(cpu_socket, &data);
     
     close(cpu_socket);
     
@@ -116,8 +116,23 @@ create_cpu_tcp_socket(struct in_addr *remote_ip, int port)
 }
 
 static void
+calculateDeltas2(int sock, struct input_data *data)
+{
+    /* Send Data to Engine via TCP */
+    send(sock, &data, sizeof(data), 0);
+
+    /* Receive Data from Engine via TCP */
+    frame_t data_received;
+    recv(sock, &data_received, sizeof(data_received), 0);
+
+    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
+}
+
+
+static void
 calculateDeltas(int sock, struct input_data *data)
 {
+  
     /* Send Data to Engine via TCP */
     send(sock, &data, sizeof(data), 0);
 
