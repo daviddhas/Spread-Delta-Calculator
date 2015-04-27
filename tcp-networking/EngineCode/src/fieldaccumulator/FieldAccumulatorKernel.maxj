@@ -1,4 +1,4 @@
-package fieldaccumulator;
+avapackage fieldaccumulator;
 
 import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
 import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator.Params;
@@ -19,16 +19,11 @@ FieldAccumulatorKernel extends FramedKernel
 	DataIn() 
 	{
 	    super(ByteOrder.LITTLE_ENDIAN);
-
-	    /* Quantities */
-	    addField("aBidQuantity", dfeInt(32));
-	    addField("bAskQuantity", dfeInt(32));
-	    addField("abSpreadAskQuantity", dfeInt(32));
-
-	    /* Prices */
-	    addField("aBidPrice", dfeInt(32));
-	    addField("bAskPrice", dfeInt(32));
-	    addField("abSpreadAskPrice", dfeInt(32));
+	    addField("instrument_id", dfeUInt(8));
+	    addField("level", dfeUInt(8));
+	    addField("side", dfeUInt(8));
+	    addField("quantity", dfeUInt(8));
+	    addField("price", dfeInt(32));
 	}
     }
     
@@ -38,8 +33,8 @@ FieldAccumulatorKernel extends FramedKernel
 	DataOut() 
 	{
 	    super(ByteOrder.LITTLE_ENDIAN);
-	    addField("impliedQuantity", dfeInt(32));
-	    addField("impliedDelta", dfeInt(32));
+	    addField("spread_quantity", dfeUInt(8));
+	    addField("spread_delta", dfeInt(32));
 	}
     }
 
@@ -47,19 +42,46 @@ FieldAccumulatorKernel extends FramedKernel
     {
 	super(parameters);
 	
+	/* Registers */
+	DFEVar a_bidprice = dfeInt(32).newInstance(this);
+	DFEVar a_bidquant = dfeUInt(8).newInstance(this);
+	DFEVar b_askprice = dfeInt(32).newInstance(this);
+	DFEVar b_askquant = dfeUInt(8).newInstance(this);
+	DFEVar ab_askprice = dfeInt(32).newInstance(this);
+	DFEVar ab_askquant = dfeUInt(8).newInstance(this);
+
+	//DFEVector<DFEVar> pricingvector = new DFEVectorType<DFEVar>(dfeInt(32),3).newInstance(this);
+	//DFEVector<DFEVar> quantvector = new DFEVectorType<DFEVar>(dfeUInt(8),3).newInstance(this);
+
 	/* Declare Frame In */
 	FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new TCPType());
 
-	/* Trying to determine if we can get the minimum of two variables */
-	DFEVar impliedSpreadQuantity = frameIn["aBidQuantity"] > frameIn["bAskQuantity"] ?
-	    frameIn["bAskQuantity"] : frameIn["aBidQuantity"];
+	/* Variables */
+	DFEVar id    = frameIn["instrument_id"];
+	DFEVar level = frameIn["level"];
+	DFEVar side  = frameIn["side"];
 
+	/* Conditionals */
+	DFEVar a_bid  = (id==0 & level==0 & side==0);
+	DFEVar b_ask  = (id==1 & level==0 & side==1);
+	DFEVar ab_ask = (id==2 & level==0 & side==1);
+
+	a_bidquant  = a_bid  ? frameIn["quantity"] : a_bidquant;
+	a_bidprice  = a_bid  ? frameIn["price"]    : a_bidprice;
+	b_askquant  = b_ask  ? frameIn["quantity"] : b_askquant;
+	b_askprice  = b_ask  ? frameIn["price"]    : b_askprice;
+	ab_askquant = ab_ask ? frameIn["quantity"] : a_bidquant;
+	ab_askprice = ab_ask ? frameIn["price"]    : a_bidprice;
 
 	/* Declare Frame Out */
 	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new TCPType());
 
-	frameOut["impliedQuantity"] <== impliedSpreadQuantity.cast(dfeInt(32));
-	frameOut["impliedDelta"] <== constant.var(dfeInt(32), -1);
+	DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+	DFEVar impliedBidPrice = a_bidprice - b_askprice;
+
+	frameOut["spread_delta"]    <== ab_askprice - impliedBidPrice;
+	frameOut["spread_quantity"] <== ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
+
 	frameOut.linkfield[TCPType.SOCKET] <== frameIn.linkfield[TCPType.SOCKET];
 	
 	io.frameOutput("frameOut", frameOut);
