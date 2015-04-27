@@ -140,12 +140,11 @@ calculateDeltas(int sock, struct input_data *data)
     static int32_t regBaskprice = 0;
     static uint8_t regBaskquant = 0;
 
-
     static int32_t regABbidprice = 0;
     static uint8_t regABbidquant = 0;
 
-    static int32_t regABaskprice = 0;
-    static uint8_t regABaskquant = 0;
+    static int32_t regABaskprice = 1;
+    static uint8_t regABaskquant = 2;
 
     /* Prices */
     regAbidprice  = (data->instrument_id==0 && data->side==0) ? data->price : regAbidprice;
@@ -155,7 +154,7 @@ calculateDeltas(int sock, struct input_data *data)
     regBaskprice  = (data->instrument_id==1 && data->side==1) ? data->price : regBaskprice;
 
     regABbidprice = (data->instrument_id==2 && data->side==0) ? data->price : regABbidprice;
-    regABbidprice = (data->instrument_id==2 && data->side==1) ? data->price : regABaskprice;
+    regABaskprice = (data->instrument_id==2 && data->side==1) ? data->price : regABaskprice;
 
     /* Quantities */
     regAbidquant  = (data->instrument_id==0 && data->side==0) ? data->quantity : regAbidquant;
@@ -165,7 +164,7 @@ calculateDeltas(int sock, struct input_data *data)
     regBaskquant  = (data->instrument_id==1 && data->side==1) ? data->quantity : regBaskquant;
 
     regABbidquant = (data->instrument_id==2 && data->side==0) ? data->quantity : regABbidquant;
-    regABbidquant = (data->instrument_id==2 && data->side==1) ? data->quantity : regABaskquant;	                   
+    regABaskquant = (data->instrument_id==2 && data->side==1) ? data->quantity : regABaskquant;	                   
 
 
     uint8_t impliedQuantity = regAbidquant < regBaskquant ? regAbidquant : regBaskquant;
