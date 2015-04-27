@@ -64,7 +64,7 @@ main(int argc, char *argv[])
     data.level         = 0;
     data.side          = 0;
     data.quantity      = 15;
-    data.price         = 75150;
+    data.price         = 74150;
 
     calculateDeltas(cpu_socket, &data);
 
@@ -143,8 +143,8 @@ calculateDeltas(int sock, struct input_data *data)
     static int32_t regABbidprice = 0;
     static uint8_t regABbidquant = 0;
 
-    static int32_t regABaskprice = 1;
-    static uint8_t regABaskquant = 2;
+    static int32_t regABaskprice = 0;
+    static uint8_t regABaskquant = 0;
 
     /* Prices */
     regAbidprice  = (data->instrument_id==0 && data->side==0) ? data->price : regAbidprice;
