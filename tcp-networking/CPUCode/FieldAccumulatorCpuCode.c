@@ -26,8 +26,7 @@ struct input_data
 };
 
 static int create_cpu_tcp_socket(struct in_addr *, int);
-//static void calculateDeltas(int, struct input_data *);
-static void calculateDeltas2(int, struct input_data *);
+static void calculateDeltas(int, struct input_data *);
 
 int 
 main(int argc, char *argv[]) 
@@ -85,7 +84,7 @@ main(int argc, char *argv[])
     data.quantity      = 10;
     data.price         = -1300;
 
-    calculateDeltas2(cpu_socket, &data);
+    calculateDeltas(cpu_socket, &data);
     
     close(cpu_socket);
     
@@ -117,7 +116,7 @@ create_cpu_tcp_socket(struct in_addr *remote_ip, int port)
 }
 
 static void
-calculateDeltas2(int sock, struct input_data *data)
+calculateDeltas(int sock, struct input_data *data)
 {
     /* Send Data to Engine via TCP */
     send(sock, &data, sizeof(data), 0);
