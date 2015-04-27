@@ -19,10 +19,10 @@ FieldAccumulatorKernel extends FramedKernel
 	DataIn() 
 	{
 	    super(ByteOrder.LITTLE_ENDIAN);
-	    addField("instrument_id", dfeUInt(8));
-	    addField("level", dfeUInt(8));
-	    addField("side", dfeUInt(8));
-	    addField("quantity", dfeUInt(8));
+	    addField("instrument_id", dfeInt(32));
+	    addField("level", dfeInt(32));
+	    addField("side", dfeInt(32));
+	    addField("quantity", dfeInt(32));
 	    addField("price", dfeInt(32));
 	}
     }
@@ -33,7 +33,7 @@ FieldAccumulatorKernel extends FramedKernel
 	DataOut() 
 	{
 	    super(ByteOrder.LITTLE_ENDIAN);
-	    addField("spread_quantity", dfeUInt(8));
+	    addField("spread_quantity", dfeInt(32));
 	    addField("spread_delta", dfeInt(32));
 	}
     }
@@ -44,11 +44,14 @@ FieldAccumulatorKernel extends FramedKernel
 	
 	/* Registers */
 	DFEVar a_bidprice = dfeInt(32).newInstance(this);
-	DFEVar a_bidquant = dfeUInt(8).newInstance(this);
+	DFEVar a_bidquant = dfeInt(32).newInstance(this);
+
+	/*
 	DFEVar b_askprice = dfeInt(32).newInstance(this);
 	DFEVar b_askquant = dfeUInt(8).newInstance(this);
 	DFEVar ab_askprice = dfeInt(32).newInstance(this);
 	DFEVar ab_askquant = dfeUInt(8).newInstance(this);
+	*/
 
 	//DFEVector<DFEVar> pricingvector = new DFEVectorType<DFEVar>(dfeInt(32),3).newInstance(this);
 	//DFEVector<DFEVar> quantvector = new DFEVectorType<DFEVar>(dfeUInt(8),3).newInstance(this);
@@ -87,8 +90,8 @@ FieldAccumulatorKernel extends FramedKernel
 	//DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
 	//DFEVar impliedBidPrice = a_bidprice - b_askprice;
 
-	frameOut["spread_delta"]    <== a_bidprice; // ab_askprice - impliedBidPrice;
-	frameOut["spread_quantity"] <== a_bidquant; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
+	frameOut["spread_delta"]    <== frameIn["price"]; // ab_askprice - impliedBidPrice;
+	frameOut["spread_quantity"] <== frameIn["quantity"]; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 
 	frameOut.linkfield[TCPType.SOCKET] <== frameIn.linkfield[TCPType.SOCKET];
 	
