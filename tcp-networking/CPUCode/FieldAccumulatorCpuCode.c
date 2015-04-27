@@ -77,18 +77,39 @@ main(int argc, char *argv[])
     /* Send data */
     struct input_data data;
 
-    for (int i=0; i< 10000000; i++)
-    {
-
-    /* B Ask Quantity */
-    data.instrument_id = i*2;
-    data.level         = i*5;
-    data.side          = i*4;
-    data.quantity      = i*3;
-    data.price         = i;
+    /* Set Value */
+    data.instrument_id = 0;
+    data.level         = 0;
+    data.side          = 0;
+    data.quantity      = 1;
+    data.price         = 2;
     calculateDeltas(cpu_socket, &data);
-    }
+
+    /* Hold */
+    data.instrument_id = 1;
+    data.level         = 0;
+    data.side          = 0;
+    data.quantity      = 3;
+    data.price         = 4;
+    calculateDeltas(cpu_socket, &data);
+
+    /* Hold */
+    data.instrument_id = 1;
+    data.level         = 0;
+    data.side          = 0;
+    data.quantity      = 5;
+    data.price         = 6;
+    calculateDeltas(cpu_socket, &data);
     
+    /* Set */
+    data.instrument_id = 0;
+    data.level         = 0;
+    data.side          = 0;
+    data.quantity      = 7;
+    data.price         = 8;
+    calculateDeltas(cpu_socket, &data);
+
+
 	max_udp_close(dfe_socket);
     max_unload(engine);
     max_file_free(maxfile);
@@ -112,6 +133,5 @@ calculateDeltas(int sock, struct input_data *data)
     {
     	printf("No bytes recv\n");
     	exit(0);
-    }
     }
 }

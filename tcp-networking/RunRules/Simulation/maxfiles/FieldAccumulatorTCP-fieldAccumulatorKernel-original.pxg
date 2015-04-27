@@ -4,7 +4,7 @@
 		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.Debug.simPrintf(Debug.java:381)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:44)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:45)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
@@ -15,7 +15,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<Input name="condition" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>NodePrintf</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.Debug.simPrintf(Debug.java:381)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:44)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:45)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<StreamName></StreamName>
 		<Format>In Kernel\n</Format>
@@ -26,7 +26,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:80)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:148)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>0</Value>
 		<HexValue>0x0</HexValue>
@@ -39,7 +39,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.Flush.disableInput(Flush.java:207)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:148)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<DisablesInput>frameIn</DisablesInput>
 	</Node>
@@ -47,7 +47,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.Debug.simPrintf(Debug.java:381)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:53)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:54)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
@@ -63,7 +63,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1.0</Value>
 	</Node>
@@ -77,7 +77,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1.0</Value>
 	</Node>
@@ -94,7 +94,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Increment>1</Increment>
 		<WrapValue>0</WrapValue>
@@ -113,7 +113,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="38" dst_node_input="load" src_node_id="37" src_node_output="result" />
@@ -122,7 +122,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:80)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:82)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
@@ -134,7 +134,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:80)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:83)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
@@ -149,7 +149,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:125)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="7" dst_node_input="load" src_node_id="5" src_node_output="result" />
@@ -160,7 +160,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.oneShotTrigger(FrameIO.java:50)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:125)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
@@ -176,7 +176,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.oneShotTrigger(FrameIO.java:49)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:125)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<InitValue>0</InitValue>
 	</Node>
@@ -191,7 +191,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.inputEnableForStaticFrame(FrameIO.java:218)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:138)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="9" dst_node_input="a" src_node_id="8" src_node_output="output" />
@@ -203,7 +203,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:143)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="12" dst_node_input="a" src_node_id="9" src_node_output="result" />
@@ -213,7 +213,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Name>io_frameIn_force_disabled</Name>
 	</Node>
@@ -225,7 +225,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="12" dst_node_input="b" src_node_id="11" src_node_output="result" />
@@ -237,7 +237,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="13" dst_node_input="enable" src_node_id="12" src_node_output="result" />
@@ -248,7 +248,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Name>frameIn</Name>
 	</Node>
@@ -262,7 +262,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>0</Base>
 		<Width>64</Width>
@@ -280,7 +280,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>0</Base>
 		<Width>32</Width>
@@ -295,7 +295,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="38" dst_node_input="input" src_node_id="33" src_node_output="output" />
@@ -310,7 +310,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="39" dst_node_input="input" src_node_id="38" src_node_output="output" />
@@ -323,16 +323,17 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="79" dst_node_input="arg0" src_node_id="39" src_node_output="output" />
+	<Edge dst_node_id="83" dst_node_input="a" src_node_id="39" src_node_output="output" />
 	<Node group="[]" id="79" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodePrintf">
 		<Input name="condition" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="arg0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
 		<Text>NodePrintf</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.Debug.simPrintf(Debug.java:381)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:53)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:54)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<StreamName></StreamName>
 		<Format>ID %d\n</Format>
@@ -341,7 +342,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.Debug.simPrintf(Debug.java:381)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:54)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:55)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
@@ -357,7 +358,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1.0</Value>
 	</Node>
@@ -371,7 +372,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1.0</Value>
 	</Node>
@@ -388,7 +389,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Increment>1</Increment>
 		<WrapValue>0</WrapValue>
@@ -407,7 +408,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="70" dst_node_input="load" src_node_id="69" src_node_output="result" />
@@ -421,7 +422,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>0</Base>
 		<Width>32</Width>
@@ -436,7 +437,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="70" dst_node_input="input" src_node_id="65" src_node_output="output" />
@@ -451,7 +452,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="71" dst_node_input="input" src_node_id="70" src_node_output="output" />
@@ -464,56 +465,56 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="81" dst_node_input="arg0" src_node_id="71" src_node_output="output" />
-	<Edge dst_node_id="88" dst_node_input="input" src_node_id="71" src_node_output="output" />
+	<Edge dst_node_id="84" dst_node_input="input" src_node_id="71" src_node_output="output" />
 	<Node group="[]" id="81" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodePrintf">
 		<Input name="condition" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="arg0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
 		<Text>NodePrintf</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.Debug.simPrintf(Debug.java:381)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:54)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:55)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<StreamName></StreamName>
 		<Format>PRICE %d\n</Format>
 	</Node>
-	<Node group="[]" id="99" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+	<Node group="[]" id="100" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
 		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:80)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
 		<NumericValue>1.0</NumericValue>
 	</Node>
-	<Edge dst_node_id="100" dst_node_input="a" src_node_id="99" src_node_output="value" />
-	<Node group="[]" id="94" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantDouble">
+	<Edge dst_node_id="101" dst_node_input="a" src_node_id="100" src_node_output="value" />
+	<Node group="[]" id="95" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantDouble">
 		<Output latency="0" name="value" type="dfeUntypedConst()" />
 		<Text>1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:529)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:251)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1.0</Value>
 	</Node>
-	<Edge dst_node_id="96" dst_node_input="enable" src_node_id="94" src_node_output="value" />
-	<Node group="[]" id="95" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+	<Edge dst_node_id="97" dst_node_input="enable" src_node_id="95" src_node_output="value" />
+	<Node group="[]" id="96" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
 		<Output latency="0" name="value" type="dfeOffsetFix(33, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:33, 0, UNSIGNED}\n0x100000000; 4.294967296E9</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:529)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:251)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>100000000000000000000000000000000</Value>
 		<HexValue>0x100000000</HexValue>
 		<NumericValue>4.294967296E9</NumericValue>
 	</Node>
-	<Edge dst_node_id="96" dst_node_input="max" src_node_id="95" src_node_output="value" />
-	<Node group="[]" id="96" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCounterV1">
+	<Edge dst_node_id="97" dst_node_input="max" src_node_id="96" src_node_output="value" />
+	<Node group="[]" id="97" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCounterV1">
 		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="max" type="dfeOffsetFix(33, 0, UNSIGNED)" />
 		<Output latency="0" name="count" type="dfeOffsetFix(32, 0, UNSIGNED)" />
@@ -521,7 +522,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:529)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:251)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Increment>1</Increment>
 		<WrapValue>0</WrapValue>
@@ -529,30 +530,30 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<CountMode>NUMERIC_INCREMENTING</CountMode>
 		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
 	</Node>
-	<Edge dst_node_id="98" dst_node_input="a" src_node_id="96" src_node_output="count" />
-	<Node group="[]" id="97" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantDouble">
+	<Edge dst_node_id="99" dst_node_input="a" src_node_id="97" src_node_output="count" />
+	<Node group="[]" id="98" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantDouble">
 		<Output latency="0" name="value" type="dfeUntypedConst()" />
 		<Text>0.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:251)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>0.0</Value>
 	</Node>
-	<Edge dst_node_id="98" dst_node_input="b" src_node_id="97" src_node_output="value" />
-	<Node group="[]" id="98" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+	<Edge dst_node_id="99" dst_node_input="b" src_node_id="98" src_node_output="value" />
+	<Node group="[]" id="99" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
 		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
 		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
 		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>==</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:251)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="100" dst_node_input="b" src_node_id="98" src_node_output="result" />
-	<Edge dst_node_id="103" dst_node_input="iStartOfFrame" src_node_id="98" src_node_output="result" />
-	<Node group="[]" id="100" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+	<Edge dst_node_id="101" dst_node_input="b" src_node_id="99" src_node_output="result" />
+	<Edge dst_node_id="104" dst_node_input="iStartOfFrame" src_node_id="99" src_node_output="result" />
+	<Node group="[]" id="101" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
 		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
@@ -560,25 +561,25 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:287)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="102" dst_node_input="load" src_node_id="100" src_node_output="result" />
-	<Node group="[]" id="101" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+	<Edge dst_node_id="103" dst_node_input="load" src_node_id="101" src_node_output="result" />
+	<Node group="[]" id="102" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
 		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:80)
 com.maxeler.networking.v1.framed_kernels.FrameIO.oneShotTrigger(FrameIO.java:50)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:287)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
 		<NumericValue>1.0</NumericValue>
 	</Node>
-	<Edge dst_node_id="102" dst_node_input="input" src_node_id="101" src_node_output="value" />
-	<Node group="[]" id="102" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeHold">
+	<Edge dst_node_id="103" dst_node_input="input" src_node_id="102" src_node_output="value" />
+	<Node group="[]" id="103" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeHold">
 		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
@@ -587,12 +588,12 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.oneShotTrigger(FrameIO.java:49)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:287)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<InitValue>0</InitValue>
 	</Node>
-	<Edge dst_node_id="136" dst_node_input="a" src_node_id="102" src_node_output="output" />
-	<Node group="[]" id="104" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeConstantRawBits">
+	<Edge dst_node_id="137" dst_node_input="a" src_node_id="103" src_node_output="output" />
+	<Node group="[]" id="105" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeConstantRawBits">
 		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:99)
@@ -600,14 +601,14 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>00000000000000000000000000000000</Value>
 		<HexValue>0x00000000</HexValue>
 		<NumericValue>0.0</NumericValue>
 	</Node>
-	<Edge dst_node_id="106" dst_node_input="a" src_node_id="104" src_node_output="value" />
-	<Node group="[]" id="105" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeConstantDouble">
+	<Edge dst_node_id="107" dst_node_input="a" src_node_id="105" src_node_output="value" />
+	<Node group="[]" id="106" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeConstantDouble">
 		<Output latency="0" name="value" type="dfeUntypedConst()" />
 		<Text>64.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:883)
@@ -615,12 +616,12 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>64.0</Value>
 	</Node>
-	<Edge dst_node_id="106" dst_node_input="b" src_node_id="105" src_node_output="value" />
-	<Node group="[]" id="106" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeAdd">
+	<Edge dst_node_id="107" dst_node_input="b" src_node_id="106" src_node_output="value" />
+	<Node group="[]" id="107" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeAdd">
 		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
 		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
 		<Output latency="0" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
@@ -630,11 +631,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="103" dst_node_input="iBitsToOutput" src_node_id="106" src_node_output="result" />
-	<Node group="[]" id="103" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStateMachine">
+	<Edge dst_node_id="104" dst_node_input="iBitsToOutput" src_node_id="107" src_node_output="result" />
+	<Node group="[]" id="104" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStateMachine">
 		<Input name="iBitsToOutput" type="dfeOffsetFix(32, 0, UNSIGNED)" />
 		<Input name="iStartOfFrame" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="1" name="oInputMuxPos" type="dfeOffsetFix(1, 0, UNSIGNED)" />
@@ -654,21 +655,21 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Name>outputSM_frameOut</Name>
 	</Node>
-	<Edge dst_node_id="109" dst_node_input="shift" src_node_id="103" src_node_output="oInputROL" />
-	<Edge dst_node_id="131" dst_node_input="input" src_node_id="103" src_node_output="oIsFirstWord" />
-	<Edge dst_node_id="129" dst_node_input="input" src_node_id="103" src_node_output="oIsLastWord" />
-	<Edge dst_node_id="110" dst_node_input="i" src_node_id="103" src_node_output="oMaskL" />
-	<Edge dst_node_id="115" dst_node_input="i" src_node_id="103" src_node_output="oMaskR" />
-	<Edge dst_node_id="136" dst_node_input="b" src_node_id="103" src_node_output="oOutputEnable" />
-	<Edge dst_node_id="150" dst_node_input="b" src_node_id="103" src_node_output="oOutputFinished" />
-	<Edge dst_node_id="133" dst_node_input="i" src_node_id="103" src_node_output="oOutputMod" />
-	<Edge dst_node_id="127" dst_node_input="sel" src_node_id="103" src_node_output="oOutputMuxPos" />
-	<Edge dst_node_id="123" dst_node_input="load" src_node_id="103" src_node_output="oStarted" />
-	<Node group="[]" id="136" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+	<Edge dst_node_id="110" dst_node_input="shift" src_node_id="104" src_node_output="oInputROL" />
+	<Edge dst_node_id="132" dst_node_input="input" src_node_id="104" src_node_output="oIsFirstWord" />
+	<Edge dst_node_id="130" dst_node_input="input" src_node_id="104" src_node_output="oIsLastWord" />
+	<Edge dst_node_id="111" dst_node_input="i" src_node_id="104" src_node_output="oMaskL" />
+	<Edge dst_node_id="116" dst_node_input="i" src_node_id="104" src_node_output="oMaskR" />
+	<Edge dst_node_id="137" dst_node_input="b" src_node_id="104" src_node_output="oOutputEnable" />
+	<Edge dst_node_id="151" dst_node_input="b" src_node_id="104" src_node_output="oOutputFinished" />
+	<Edge dst_node_id="134" dst_node_input="i" src_node_id="104" src_node_output="oOutputMod" />
+	<Edge dst_node_id="128" dst_node_input="sel" src_node_id="104" src_node_output="oOutputMuxPos" />
+	<Edge dst_node_id="124" dst_node_input="load" src_node_id="104" src_node_output="oStarted" />
+	<Node group="[]" id="137" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
 		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
@@ -676,33 +677,33 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="139" dst_node_input="a" src_node_id="136" src_node_output="result" />
-	<Node group="[]" id="137" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+	<Edge dst_node_id="140" dst_node_input="a" src_node_id="137" src_node_output="result" />
+	<Node group="[]" id="138" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
 		<Output latency="0" name="io_frameOut_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>Scalar input (io_frameOut_force_disabled)</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Name>io_frameOut_force_disabled</Name>
 	</Node>
-	<Edge dst_node_id="138" dst_node_input="a" src_node_id="137" src_node_output="io_frameOut_force_disabled" />
-	<Node group="[]" id="138" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
+	<Edge dst_node_id="139" dst_node_input="a" src_node_id="138" src_node_output="io_frameOut_force_disabled" />
+	<Node group="[]" id="139" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
 		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>~</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="139" dst_node_input="b" src_node_id="138" src_node_output="result" />
-	<Node group="[]" id="139" isControl="false" isVisible="false" pipelineFactor="0.0" type="NodeAnd">
+	<Edge dst_node_id="140" dst_node_input="b" src_node_id="139" src_node_output="result" />
+	<Node group="[]" id="140" isControl="false" isVisible="false" pipelineFactor="0.0" type="NodeAnd">
 		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
@@ -710,10 +711,10 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="140" dst_node_input="output_control" src_node_id="139" src_node_output="result" />
+	<Edge dst_node_id="141" dst_node_input="output_control" src_node_id="140" src_node_output="result" />
 	<Node group="[]" id="23" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeSlice">
 		<Input name="a" type="dfeBits(78)" />
 		<Output latency="0" name="result" type="dfeBits(8)" />
@@ -721,7 +722,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>70</Base>
 		<Width>8</Width>
@@ -734,34 +735,34 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="148" dst_node_input="input" src_node_id="24" src_node_output="output" />
-	<Node group="[]" id="148" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="149" dst_node_input="input" src_node_id="24" src_node_output="output" />
+	<Node group="[]" id="149" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeOffsetFix(8, 0, UNSIGNED)" />
 		<Output latency="0" name="output" type="dfeBits(8)" />
 		<Text>&lt;{HWRawBits:8}&gt;</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="149" dst_node_input="in0" src_node_id="148" src_node_output="output" />
-	<Node group="[]" id="131" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
-		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
-		<Output latency="0" name="output" type="dfeBits(1)" />
-		<Text>&lt;{HWRawBits:1}&gt;</Text>
-		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.pack(DFEVar.java:1320)
-com.maxeler.networking.v1.framed_kernels.FrameIO.forceConnect(FrameIO.java:223)
-com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:304)
-com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
-fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
-	</Node>
-	<Edge dst_node_id="132" dst_node_input="input" src_node_id="131" src_node_output="output" />
+	<Edge dst_node_id="150" dst_node_input="in0" src_node_id="149" src_node_output="output" />
 	<Node group="[]" id="132" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="output" type="dfeBits(1)" />
+		<Text>&lt;{HWRawBits:1}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.pack(DFEVar.java:1320)
+com.maxeler.networking.v1.framed_kernels.FrameIO.forceConnect(FrameIO.java:223)
+com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:304)
+com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
+fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="133" dst_node_input="input" src_node_id="132" src_node_output="output" />
+	<Node group="[]" id="133" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(1)" />
 		<Output latency="0" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>&lt;{HWOffsetFix:1, 0, UNSIGNED}&gt;</Text>
@@ -769,22 +770,22 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.forceConnect(FrameIO.java:223)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:304)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="146" dst_node_input="input" src_node_id="132" src_node_output="output" />
-	<Node group="[]" id="146" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="147" dst_node_input="input" src_node_id="133" src_node_output="output" />
+	<Node group="[]" id="147" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="0" name="output" type="dfeBits(1)" />
 		<Text>&lt;{HWRawBits:1}&gt;</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="147" dst_node_input="in0" src_node_id="146" src_node_output="output" />
-	<Node group="[]" id="129" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="148" dst_node_input="in0" src_node_id="147" src_node_output="output" />
+	<Node group="[]" id="130" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="0" name="output" type="dfeBits(1)" />
 		<Text>&lt;{HWRawBits:1}&gt;</Text>
@@ -792,11 +793,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.forceConnect(FrameIO.java:223)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:301)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="130" dst_node_input="input" src_node_id="129" src_node_output="output" />
-	<Node group="[]" id="130" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="131" dst_node_input="input" src_node_id="130" src_node_output="output" />
+	<Node group="[]" id="131" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(1)" />
 		<Output latency="0" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>&lt;{HWOffsetFix:1, 0, UNSIGNED}&gt;</Text>
@@ -804,33 +805,33 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.forceConnect(FrameIO.java:223)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:301)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="144" dst_node_input="input" src_node_id="130" src_node_output="output" />
-	<Node group="[]" id="144" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="145" dst_node_input="input" src_node_id="131" src_node_output="output" />
+	<Node group="[]" id="145" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="0" name="output" type="dfeBits(1)" />
 		<Text>&lt;{HWRawBits:1}&gt;</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="145" dst_node_input="in0" src_node_id="144" src_node_output="output" />
-	<Node group="[]" id="133" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+	<Edge dst_node_id="146" dst_node_input="in0" src_node_id="145" src_node_output="output" />
+	<Node group="[]" id="134" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
 		<Input name="i" type="dfeOffsetFix(3, 0, UNSIGNED)" />
 		<Output latency="0" name="o" type="dfeOffsetFix(3, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:3, 0, UNSIGNED}</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:165)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:311)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="134" dst_node_input="input" src_node_id="133" src_node_output="o" />
-	<Node group="[]" id="134" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="135" dst_node_input="input" src_node_id="134" src_node_output="o" />
+	<Node group="[]" id="135" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeOffsetFix(3, 0, UNSIGNED)" />
 		<Output latency="0" name="output" type="dfeBits(3)" />
 		<Text>&lt;{HWRawBits:3}&gt;</Text>
@@ -838,11 +839,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.forceConnect(FrameIO.java:223)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:309)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="135" dst_node_input="input" src_node_id="134" src_node_output="output" />
-	<Node group="[]" id="135" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="136" dst_node_input="input" src_node_id="135" src_node_output="output" />
+	<Node group="[]" id="136" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(3)" />
 		<Output latency="0" name="output" type="dfeOffsetFix(3, 0, UNSIGNED)" />
 		<Text>&lt;{HWOffsetFix:3, 0, UNSIGNED}&gt;</Text>
@@ -850,22 +851,22 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.forceConnect(FrameIO.java:223)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:309)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="142" dst_node_input="input" src_node_id="135" src_node_output="output" />
-	<Node group="[]" id="142" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="143" dst_node_input="input" src_node_id="136" src_node_output="output" />
+	<Node group="[]" id="143" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeOffsetFix(3, 0, UNSIGNED)" />
 		<Output latency="0" name="output" type="dfeBits(3)" />
 		<Text>&lt;{HWRawBits:3}&gt;</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="143" dst_node_input="in0" src_node_id="142" src_node_output="output" />
-	<Node group="[]" id="124" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+	<Edge dst_node_id="144" dst_node_input="in0" src_node_id="143" src_node_output="output" />
+	<Node group="[]" id="125" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
 		<Input name="input" type="dfeBits(128)" />
 		<Output latency="-1" name="output" type="dfeBits(128)" />
 		<Text>stream offset: -1</Text>
@@ -874,11 +875,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="121" dst_node_input="a" src_node_id="124" src_node_output="output" />
-	<Node group="[]" id="110" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+	<Edge dst_node_id="122" dst_node_input="a" src_node_id="125" src_node_output="output" />
+	<Node group="[]" id="111" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
 		<Input name="i" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="0" name="o" type="dfeOffsetFix(1, 0, TWOSCOMPLEMENT)" />
 		<Text>{HWOffsetFix:1, 0, TWOSCOMPLEMENT}</Text>
@@ -887,12 +888,12 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="111" dst_node_input="a" src_node_id="110" src_node_output="o" />
-	<Edge dst_node_id="113" dst_node_input="in1" src_node_id="110" src_node_output="o" />
-	<Node group="[]" id="111" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeSlice">
+	<Edge dst_node_id="112" dst_node_input="a" src_node_id="111" src_node_output="o" />
+	<Edge dst_node_id="114" dst_node_input="in1" src_node_id="111" src_node_output="o" />
+	<Node group="[]" id="112" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeSlice">
 		<Input name="a" type="dfeOffsetFix(1, 0, TWOSCOMPLEMENT)" />
 		<Output latency="0" name="result" type="dfeBits(1)" />
 		<Text>[0:0]</Text>
@@ -901,150 +902,150 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>0</Base>
 		<Width>1</Width>
-	</Node>
-	<Edge dst_node_id="112" dst_node_input="in0" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in1" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in2" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in3" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in4" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in5" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in6" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in7" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in8" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in9" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in10" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in11" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in12" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in13" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in14" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in15" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in16" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in17" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in18" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in19" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in20" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in21" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in22" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in23" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in24" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in25" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in26" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in27" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in28" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in29" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in30" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in31" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in32" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in33" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in34" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in35" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in36" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in37" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in38" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in39" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in40" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in41" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in42" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in43" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in44" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in45" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in46" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in47" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in48" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in49" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in50" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in51" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in52" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in53" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in54" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in55" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in56" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in57" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in58" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in59" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in60" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in61" src_node_id="111" src_node_output="result" />
-	<Edge dst_node_id="112" dst_node_input="in62" src_node_id="111" src_node_output="result" />
-	<Node group="[]" id="112" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeCat">
-		<Input name="in0" type="dfeBits(1)" />
-		<Input name="in1" type="dfeBits(1)" />
-		<Input name="in2" type="dfeBits(1)" />
-		<Input name="in3" type="dfeBits(1)" />
-		<Input name="in4" type="dfeBits(1)" />
-		<Input name="in5" type="dfeBits(1)" />
-		<Input name="in6" type="dfeBits(1)" />
-		<Input name="in7" type="dfeBits(1)" />
-		<Input name="in8" type="dfeBits(1)" />
-		<Input name="in9" type="dfeBits(1)" />
-		<Input name="in10" type="dfeBits(1)" />
-		<Input name="in11" type="dfeBits(1)" />
-		<Input name="in12" type="dfeBits(1)" />
-		<Input name="in13" type="dfeBits(1)" />
-		<Input name="in14" type="dfeBits(1)" />
-		<Input name="in15" type="dfeBits(1)" />
-		<Input name="in16" type="dfeBits(1)" />
-		<Input name="in17" type="dfeBits(1)" />
-		<Input name="in18" type="dfeBits(1)" />
-		<Input name="in19" type="dfeBits(1)" />
-		<Input name="in20" type="dfeBits(1)" />
-		<Input name="in21" type="dfeBits(1)" />
-		<Input name="in22" type="dfeBits(1)" />
-		<Input name="in23" type="dfeBits(1)" />
-		<Input name="in24" type="dfeBits(1)" />
-		<Input name="in25" type="dfeBits(1)" />
-		<Input name="in26" type="dfeBits(1)" />
-		<Input name="in27" type="dfeBits(1)" />
-		<Input name="in28" type="dfeBits(1)" />
-		<Input name="in29" type="dfeBits(1)" />
-		<Input name="in30" type="dfeBits(1)" />
-		<Input name="in31" type="dfeBits(1)" />
-		<Input name="in32" type="dfeBits(1)" />
-		<Input name="in33" type="dfeBits(1)" />
-		<Input name="in34" type="dfeBits(1)" />
-		<Input name="in35" type="dfeBits(1)" />
-		<Input name="in36" type="dfeBits(1)" />
-		<Input name="in37" type="dfeBits(1)" />
-		<Input name="in38" type="dfeBits(1)" />
-		<Input name="in39" type="dfeBits(1)" />
-		<Input name="in40" type="dfeBits(1)" />
-		<Input name="in41" type="dfeBits(1)" />
-		<Input name="in42" type="dfeBits(1)" />
-		<Input name="in43" type="dfeBits(1)" />
-		<Input name="in44" type="dfeBits(1)" />
-		<Input name="in45" type="dfeBits(1)" />
-		<Input name="in46" type="dfeBits(1)" />
-		<Input name="in47" type="dfeBits(1)" />
-		<Input name="in48" type="dfeBits(1)" />
-		<Input name="in49" type="dfeBits(1)" />
-		<Input name="in50" type="dfeBits(1)" />
-		<Input name="in51" type="dfeBits(1)" />
-		<Input name="in52" type="dfeBits(1)" />
-		<Input name="in53" type="dfeBits(1)" />
-		<Input name="in54" type="dfeBits(1)" />
-		<Input name="in55" type="dfeBits(1)" />
-		<Input name="in56" type="dfeBits(1)" />
-		<Input name="in57" type="dfeBits(1)" />
-		<Input name="in58" type="dfeBits(1)" />
-		<Input name="in59" type="dfeBits(1)" />
-		<Input name="in60" type="dfeBits(1)" />
-		<Input name="in61" type="dfeBits(1)" />
-		<Input name="in62" type="dfeBits(1)" />
-		<Output latency="0" name="result" type="dfeBits(63)" />
-		<Text>@</Text>
-		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Bitops.padSignExtend(Bitops.java:195)
-com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(SourcelessOutputManager.maxj:675)
-com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
-com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
-com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
-fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="113" dst_node_input="in0" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in1" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in2" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in3" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in4" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in5" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in6" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in7" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in8" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in9" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in10" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in11" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in12" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in13" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in14" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in15" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in16" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in17" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in18" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in19" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in20" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in21" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in22" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in23" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in24" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in25" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in26" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in27" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in28" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in29" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in30" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in31" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in32" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in33" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in34" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in35" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in36" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in37" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in38" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in39" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in40" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in41" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in42" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in43" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in44" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in45" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in46" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in47" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in48" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in49" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in50" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in51" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in52" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in53" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in54" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in55" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in56" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in57" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in58" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in59" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in60" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in61" src_node_id="112" src_node_output="result" />
+	<Edge dst_node_id="113" dst_node_input="in62" src_node_id="112" src_node_output="result" />
 	<Node group="[]" id="113" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeCat">
+		<Input name="in0" type="dfeBits(1)" />
+		<Input name="in1" type="dfeBits(1)" />
+		<Input name="in2" type="dfeBits(1)" />
+		<Input name="in3" type="dfeBits(1)" />
+		<Input name="in4" type="dfeBits(1)" />
+		<Input name="in5" type="dfeBits(1)" />
+		<Input name="in6" type="dfeBits(1)" />
+		<Input name="in7" type="dfeBits(1)" />
+		<Input name="in8" type="dfeBits(1)" />
+		<Input name="in9" type="dfeBits(1)" />
+		<Input name="in10" type="dfeBits(1)" />
+		<Input name="in11" type="dfeBits(1)" />
+		<Input name="in12" type="dfeBits(1)" />
+		<Input name="in13" type="dfeBits(1)" />
+		<Input name="in14" type="dfeBits(1)" />
+		<Input name="in15" type="dfeBits(1)" />
+		<Input name="in16" type="dfeBits(1)" />
+		<Input name="in17" type="dfeBits(1)" />
+		<Input name="in18" type="dfeBits(1)" />
+		<Input name="in19" type="dfeBits(1)" />
+		<Input name="in20" type="dfeBits(1)" />
+		<Input name="in21" type="dfeBits(1)" />
+		<Input name="in22" type="dfeBits(1)" />
+		<Input name="in23" type="dfeBits(1)" />
+		<Input name="in24" type="dfeBits(1)" />
+		<Input name="in25" type="dfeBits(1)" />
+		<Input name="in26" type="dfeBits(1)" />
+		<Input name="in27" type="dfeBits(1)" />
+		<Input name="in28" type="dfeBits(1)" />
+		<Input name="in29" type="dfeBits(1)" />
+		<Input name="in30" type="dfeBits(1)" />
+		<Input name="in31" type="dfeBits(1)" />
+		<Input name="in32" type="dfeBits(1)" />
+		<Input name="in33" type="dfeBits(1)" />
+		<Input name="in34" type="dfeBits(1)" />
+		<Input name="in35" type="dfeBits(1)" />
+		<Input name="in36" type="dfeBits(1)" />
+		<Input name="in37" type="dfeBits(1)" />
+		<Input name="in38" type="dfeBits(1)" />
+		<Input name="in39" type="dfeBits(1)" />
+		<Input name="in40" type="dfeBits(1)" />
+		<Input name="in41" type="dfeBits(1)" />
+		<Input name="in42" type="dfeBits(1)" />
+		<Input name="in43" type="dfeBits(1)" />
+		<Input name="in44" type="dfeBits(1)" />
+		<Input name="in45" type="dfeBits(1)" />
+		<Input name="in46" type="dfeBits(1)" />
+		<Input name="in47" type="dfeBits(1)" />
+		<Input name="in48" type="dfeBits(1)" />
+		<Input name="in49" type="dfeBits(1)" />
+		<Input name="in50" type="dfeBits(1)" />
+		<Input name="in51" type="dfeBits(1)" />
+		<Input name="in52" type="dfeBits(1)" />
+		<Input name="in53" type="dfeBits(1)" />
+		<Input name="in54" type="dfeBits(1)" />
+		<Input name="in55" type="dfeBits(1)" />
+		<Input name="in56" type="dfeBits(1)" />
+		<Input name="in57" type="dfeBits(1)" />
+		<Input name="in58" type="dfeBits(1)" />
+		<Input name="in59" type="dfeBits(1)" />
+		<Input name="in60" type="dfeBits(1)" />
+		<Input name="in61" type="dfeBits(1)" />
+		<Input name="in62" type="dfeBits(1)" />
+		<Output latency="0" name="result" type="dfeBits(63)" />
+		<Text>@</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Bitops.padSignExtend(Bitops.java:195)
+com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(SourcelessOutputManager.maxj:675)
+com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
+com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
+com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
+fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="114" dst_node_input="in0" src_node_id="113" src_node_output="result" />
+	<Node group="[]" id="114" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(63)" />
 		<Input name="in1" type="dfeOffsetFix(1, 0, TWOSCOMPLEMENT)" />
 		<Output latency="0" name="result" type="dfeBits(64)" />
@@ -1054,11 +1055,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="114" dst_node_input="input" src_node_id="113" src_node_output="result" />
-	<Node group="[]" id="114" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeReinterpret">
+	<Edge dst_node_id="115" dst_node_input="input" src_node_id="114" src_node_output="result" />
+	<Node group="[]" id="115" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(64)" />
 		<Output latency="0" name="output" type="dfeOffsetFix(64, 0, TWOSCOMPLEMENT)" />
 		<Text>&lt;{HWOffsetFix:64, 0, TWOSCOMPLEMENT}&gt;</Text>
@@ -1067,11 +1068,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="120" dst_node_input="in0" src_node_id="114" src_node_output="output" />
-	<Node group="[]" id="115" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+	<Edge dst_node_id="121" dst_node_input="in0" src_node_id="115" src_node_output="output" />
+	<Node group="[]" id="116" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
 		<Input name="i" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="0" name="o" type="dfeOffsetFix(1, 0, TWOSCOMPLEMENT)" />
 		<Text>{HWOffsetFix:1, 0, TWOSCOMPLEMENT}</Text>
@@ -1080,12 +1081,12 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="116" dst_node_input="a" src_node_id="115" src_node_output="o" />
-	<Edge dst_node_id="118" dst_node_input="in1" src_node_id="115" src_node_output="o" />
-	<Node group="[]" id="116" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeSlice">
+	<Edge dst_node_id="117" dst_node_input="a" src_node_id="116" src_node_output="o" />
+	<Edge dst_node_id="119" dst_node_input="in1" src_node_id="116" src_node_output="o" />
+	<Node group="[]" id="117" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeSlice">
 		<Input name="a" type="dfeOffsetFix(1, 0, TWOSCOMPLEMENT)" />
 		<Output latency="0" name="result" type="dfeBits(1)" />
 		<Text>[0:0]</Text>
@@ -1094,75 +1095,75 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>0</Base>
 		<Width>1</Width>
 	</Node>
-	<Edge dst_node_id="117" dst_node_input="in0" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in1" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in2" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in3" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in4" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in5" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in6" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in7" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in8" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in9" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in10" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in11" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in12" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in13" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in14" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in15" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in16" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in17" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in18" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in19" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in20" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in21" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in22" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in23" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in24" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in25" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in26" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in27" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in28" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in29" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in30" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in31" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in32" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in33" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in34" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in35" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in36" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in37" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in38" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in39" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in40" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in41" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in42" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in43" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in44" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in45" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in46" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in47" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in48" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in49" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in50" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in51" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in52" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in53" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in54" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in55" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in56" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in57" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in58" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in59" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in60" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in61" src_node_id="116" src_node_output="result" />
-	<Edge dst_node_id="117" dst_node_input="in62" src_node_id="116" src_node_output="result" />
-	<Node group="[]" id="117" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeCat">
+	<Edge dst_node_id="118" dst_node_input="in0" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in1" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in2" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in3" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in4" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in5" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in6" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in7" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in8" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in9" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in10" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in11" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in12" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in13" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in14" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in15" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in16" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in17" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in18" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in19" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in20" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in21" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in22" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in23" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in24" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in25" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in26" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in27" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in28" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in29" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in30" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in31" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in32" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in33" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in34" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in35" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in36" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in37" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in38" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in39" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in40" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in41" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in42" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in43" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in44" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in45" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in46" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in47" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in48" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in49" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in50" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in51" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in52" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in53" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in54" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in55" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in56" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in57" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in58" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in59" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in60" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in61" src_node_id="117" src_node_output="result" />
+	<Edge dst_node_id="118" dst_node_input="in62" src_node_id="117" src_node_output="result" />
+	<Node group="[]" id="118" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(1)" />
 		<Input name="in1" type="dfeBits(1)" />
 		<Input name="in2" type="dfeBits(1)" />
@@ -1233,11 +1234,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="118" dst_node_input="in0" src_node_id="117" src_node_output="result" />
-	<Node group="[]" id="118" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeCat">
+	<Edge dst_node_id="119" dst_node_input="in0" src_node_id="118" src_node_output="result" />
+	<Node group="[]" id="119" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(63)" />
 		<Input name="in1" type="dfeOffsetFix(1, 0, TWOSCOMPLEMENT)" />
 		<Output latency="0" name="result" type="dfeBits(64)" />
@@ -1247,11 +1248,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="119" dst_node_input="input" src_node_id="118" src_node_output="result" />
-	<Node group="[]" id="119" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeReinterpret">
+	<Edge dst_node_id="120" dst_node_input="input" src_node_id="119" src_node_output="result" />
+	<Node group="[]" id="120" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(64)" />
 		<Output latency="0" name="output" type="dfeOffsetFix(64, 0, TWOSCOMPLEMENT)" />
 		<Text>&lt;{HWOffsetFix:64, 0, TWOSCOMPLEMENT}&gt;</Text>
@@ -1260,11 +1261,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="120" dst_node_input="in1" src_node_id="119" src_node_output="output" />
-	<Node group="[]" id="120" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+	<Edge dst_node_id="121" dst_node_input="in1" src_node_id="120" src_node_output="output" />
+	<Node group="[]" id="121" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
 		<Input name="in0" type="dfeOffsetFix(64, 0, TWOSCOMPLEMENT)" />
 		<Input name="in1" type="dfeOffsetFix(64, 0, TWOSCOMPLEMENT)" />
 		<Output latency="0" name="result" type="dfeBits(128)" />
@@ -1274,11 +1275,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="121" dst_node_input="b" src_node_id="120" src_node_output="result" />
-	<Node group="[]" id="121" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeAnd">
+	<Edge dst_node_id="122" dst_node_input="b" src_node_id="121" src_node_output="result" />
+	<Node group="[]" id="122" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeAnd">
 		<Input name="a" type="dfeBits(128)" />
 		<Input name="b" type="dfeBits(128)" />
 		<Output latency="0" name="result" type="dfeBits(128)" />
@@ -1288,11 +1289,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="122" dst_node_input="a" src_node_id="121" src_node_output="result" />
-	<Node group="[]" id="107" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+	<Edge dst_node_id="123" dst_node_input="a" src_node_id="122" src_node_output="result" />
+	<Node group="[]" id="108" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
 		<Output latency="0" name="value" type="dfeBits(64)" />
 		<Text>{HWRawBits:64}\n0x0000000000000000</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.zero(Constant.java:484)
@@ -1300,13 +1301,45 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>0000000000000000000000000000000000000000000000000000000000000000</Value>
 		<HexValue>0x0000000000000000</HexValue>
 	</Node>
-	<Edge dst_node_id="108" dst_node_input="in0" src_node_id="107" src_node_output="value" />
-	<Node group="[]" id="88" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="109" dst_node_input="in0" src_node_id="108" src_node_output="value" />
+	<Node group="[]" id="82" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:99)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:61)
+fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="83" dst_node_input="b" src_node_id="82" src_node_output="value" />
+	<Node group="[]" id="83" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:577)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:61)
+fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="84" dst_node_input="load" src_node_id="83" src_node_output="result" />
+	<Edge dst_node_id="85" dst_node_input="load" src_node_id="83" src_node_output="result" />
+	<Node group="[]" id="84" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeHold">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Hold</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions.streamHold(Reductions.java:641)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="89" dst_node_input="input" src_node_id="84" src_node_output="output" />
+	<Node group="[]" id="89" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
 		<Output latency="0" name="output" type="dfeBits(32)" />
 		<Text>&lt;{HWRawBits:32}&gt;</Text>
@@ -1314,11 +1347,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:552)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="89" dst_node_input="a" src_node_id="88" src_node_output="output" />
-	<Node group="[]" id="89" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+	<Edge dst_node_id="90" dst_node_input="a" src_node_id="89" src_node_output="output" />
+	<Node group="[]" id="90" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
 		<Input name="a" type="dfeBits(32)" />
 		<Output latency="0" name="result" type="dfeBits(32)" />
 		<Text>[31:0]</Text>
@@ -1327,13 +1360,13 @@ com.maxeler.networking.v1.framed_kernels.FrameData.busSlice(FrameData.maxj:580)
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:561)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>0</Base>
 		<Width>32</Width>
 	</Node>
-	<Edge dst_node_id="90" dst_node_input="input" src_node_id="89" src_node_output="result" />
-	<Node group="[]" id="90" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+	<Edge dst_node_id="91" dst_node_input="input" src_node_id="90" src_node_output="result" />
+	<Node group="[]" id="91" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
 		<Input name="input" type="dfeBits(32)" />
 		<Output latency="0" name="output" type="dfeBits(32)" />
 		<Text>stream offset: 0</Text>
@@ -1342,11 +1375,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.streamOffsetFor
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:561)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="91" dst_node_input="input" src_node_id="90" src_node_output="output" />
-	<Node group="[]" id="91" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="92" dst_node_input="input" src_node_id="91" src_node_output="output" />
+	<Node group="[]" id="92" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(32)" />
 		<Output latency="0" name="output" type="dfeBits(32)" />
 		<Text>&lt;{HWRawBits:32}&gt;</Text>
@@ -1355,10 +1388,10 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.commitStaticFra
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:570)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="93" dst_node_input="in0" src_node_id="91" src_node_output="output" />
+	<Edge dst_node_id="94" dst_node_input="in0" src_node_id="92" src_node_output="output" />
 	<Node group="[]" id="58" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeConstantDouble">
 		<Output latency="0" name="value" type="dfeUntypedConst()" />
 		<Text>1.0</Text>
@@ -1368,7 +1401,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1.0</Value>
 	</Node>
@@ -1382,7 +1415,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1.0</Value>
 	</Node>
@@ -1399,7 +1432,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Increment>1</Increment>
 		<WrapValue>0</WrapValue>
@@ -1418,7 +1451,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="62" dst_node_input="load" src_node_id="61" src_node_output="result" />
@@ -1432,7 +1465,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>32</Base>
 		<Width>32</Width>
@@ -1447,7 +1480,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="62" dst_node_input="input" src_node_id="57" src_node_output="output" />
@@ -1462,7 +1495,7 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="63" dst_node_input="input" src_node_id="62" src_node_output="output" />
@@ -1475,11 +1508,21 @@ com.maxeler.networking.v1.framed_kernels.FrameData.makeStaticFieldStream(FrameDa
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:655)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:155)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="85" dst_node_input="input" src_node_id="63" src_node_output="output" />
-	<Node group="[]" id="85" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Node group="[]" id="85" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeHold">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Hold</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions.streamHold(Reductions.java:641)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:66)
+fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="86" dst_node_input="input" src_node_id="85" src_node_output="output" />
+	<Node group="[]" id="86" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
 		<Output latency="0" name="output" type="dfeBits(32)" />
 		<Text>&lt;{HWRawBits:32}&gt;</Text>
@@ -1487,11 +1530,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:552)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="86" dst_node_input="a" src_node_id="85" src_node_output="output" />
-	<Node group="[]" id="86" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+	<Edge dst_node_id="87" dst_node_input="a" src_node_id="86" src_node_output="output" />
+	<Node group="[]" id="87" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
 		<Input name="a" type="dfeBits(32)" />
 		<Output latency="0" name="result" type="dfeBits(32)" />
 		<Text>[31:0]</Text>
@@ -1500,13 +1543,13 @@ com.maxeler.networking.v1.framed_kernels.FrameData.busSlice(FrameData.maxj:580)
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:561)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>0</Base>
 		<Width>32</Width>
 	</Node>
-	<Edge dst_node_id="87" dst_node_input="input" src_node_id="86" src_node_output="result" />
-	<Node group="[]" id="87" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+	<Edge dst_node_id="88" dst_node_input="input" src_node_id="87" src_node_output="result" />
+	<Node group="[]" id="88" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
 		<Input name="input" type="dfeBits(32)" />
 		<Output latency="0" name="output" type="dfeBits(32)" />
 		<Text>stream offset: 0</Text>
@@ -1515,11 +1558,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.streamOffsetFor
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:561)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="92" dst_node_input="input" src_node_id="87" src_node_output="output" />
-	<Node group="[]" id="92" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="93" dst_node_input="input" src_node_id="88" src_node_output="output" />
+	<Node group="[]" id="93" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(32)" />
 		<Output latency="0" name="output" type="dfeBits(32)" />
 		<Text>&lt;{HWRawBits:32}&gt;</Text>
@@ -1528,11 +1571,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.commitStaticFra
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:570)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="93" dst_node_input="in1" src_node_id="92" src_node_output="output" />
-	<Node group="[]" id="93" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+	<Edge dst_node_id="94" dst_node_input="in1" src_node_id="93" src_node_output="output" />
+	<Node group="[]" id="94" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(32)" />
 		<Input name="in1" type="dfeBits(32)" />
 		<Output latency="0" name="result" type="dfeBits(64)" />
@@ -1542,11 +1585,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.commitStaticFra
 com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.addStaticField(SourcelessOutputManager.maxj:570)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:205)
 com.maxeler.networking.v1.framed_kernels.FrameData.&lt;init&gt;(FrameData.maxj:155)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:65)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="108" dst_node_input="in1" src_node_id="93" src_node_output="result" />
-	<Node group="[]" id="108" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+	<Edge dst_node_id="109" dst_node_input="in1" src_node_id="94" src_node_output="result" />
+	<Node group="[]" id="109" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(64)" />
 		<Input name="in1" type="dfeBits(64)" />
 		<Output latency="0" name="result" type="dfeBits(128)" />
@@ -1556,11 +1599,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="109" dst_node_input="datain" src_node_id="108" src_node_output="result" />
-	<Node group="[]" id="109" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeShift">
+	<Edge dst_node_id="110" dst_node_input="datain" src_node_id="109" src_node_output="result" />
+	<Node group="[]" id="110" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeShift">
 		<Input name="datain" type="dfeBits(128)" />
 		<Input name="shift" type="dfeOffsetFix(7, 0, UNSIGNED)" />
 		<Output latency="4" name="dataout" type="dfeBits(128)" />
@@ -1570,13 +1613,13 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Direction>Left</Direction>
 		<Circular>true</Circular>
 	</Node>
-	<Edge dst_node_id="122" dst_node_input="b" src_node_id="109" src_node_output="dataout" />
-	<Node group="[]" id="122" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeOr">
+	<Edge dst_node_id="123" dst_node_input="b" src_node_id="110" src_node_output="dataout" />
+	<Node group="[]" id="123" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeOr">
 		<Input name="a" type="dfeBits(128)" />
 		<Input name="b" type="dfeBits(128)" />
 		<Output latency="0" name="result" type="dfeBits(128)" />
@@ -1586,11 +1629,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="123" dst_node_input="input" src_node_id="122" src_node_output="result" />
-	<Node group="[]" id="123" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeHold">
+	<Edge dst_node_id="124" dst_node_input="input" src_node_id="123" src_node_output="result" />
+	<Node group="[]" id="124" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeHold">
 		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="input" type="dfeBits(128)" />
 		<Output latency="1" name="output" type="dfeBits(128)" />
@@ -1600,14 +1643,14 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<InitValue>00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</InitValue>
 	</Node>
-	<Edge dst_node_id="124" dst_node_input="input" src_node_id="123" src_node_output="output" />
-	<Edge dst_node_id="125" dst_node_input="a" src_node_id="123" src_node_output="output" />
-	<Edge dst_node_id="126" dst_node_input="a" src_node_id="123" src_node_output="output" />
-	<Node group="[]" id="126" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+	<Edge dst_node_id="125" dst_node_input="input" src_node_id="124" src_node_output="output" />
+	<Edge dst_node_id="126" dst_node_input="a" src_node_id="124" src_node_output="output" />
+	<Edge dst_node_id="127" dst_node_input="a" src_node_id="124" src_node_output="output" />
+	<Node group="[]" id="127" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
 		<Input name="a" type="dfeBits(128)" />
 		<Output latency="0" name="result" type="dfeBits(64)" />
 		<Text>[63:0]</Text>
@@ -1616,13 +1659,13 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>0</Base>
 		<Width>64</Width>
 	</Node>
-	<Edge dst_node_id="127" dst_node_input="option0" src_node_id="126" src_node_output="result" />
-	<Node group="[]" id="125" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+	<Edge dst_node_id="128" dst_node_input="option0" src_node_id="127" src_node_output="result" />
+	<Node group="[]" id="126" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
 		<Input name="a" type="dfeBits(128)" />
 		<Output latency="0" name="result" type="dfeBits(64)" />
 		<Text>[127:64]</Text>
@@ -1631,13 +1674,13 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>64</Base>
 		<Width>64</Width>
 	</Node>
-	<Edge dst_node_id="127" dst_node_input="option1" src_node_id="125" src_node_output="result" />
-	<Node group="[]" id="127" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+	<Edge dst_node_id="128" dst_node_input="option1" src_node_id="126" src_node_output="result" />
+	<Node group="[]" id="128" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
 		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="option0" type="dfeBits(64)" />
 		<Input name="option1" type="dfeBits(64)" />
@@ -1648,11 +1691,11 @@ com.maxeler.networking.v1.framed_kernels.SourcelessOutputManager.makeBusOutput(S
 com.maxeler.networking.v1.framed_kernels.FrameData.getBusOutput(FrameData.maxj:221)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:294)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="128" dst_node_input="input" src_node_id="127" src_node_output="result" />
-	<Node group="[]" id="128" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="129" dst_node_input="input" src_node_id="128" src_node_output="result" />
+	<Node group="[]" id="129" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(64)" />
 		<Output latency="0" name="output" type="dfeBits(64)" />
 		<Text>&lt;{HWRawBits:64}&gt;</Text>
@@ -1660,22 +1703,22 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.forceConnect(FrameIO.java:223)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:298)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="141" dst_node_input="input" src_node_id="128" src_node_output="output" />
-	<Node group="[]" id="141" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+	<Edge dst_node_id="142" dst_node_input="input" src_node_id="129" src_node_output="output" />
+	<Node group="[]" id="142" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
 		<Input name="input" type="dfeBits(64)" />
 		<Output latency="0" name="output" type="dfeBits(64)" />
 		<Text>&lt;{HWRawBits:64}&gt;</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="143" dst_node_input="in1" src_node_id="141" src_node_output="output" />
-	<Node group="[]" id="143" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+	<Edge dst_node_id="144" dst_node_input="in1" src_node_id="142" src_node_output="output" />
+	<Node group="[]" id="144" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(3)" />
 		<Input name="in1" type="dfeBits(64)" />
 		<Output latency="0" name="result" type="dfeBits(67)" />
@@ -1683,11 +1726,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="145" dst_node_input="in1" src_node_id="143" src_node_output="result" />
-	<Node group="[]" id="145" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+	<Edge dst_node_id="146" dst_node_input="in1" src_node_id="144" src_node_output="result" />
+	<Node group="[]" id="146" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(1)" />
 		<Input name="in1" type="dfeBits(67)" />
 		<Output latency="0" name="result" type="dfeBits(68)" />
@@ -1695,11 +1738,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="147" dst_node_input="in1" src_node_id="145" src_node_output="result" />
-	<Node group="[]" id="147" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+	<Edge dst_node_id="148" dst_node_input="in1" src_node_id="146" src_node_output="result" />
+	<Node group="[]" id="148" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(1)" />
 		<Input name="in1" type="dfeBits(68)" />
 		<Output latency="0" name="result" type="dfeBits(69)" />
@@ -1707,11 +1750,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="149" dst_node_input="in1" src_node_id="147" src_node_output="result" />
-	<Node group="[]" id="149" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+	<Edge dst_node_id="150" dst_node_input="in1" src_node_id="148" src_node_output="result" />
+	<Node group="[]" id="150" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
 		<Input name="in0" type="dfeBits(8)" />
 		<Input name="in1" type="dfeBits(69)" />
 		<Output latency="0" name="result" type="dfeBits(77)" />
@@ -1719,22 +1762,22 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="140" dst_node_input="data" src_node_id="149" src_node_output="result" />
-	<Node group="[]" id="140" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutput">
+	<Edge dst_node_id="141" dst_node_input="data" src_node_id="150" src_node_output="result" />
+	<Node group="[]" id="141" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutput">
 		<Input name="output_control" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="data" type="dfeBits(77)" />
 		<Text>Output(frameOut)</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:723)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:315)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Name>frameOut</Name>
 	</Node>
-	<Node group="[]" id="155" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+	<Node group="[]" id="156" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
 		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
@@ -1743,16 +1786,16 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:25)</
 		<HexValue>0x1</HexValue>
 		<NumericValue>1.0</NumericValue>
 	</Node>
-	<Edge dst_node_id="156" dst_node_input="load" src_node_id="155" src_node_output="value" />
-	<Node group="[]" id="151" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantDouble">
+	<Edge dst_node_id="157" dst_node_input="load" src_node_id="156" src_node_output="value" />
+	<Node group="[]" id="152" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantDouble">
 		<Output latency="0" name="value" type="dfeUntypedConst()" />
 		<Text>1.0</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:25)</OriginStackTrace>
 		<Value>1.0</Value>
 	</Node>
-	<Edge dst_node_id="153" dst_node_input="enable" src_node_id="151" src_node_output="value" />
-	<Node group="[]" id="152" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+	<Edge dst_node_id="154" dst_node_input="enable" src_node_id="152" src_node_output="value" />
+	<Node group="[]" id="153" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
 		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
 		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
@@ -1761,8 +1804,8 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:25)</
 		<HexValue>0x1000000000000</HexValue>
 		<NumericValue>2.81474976710656E14</NumericValue>
 	</Node>
-	<Edge dst_node_id="153" dst_node_input="max" src_node_id="152" src_node_output="value" />
-	<Node group="[]" id="153" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeCounterV1">
+	<Edge dst_node_id="154" dst_node_input="max" src_node_id="153" src_node_output="value" />
+	<Node group="[]" id="154" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeCounterV1">
 		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
 		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
@@ -1776,16 +1819,16 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:25)</
 		<CountMode>NUMERIC_INCREMENTING</CountMode>
 		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
 	</Node>
-	<Edge dst_node_id="154" dst_node_input="input" src_node_id="153" src_node_output="count" />
-	<Node group="[]" id="154" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeStreamOffset">
+	<Edge dst_node_id="155" dst_node_input="input" src_node_id="154" src_node_output="count" />
+	<Node group="[]" id="155" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeStreamOffset">
 		<Input name="input" type="dfeOffsetFix(48, 0, UNSIGNED)" />
 		<Output latency="1" name="output" type="dfeOffsetFix(48, 0, UNSIGNED)" />
 		<Text>stream offset: 1</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:25)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="156" dst_node_input="data" src_node_id="154" src_node_output="output" />
-	<Node group="[]" id="156" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeOutputMappedReg">
+	<Edge dst_node_id="157" dst_node_input="data" src_node_id="155" src_node_output="output" />
+	<Node group="[]" id="157" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeOutputMappedReg">
 		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="data" type="dfeOffsetFix(48, 0, UNSIGNED)" />
 		<Text>Scalar output (current_run_cycle_count)</Text>
@@ -1800,7 +1843,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:25)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.&lt;init&gt;(FrameIO.java:32)
 com.maxeler.networking.v1.framed_kernels.FramedKernel.&lt;init&gt;(FramedKernel.java:16)
 com.maxeler.networking.v1.framed_kernels.FramedKernel.&lt;init&gt;(FramedKernel.java:35)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:42)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:43)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
@@ -1814,7 +1857,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Base>67</Base>
 		<Width>1</Width>
@@ -1827,7 +1870,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:145)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="28" dst_node_input="a" src_node_id="18" src_node_output="output" />
@@ -1838,7 +1881,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.complement(DFEVar.java:1052)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:149)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="28" dst_node_input="b" src_node_id="27" src_node_output="result" />
@@ -1850,7 +1893,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:410)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:149)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
 	<Edge dst_node_id="30" dst_node_input="load" src_node_id="28" src_node_output="result" />
@@ -1861,7 +1904,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.oneShotTrigger(FrameIO.java:50)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:149)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<Value>1</Value>
 		<HexValue>0x1</HexValue>
@@ -1877,7 +1920,7 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 com.maxeler.networking.v1.framed_kernels.FrameIO.oneShotTrigger(FrameIO.java:49)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:149)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 		<InitValue>0</InitValue>
 	</Node>
@@ -1890,11 +1933,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:149)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:51)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:52)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="150" dst_node_input="a" src_node_id="31" src_node_output="result" />
-	<Node group="[]" id="150" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeAnd">
+	<Edge dst_node_id="151" dst_node_input="a" src_node_id="31" src_node_output="result" />
+	<Node group="[]" id="151" isControl="false" isVisible="true" pipelineFactor="0.0" type="NodeAnd">
 		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
@@ -1902,11 +1945,11 @@ fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:320)
 com.maxeler.networking.v1.framed_kernels.FrameIO.frameOutput(FrameIO.java:254)
-fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:73)
+fieldaccumulator.FieldAccumulatorKernel.&lt;init&gt;(FieldAccumulatorKernel.maxj:81)
 fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)</OriginStackTrace>
 	</Node>
-	<Edge dst_node_id="160" dst_node_input="start" src_node_id="150" src_node_output="result" />
-	<Node group="[]" id="160" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeFlush">
+	<Edge dst_node_id="161" dst_node_input="start" src_node_id="151" src_node_output="result" />
+	<Node group="[]" id="161" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeFlush">
 		<Input name="start" type="dfeOffsetFix(1, 0, UNSIGNED)" />
 		<Text>flush after trigger</Text>
 		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)

@@ -1,6 +1,7 @@
 package fieldaccumulator;
 
 import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
 import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
 import com.maxeler.networking.v1.framed_kernels.ByteOrder;
 import com.maxeler.networking.v1.framed_kernels.FrameData;
@@ -53,19 +54,23 @@ FieldAccumulatorKernel extends FramedKernel
 	debug.simPrintf("ID %d\n", frameIn["instrument_id"]);
 	debug.simPrintf("PRICE %d\n", frameIn["price"]);
 
-	/* Conditionals */
-	boolean a_bid   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 0) &
-                       frameIn["level"]         == constant.var(dfeUInt(8), 0) &
-			           frameIn["side"]          == constant.var(dfeUInt(8), 0));
 
-	a_bidquant  = a_bid  ? frameIn["quantity"] : a_bidquant;
-	a_bidprice  = a_bid  ? frameIn["price"]    : a_bidprice;
+	pushResetBetweenFrames(false);
+
+	/* Conditionals */
+	DFEVar a_bid   = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 0));// &
+//                       frameIn["level"]         == constant.var(dfeInt(32), 0) &
+//			           frameIn["side"]          == constant.var(dfeInt(32), 0));
+
+	a_bidprice = Reductions.streamHold(frameIn["price"], a_bid);
+	a_bidquant = Reductions.streamHold(frameIn["quantity"], a_bid);
+	popResetBetweenFrames();
 
 	/* Declare Frame Out */
 	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new UDPOneToOneTXType());
 
-	frameOut["spread_delta"]    <== frameIn["price"]; // ab_askprice - impliedBidPrice;
-	frameOut["spread_quantity"] <== frameIn["quantity"]; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
+	frameOut["spread_delta"]    <== a_bidprice; // ab_askprice - impliedBidPrice;
+	frameOut["spread_quantity"] <== a_bidquant; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 
 	frameOut.linkfield[UDPOneToOneTXType.SOCKET] <==
 		frameIn.linkfield[UDPOneToOneRXType.SOCKET];
