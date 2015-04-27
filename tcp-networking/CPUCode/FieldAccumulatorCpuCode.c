@@ -12,19 +12,17 @@
 
 typedef struct output_data
 {
-    int32_t spread_quantity;
+    uint8_t spread_quantity;
     int32_t delta;
 } __attribute__ ((__packed__)) frame_t;
 
 struct input_data
 {
-    int32_t aBidQuantity;
-    int32_t bAskQuantity;
-    int32_t abSpreadAskQuantity;
-
-    int32_t aBidPrice;
-    int32_t bAskPrice;
-    int32_t abSpreadAskPrice;
+    uint8_t instrument_id;
+    uint8_t level; 
+    uint8_t side;             // 0 is Bidding, 1 is Asking
+    uint8_t quantity;
+    int32_t price;
 };
 
 static int create_cpu_tcp_socket(struct in_addr *, int);
@@ -112,13 +110,81 @@ calculateDeltas(int sock, struct input_data *data)
 
     /* -------- Expected Value -------- */
     
+    static int32_t regAbidprice = 0;
+    static uint8_t regAbidquant = 0;
+
+    static int32_t regAaskprice = 0;
+    static uint8_t regAaskquant = 0;
+
+
+    static int32_t regBbidprice = 0;
+    static uint8_t regBbidquant = 0;
+
+    static int32_t regBaskprice = 0;
+    static uint8_t regBaskquant = 0;
+
+
+    static int32_t regABbidprice = 0;
+    static uint8_t regABbidquant = 0;
+
+    static int32_t regABaskprice = 0;
+    static uint8_t regABaskquant = 0;
+
+
     /* Find Implied Spread Bid Price and Quantity */
-    int impliedQuantity = data->aBidQuantity > data->bAskQuantity ? data->bAskQuantity : data->aBidQuantity;
-    int impliedBidPrice = data->aBidPrice - data->bAskPrice;
+
+    switch(data.instrument_id) 
+    {
+    case 0:                   // Instrument A
+
+	if (!data.side)           // Bidding
+	{
+	    regAbidprice = data.price;
+	    regAbidquant = data.quant;
+	}	   
+	else                      // Asking
+	{
+	    regAaskprice = data.price;
+	    regAaskquant = data.quant;
+	}
+	break;
+
+    case 1:                   // Instrument B
+
+	if (!data.side)           // Bidding
+	{
+	    regAbidprice = data.price;
+	    regAbidquant = data.quant;
+	}	   
+	else                      // Asking
+	{
+	    regAaskprice = data.price;
+	    regAaskquant = data.quant;
+	}
+	break;
+
+    case 2:                   // Spread AB
+
+	if (!data.side)           // Bidding
+	{
+	    regAbidprice = data.price;
+	    regAbidquant = data.quant;
+	}	   
+	else                      // Asking
+	{
+	    regAaskprice = data.price;
+	    regAaskquant = data.quant;
+	}
+	break;	
+    }
+	    
+    uint8_t impliedQuantity = regAbidquant < regBaskquant ? regAbidquant : regBaskquant;
+    int32_t impliedBidPrice = regAbidprice - regBaskprice;
 
     /* Output Parameters */
-    int delta = data->abSpreadAskPrice - impliedBidPrice;
-    int spread_quantity = impliedQuantity > data->abSpreadAskQuantity ? data->abSpreadAskQuantity : impliedQuantity;
+    int32_t delta = regABaskprice - impliedBidPrice;
+    uint8_t spread_quantity = regABaskquant < impliedQuantity ? regABaskquant : impliedQuantity;
+
 
     printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
     printf("Expected: Quantity = %d, Delta = %d\n", spread_quantity, delta);
