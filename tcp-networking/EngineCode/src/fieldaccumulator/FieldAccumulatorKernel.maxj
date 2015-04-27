@@ -57,15 +57,15 @@ FieldAccumulatorKernel extends FramedKernel
 	FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new TCPType());
 
 	/* Conditionals */
-	DFEVar a_bid   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 0) & 
+	boolean a_bid   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 0) & 
                           frameIn["level"]         == constant.var(dfeUInt(8), 0) & 
 			  frameIn["side"]          == constant.var(dfeUInt(8), 0));
 
-	DFEVar b_ask   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 1) & 
+	boolean b_ask   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 1) & 
                           frameIn["level"]         == constant.var(dfeUInt(8), 0) & 
 			  frameIn["side"]          == constant.var(dfeUInt(8), 1));
 
-	DFEVar ab_ask  = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 2) & 
+	boolean ab_ask  = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 2) & 
                           frameIn["level"]         == constant.var(dfeUInt(8), 0) & 
 		          frameIn["side"]          == constant.var(dfeUInt(8), 1));
 
