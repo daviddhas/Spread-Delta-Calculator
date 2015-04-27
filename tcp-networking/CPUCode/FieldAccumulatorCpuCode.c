@@ -59,11 +59,30 @@ main(int argc, char *argv[])
     /* Send data */
     struct input_data data;
 
+    /* A Bid Quantity */
     data.instrument_id = 0;
     data.level         = 0;
     data.side          = 0;
+    data.quantity      = 15;
+    data.price         = 75150;
+
+    calculateDeltas(cpu_socket, &data);
+
+    /* B Ask Quantity */
+    data.instrument_id = 1;
+    data.level         = 0;
+    data.side          = 1;
     data.quantity      = 10;
-    data.price         = 32000;
+    data.price         = 75500;
+
+    calculateDeltas(cpu_socket, &data);
+
+    /* AB Ask Quantity */
+    data.instrument_id = 2;
+    data.level         = 0;
+    data.side          = 1;
+    data.quantity      = 10;
+    data.price         = -1300;
 
     calculateDeltas(cpu_socket, &data);
     
@@ -100,11 +119,11 @@ static void
 calculateDeltas(int sock, struct input_data *data)
 {
     /* Send Data to Engine via TCP */
-    send(sock, &data, sizeof(data), 0);
+    // send(sock, &data, sizeof(data), 0);
 
     /* Receive Data from Engine via TCP */
     frame_t data_received;
-    recv(sock, &data_received, sizeof(data_received), 0);
+    // recv(sock, &data_received, sizeof(data_received), 0);
 
 
     /* -------- Expected Value -------- */
