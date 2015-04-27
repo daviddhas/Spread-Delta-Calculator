@@ -131,24 +131,24 @@ calculateDeltas(int sock, struct input_data *data)
     static uint8_t regABaskquant = 0;
 
     /* Prices */
-    regAbidprice  = (data.instrument_id==0 && data.side==0) data.price : regAbidprice;
-    regAaskprice  = (data.instrument_id==0 && data.side==1) data.price : regAaskprice;
+    regAbidprice  = (data.instrument_id==0 && data.side==0) ? data.price : regAbidprice;
+    regAaskprice  = (data.instrument_id==0 && data.side==1) ? data.price : regAaskprice;
 
-    regBbidprice  = (data.instrument_id==1 && data.side==0) data.price : regBbidprice;
-    regBaskprice  = (data.instrument_id==1 && data.side==1) data.price : regBaskprice;
+    regBbidprice  = (data.instrument_id==1 && data.side==0) ? data.price : regBbidprice;
+    regBaskprice  = (data.instrument_id==1 && data.side==1) ? data.price : regBaskprice;
 
-    regABbidprice = (data.instrument_id==2 && data.side==0) data.price : regABbidprice;
-    regABbidprice = (data.instrument_id==2 && data.side==1) data.price : regABaskprice;
+    regABbidprice = (data.instrument_id==2 && data.side==0) ? data.price : regABbidprice;
+    regABbidprice = (data.instrument_id==2 && data.side==1) ? data.price : regABaskprice;
 
     /* Quantities */
-    regAbidquant  = (data.instrument_id==0 && data.side==0) data.quant : regAbidquant;
-    regAaskquant  = (data.instrument_id==0 && data.side==1) data.quant : regAaskquant;
+    regAbidquant  = (data.instrument_id==0 && data.side==0) ? data.quant : regAbidquant;
+    regAaskquant  = (data.instrument_id==0 && data.side==1) ? data.quant : regAaskquant;
 
-    regBbidquant  = (data.instrument_id==1 && data.side==0) data.quant : regBbidquant;
-    regBaskquant  = (data.instrument_id==1 && data.side==1) data.quant : regBaskquant;
+    regBbidquant  = (data.instrument_id==1 && data.side==0) ? data.quant : regBbidquant;
+    regBaskquant  = (data.instrument_id==1 && data.side==1) ? data.quant : regBaskquant;
 
-    regABbidquant = (data.instrument_id==2 && data.side==0) data.quant : regABbidquant;
-    regABbidquant = (data.instrument_id==2 && data.side==1) data.quant : regABaskquant;	                   
+    regABbidquant = (data.instrument_id==2 && data.side==0) ? data.quant : regABbidquant;
+    regABbidquant = (data.instrument_id==2 && data.side==1) ? data.quant : regABaskquant;	                   
 
     /* Nested Ternaries?
      regAbidprice = data.instrument_id == 0 ? 
