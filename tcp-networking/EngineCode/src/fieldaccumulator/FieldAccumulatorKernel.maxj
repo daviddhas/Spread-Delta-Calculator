@@ -56,15 +56,10 @@ FieldAccumulatorKernel extends FramedKernel
 	/* Declare Frame In */
 	FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new TCPType());
 
-	/* Variables */
-	DFEVar id    = frameIn["instrument_id"];
-	DFEVar level = frameIn["level"];
-	DFEVar side  = frameIn["side"];
-
 	/* Conditionals */
-	DFEVar a_bid  = (id==0 & level==0 & side==0);
-	DFEVar b_ask  = (id==1 & level==0 & side==1);
-	DFEVar ab_ask = (id==2 & level==0 & side==1);
+	DFEVar a_bid  = (frameIn["instrument_id"]==0 & frameIn["level"]==0 & frameIn["side"]==0);
+	DFEVar b_ask  = (frameIn["instrument_id"]==1 & frameIn["level"]==0 & frameIn["side"]==1);
+	DFEVar ab_ask = (frameIn["instrument_id"]==2 & frameIn["level"]==0 & frameIn["side"]==1);
 
 	a_bidquant  = a_bid  ? frameIn["quantity"] : a_bidquant;
 	a_bidprice  = a_bid  ? frameIn["price"]    : a_bidprice;
