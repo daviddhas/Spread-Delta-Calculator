@@ -134,7 +134,6 @@ calculateDeltas(int sock, struct input_data *data)
     static int32_t regAaskprice = 0;
     static uint8_t regAaskquant = 0;
 
-
     static int32_t regBbidprice = 0;
     static uint8_t regBbidquant = 0;
 
@@ -169,95 +168,6 @@ calculateDeltas(int sock, struct input_data *data)
     regABbidquant = (data->instrument_id==2 && data->side==1) ? data->quantity : regABaskquant;	                   
 
 
-    /*
-    if (data.instrument_id == 0)      // Instrument A
-    {
-	if (!data.side)           // Bidding
-	{
-	    regAbidprice = data.price;
-	    regAbidquant = data.quant;
-	}	   
-	else                      // Asking
-	{
-	    regAaskprice = data.price;
-	    regAaskquant = data.quant;
-	}	
-    }
-    else if (data.instrument_id == 1) // Instrument B
-    {
-	if (!data.side)           // Bidding
-	{
-	    regAbidprice = data.price;
-	    regAbidquant = data.quant;
-	}	   
-	else                      // Asking
-	{
-	    regAaskprice = data.price;
-	    regAaskquant = data.quant;
-	}
-    }
-    else if (data.instrument_id == 2) // Spread A-B
-    {
-	if (!data.side)           // Bidding
-	{
-	    regABbidprice = data.price;
-	    regABbidquant = data.quant;
-	}	   
-	else                      // Asking
-	{
-	    regABaskprice = data.price;
-	    regABaskquant = data.quant;
-	}
-    }
-    */
-
-    /*
-    switch(data.instrument_id) 
-    {
-    case 0:                   // Instrument A
-
-	if (!data.side)           // Bidding
-	{
-	    regAbidprice = data.price;
-	    regAbidquant = data.quant;
-	}	   
-	else                      // Asking
-	{
-	    regAaskprice = data.price;
-	    regAaskquant = data.quant;
-	}
-	break;
-
-    case 1:                   // Instrument B
-
-	if (!data.side)           // Bidding
-	{
-	    regAbidprice = data.price;
-	    regAbidquant = data.quant;
-	}	   
-	else                      // Asking
-	{
-	    regAaskprice = data.price;
-	    regAaskquant = data.quant;
-	}
-	break;
-
-    case 2:                   // Spread AB
-
-	if (!data.side)           // Bidding
-	{
-	    regAbidprice = data.price;
-	    regAbidquant = data.quant;
-	}	   
-	else                      // Asking
-	{
-	    regAaskprice = data.price;
-	    regAaskquant = data.quant;
-	}
-	break;	
-    }
-    */
-
     uint8_t impliedQuantity = regAbidquant < regBaskquant ? regAbidquant : regBaskquant;
     int32_t impliedBidPrice = regAbidprice - regBaskprice;
 
@@ -266,6 +176,12 @@ calculateDeltas(int sock, struct input_data *data)
     uint8_t spread_quantity = regABaskquant < impliedQuantity ? regABaskquant : impliedQuantity;
 
 
-    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
-    printf("Expected: Quantity = %d, Delta = %d\n", spread_quantity, delta);
+    printf("Expected: A  price is = %d, quant is %d\n", regAbidprice, regAbidquant);
+    printf("Expected: B  price is = %d, quant is %d\n", regBaskprice, regBaskquant);
+    printf("Expected: AB price is = %d, quant is %d\n", regABaskprice, regABaskquant);
+
+    printf("CALCULATION => Quantity = %d, Delta = %d\n\n", spread_quantity, delta);
+
+//    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
+//    printf("Expected: Quantity = %d, Delta = %d\n", spread_quantity, delta);
 }
