@@ -1,22 +1,21 @@
 package fieldaccumulator;
 
 import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
-import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator.Params;
-import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
 import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
 import com.maxeler.networking.v1.framed_kernels.ByteOrder;
 import com.maxeler.networking.v1.framed_kernels.FrameData;
 import com.maxeler.networking.v1.framed_kernels.FrameFormat;
 import com.maxeler.networking.v1.framed_kernels.FramedKernel;
-import com.maxeler.networking.v1.kernel_types.TCPType;
+import com.maxeler.networking.v1.kernel_types.UDPOneToOneRXType;
+import com.maxeler.networking.v1.kernel_types.UDPOneToOneTXType;
 
-public class 
-FieldAccumulatorKernel extends FramedKernel 
+public class
+FieldAccumulatorKernel extends FramedKernel
 {
-    static class 
-    DataIn extends FrameFormat 
+    static class
+    DataIn extends FrameFormat
     {
-	DataIn() 
+	DataIn()
 	{
 	    super(ByteOrder.LITTLE_ENDIAN);
 	    addField("instrument_id", dfeInt(32));
@@ -26,11 +25,11 @@ FieldAccumulatorKernel extends FramedKernel
 	    addField("price", dfeInt(32));
 	}
     }
-    
-    static class 
-    DataOut extends FrameFormat 
+
+    static class
+    DataOut extends FrameFormat
     {
-	DataOut() 
+	DataOut()
 	{
 	    super(ByteOrder.LITTLE_ENDIAN);
 	    addField("spread_quantity", dfeInt(32));
@@ -38,64 +37,39 @@ FieldAccumulatorKernel extends FramedKernel
 	}
     }
 
-    FieldAccumulatorKernel(KernelParameters parameters) 
+    FieldAccumulatorKernel(KernelParameters parameters)
     {
 	super(parameters);
-	
+
+	debug.simPrintf("In Kernel\n");
+
 	/* Registers */
 	DFEVar a_bidprice = dfeInt(32).newInstance(this);
 	DFEVar a_bidquant = dfeInt(32).newInstance(this);
 
-	/*
-	DFEVar b_askprice = dfeInt(32).newInstance(this);
-	DFEVar b_askquant = dfeUInt(8).newInstance(this);
-	DFEVar ab_askprice = dfeInt(32).newInstance(this);
-	DFEVar ab_askquant = dfeUInt(8).newInstance(this);
-	*/
-
-	//DFEVector<DFEVar> pricingvector = new DFEVectorType<DFEVar>(dfeInt(32),3).newInstance(this);
-	//DFEVector<DFEVar> quantvector = new DFEVectorType<DFEVar>(dfeUInt(8),3).newInstance(this);
-
 	/* Declare Frame In */
-	FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new TCPType());
+	FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new UDPOneToOneRXType());
+
+	debug.simPrintf("ID %d\n", frameIn["instrument_id"]);
+	debug.simPrintf("PRICE %d\n", frameIn["price"]);
 
 	/* Conditionals */
-	boolean a_bid   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 0) & 
-                          frameIn["level"]          == constant.var(dfeUInt(8), 0) & 
-			  frameIn["side"]           == constant.var(dfeUInt(8), 0));
-
-	/* 
-	boolean b_ask   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 1) & 
-                          frameIn["level"]          == constant.var(dfeUInt(8), 0) & 
-			  frameIn["side"]           == constant.var(dfeUInt(8), 1));
-
-	boolean ab_ask  = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 2) & 
-                          frameIn["level"]          == constant.var(dfeUInt(8), 0) & 
-		          frameIn["side"]           == constant.var(dfeUInt(8), 1));
-	*/
+	boolean a_bid   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 0) &
+                       frameIn["level"]         == constant.var(dfeUInt(8), 0) &
+			           frameIn["side"]          == constant.var(dfeUInt(8), 0));
 
 	a_bidquant  = a_bid  ? frameIn["quantity"] : a_bidquant;
 	a_bidprice  = a_bid  ? frameIn["price"]    : a_bidprice;
 
-	/*
-	b_askquant  = b_ask  ? frameIn["quantity"] : b_askquant;
-	b_askprice  = b_ask  ? frameIn["price"]    : b_askprice;
-	ab_askquant = ab_ask ? frameIn["quantity"] : a_bidquant;
-	ab_askprice = ab_ask ? frameIn["price"]    : a_bidprice;
-	*/
-
 	/* Declare Frame Out */
-	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new TCPType());
-
-	//DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
-	//DFEVar impliedBidPrice = a_bidprice - b_askprice;
+	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new UDPOneToOneTXType());
 
 	frameOut["spread_delta"]    <== frameIn["price"]; // ab_askprice - impliedBidPrice;
 	frameOut["spread_quantity"] <== frameIn["quantity"]; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 
-	frameOut.linkfield[TCPType.SOCKET] <== frameIn.linkfield[TCPType.SOCKET];
-	
+	frameOut.linkfield[UDPOneToOneTXType.SOCKET] <==
+		frameIn.linkfield[UDPOneToOneRXType.SOCKET];
+
 	io.frameOutput("frameOut", frameOut);
-	// io.frameOutput("frameOut", frameOut, constant.var(true), constant.var(true));
     }
 }

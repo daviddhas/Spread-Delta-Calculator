@@ -25,8 +25,25 @@ struct input_data
     int32_t price;
 };
 
-static int create_cpu_tcp_socket(struct in_addr *, int);
 static void calculateDeltas(int, struct input_data *);
+
+static int create_cpu_udp_socket(struct in_addr *local_ip, struct in_addr *remote_ip, int port) {
+	int sock = socket(AF_INET, SOCK_DGRAM, 0);
+
+	struct sockaddr_in cpu;
+	memset(&cpu, 0, sizeof(cpu));
+	cpu.sin_family = AF_INET;
+	cpu.sin_port = htons(port);
+
+	cpu.sin_addr = *local_ip;
+	bind(sock, (struct sockaddr *)&cpu, sizeof(cpu));
+
+	cpu.sin_addr = *remote_ip;
+    connect(sock, (const struct sockaddr*) &cpu, sizeof(cpu));
+
+	return sock;
+}
+
 
 int 
 main(int argc, char *argv[]) 
@@ -37,93 +54,64 @@ main(int argc, char *argv[])
 	return 1;
     }
 
-    struct in_addr dfe_ip, cpu_ip, netmask;
-    const int port = 5007;
-
-    /* Store DFE IP, CPU IP and Netmask */
-    inet_aton(argv[1], &dfe_ip);
-    inet_aton(argv[2], &cpu_ip);
-    inet_aton(argv[3], &netmask);
+	struct in_addr dfe_ip;
+	inet_aton(argv[1], &dfe_ip);
+	struct in_addr cpu_ip;
+	inet_aton(argv[2], &cpu_ip);
+	struct in_addr netmask;
+	inet_aton(argv[3], &netmask);
+	const int port = 5008;
     
     /* Create DFE Socket, then listen */
     max_file_t *maxfile = FieldAccumulatorTCP_init();
     max_engine_t *engine = max_load(maxfile, "*");
     max_ip_config(engine, MAX_NET_CONNECTION_CH2_SFP1, &dfe_ip, &netmask);
-    max_tcp_socket_t *dfe_socket = max_tcp_create_socket(engine, "tcp_ch2_sfp1");
-    max_tcp_listen(dfe_socket, port);
-    max_tcp_await_state(dfe_socket, MAX_TCP_STATE_LISTEN, NULL);
-    
-    /* Create TCP Socket on CPU */
-    int cpu_socket = create_cpu_tcp_socket(&dfe_ip, port);
+
+	max_udp_socket_t *dfe_socket = max_udp_create_socket(engine, "udp_ch2_sfp1");
+	max_udp_bind(dfe_socket, port);
+	max_udp_connect(dfe_socket, &cpu_ip, port);
+
+	int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
+
     
     /* Send data */
     struct input_data data;
 
-    /* A Bid Quantity */
-    data.instrument_id = 0;
-    data.level         = 0;
-    data.side          = 0;
-    data.quantity      = 15;
-    data.price         = 74150;
-
-    calculateDeltas(cpu_socket, &data);
+    for (int i=0; i< 10000000; i++)
+    {
 
     /* B Ask Quantity */
-    data.instrument_id = 1;
-    data.level         = 0;
-    data.side          = 1;
-    data.quantity      = 10;
-    data.price         = 75500;
-
+    data.instrument_id = i*2;
+    data.level         = i*5;
+    data.side          = i*4;
+    data.quantity      = i*3;
+    data.price         = i;
     calculateDeltas(cpu_socket, &data);
-
-    /* AB Ask Quantity */
-    data.instrument_id = 2;
-    data.level         = 0;
-    data.side          = 1;
-    data.quantity      = 10;
-    data.price         = -1300;
-
-    calculateDeltas(cpu_socket, &data);
+    }
     
-    close(cpu_socket);
-    
-    max_tcp_close(dfe_socket);
-    
+	max_udp_close(dfe_socket);
     max_unload(engine);
     max_file_free(maxfile);
     
     return 0;
 }
 
-static int 
-create_cpu_tcp_socket(struct in_addr *remote_ip, int port) 
-{
-    int sock = socket(AF_INET, SOCK_STREAM, 0);
-    
-    int state = 1;
-    setsockopt(sock, IPPROTO_TCP, TCP_NODELAY, &state, sizeof(state));
-    
-    struct sockaddr_in cpu;
-    memset(&cpu, 0, sizeof(cpu));
-    cpu.sin_family = AF_INET;
-    cpu.sin_port = htons(port);
-    cpu.sin_addr = *remote_ip;
-    
-    connect(sock, (const struct sockaddr*) &cpu, sizeof(cpu));
-    
-    return sock;
-}
-
 static void
 calculateDeltas(int sock, struct input_data *data)
 {
     /* Send Data to Engine via TCP */
-    send(sock, &data, sizeof(data), 0);
+    send(sock, data, sizeof(struct input_data), 0);
 
     /* Receive Data from Engine via TCP */
     frame_t data_received;
-    recv(sock, &data_received, sizeof(data_received), 0);
+
+    int e = recv(sock, &data_received, sizeof(struct output_data), 0);
 
     printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
+    if (e == -1)
+    {
+    	printf("No bytes recv\n");
+    	exit(0);
+    }
+    }
 }

@@ -24,6 +24,7 @@
  /usr/include/asm-generic/sockios.h /usr/include/netinet/in.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h /usr/include/bits/in.h \
  /usr/include/netinet/tcp.h \
+ ../RunRules/Simulation/include/FieldAccumulatorTCP.h \
  /opt/maxeler/maxcompiler/include/slic/MaxSLiCInterface.h \
  /opt/maxeler/maxcompiler/include/slic/slic_engine.h \
  /opt/maxeler/maxcompiler/include/slic/slic_typedefs.h \
@@ -56,5 +57,4 @@
  /opt/maxeler/maxcompiler/include/slic/slic_network.h \
  /opt/maxeler/maxcompiler/include/slic/slic_tcp.h /usr/include/sys/time.h \
  /opt/maxeler/maxcompiler/include/slic/slic_udp.h \
- /usr/include/arpa/inet.h \
- ../RunRules/Simulation/include/FieldAccumulatorTCP.h
+ /usr/include/arpa/inet.h
