@@ -58,32 +58,37 @@ FieldAccumulatorKernel extends FramedKernel
 
 	/* Conditionals */
 	boolean a_bid   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 0) & 
-                          frameIn["level"]         == constant.var(dfeUInt(8), 0) & 
-			  frameIn["side"]          == constant.var(dfeUInt(8), 0));
+                          frameIn["level"]          == constant.var(dfeUInt(8), 0) & 
+			  frameIn["side"]           == constant.var(dfeUInt(8), 0));
 
+	/* 
 	boolean b_ask   = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 1) & 
-                          frameIn["level"]         == constant.var(dfeUInt(8), 0) & 
-			  frameIn["side"]          == constant.var(dfeUInt(8), 1));
+                          frameIn["level"]          == constant.var(dfeUInt(8), 0) & 
+			  frameIn["side"]           == constant.var(dfeUInt(8), 1));
 
 	boolean ab_ask  = (frameIn["instrument_id"] == constant.var(dfeUInt(8), 2) & 
-                          frameIn["level"]         == constant.var(dfeUInt(8), 0) & 
-		          frameIn["side"]          == constant.var(dfeUInt(8), 1));
+                          frameIn["level"]          == constant.var(dfeUInt(8), 0) & 
+		          frameIn["side"]           == constant.var(dfeUInt(8), 1));
+	*/
 
 	a_bidquant  = a_bid  ? frameIn["quantity"] : a_bidquant;
 	a_bidprice  = a_bid  ? frameIn["price"]    : a_bidprice;
+
+	/*
 	b_askquant  = b_ask  ? frameIn["quantity"] : b_askquant;
 	b_askprice  = b_ask  ? frameIn["price"]    : b_askprice;
 	ab_askquant = ab_ask ? frameIn["quantity"] : a_bidquant;
 	ab_askprice = ab_ask ? frameIn["price"]    : a_bidprice;
+	*/
 
 	/* Declare Frame Out */
 	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new TCPType());
 
-	DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
-	DFEVar impliedBidPrice = a_bidprice - b_askprice;
+	//DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+	//DFEVar impliedBidPrice = a_bidprice - b_askprice;
 
-	frameOut["spread_delta"]    <== ab_askprice - impliedBidPrice;
-	frameOut["spread_quantity"] <== ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
+	frameOut["spread_delta"]    <== a_bidprice; // ab_askprice - impliedBidPrice;
+	frameOut["spread_quantity"] <== a_bidquant; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 
 	frameOut.linkfield[TCPType.SOCKET] <== frameIn.linkfield[TCPType.SOCKET];
 	
