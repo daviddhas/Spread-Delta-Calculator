@@ -77,34 +77,34 @@ main(int argc, char *argv[])
     /* Send data */
     struct input_data data;
 
-    /* Set Value */
+    /* Set Value A */
     data.instrument_id = 0;
     data.level         = 0;
     data.side          = 0;
-    data.quantity      = 1;
-    data.price         = 2;
+    data.quantity      = 5;
+    data.price         = 10;
     calculateDeltas(cpu_socket, &data);
 
-    /* Hold */
+    /* Set B*/
     data.instrument_id = 1;
     data.level         = 0;
-    data.side          = 0;
+    data.side          = 1;
     data.quantity      = 3;
     data.price         = 4;
     calculateDeltas(cpu_socket, &data);
 
     /* Hold */
-    data.instrument_id = 0;
+    data.instrument_id = 1;
     data.level         = 0;
     data.side          = 1;
     data.quantity      = 5;
     data.price         = 6;
     calculateDeltas(cpu_socket, &data);
     
-    /* Set */
-    data.instrument_id = 0;
+    /* Set AB */
+    data.instrument_id = 2;
     data.level         = 0;
-    data.side          = 0;
+    data.side          = 1;
     data.quantity      = 7;
     data.price         = 8;
     calculateDeltas(cpu_socket, &data);

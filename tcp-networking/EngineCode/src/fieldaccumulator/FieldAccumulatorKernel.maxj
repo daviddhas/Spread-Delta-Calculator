@@ -13,6 +13,8 @@ import com.maxeler.networking.v1.kernel_types.UDPOneToOneTXType;
 public class
 FieldAccumulatorKernel extends FramedKernel
 {
+
+
     static class
     DataIn extends FrameFormat
     {
@@ -27,6 +29,8 @@ FieldAccumulatorKernel extends FramedKernel
 	}
     }
 
+
+
     static class
     DataOut extends FrameFormat
     {
@@ -38,15 +42,32 @@ FieldAccumulatorKernel extends FramedKernel
 	}
     }
 
-    FieldAccumulatorKernel(KernelParameters parameters)
+    public FieldAccumulatorKernel(KernelParameters parameters)
     {
 	super(parameters);
 
 	debug.simPrintf("In Kernel\n");
 
 	/* Registers */
+	//Bid Registers
 	DFEVar a_bidprice = dfeInt(32).newInstance(this);
 	DFEVar a_bidquant = dfeInt(32).newInstance(this);
+
+	DFEVar b_bidprice = dfeInt(32).newInstance(this);
+	DFEVar b_bidquant = dfeInt(32).newInstance(this);
+
+	DFEVar ab_bidprice = dfeInt(32).newInstance(this);
+	DFEVar ab_bidquant = dfeInt(32).newInstance(this);
+
+	//Ask Registers
+	DFEVar a_askprice = dfeInt(32).newInstance(this);
+	DFEVar a_askquant = dfeInt(32).newInstance(this);
+
+	DFEVar b_askprice = dfeInt(32).newInstance(this);
+	DFEVar b_askquant = dfeInt(32).newInstance(this);
+
+	DFEVar ab_askprice = dfeInt(32).newInstance(this);
+	DFEVar ab_askquant = dfeInt(32).newInstance(this);
 
 	/* Declare Frame In */
 	FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new UDPOneToOneRXType());
@@ -58,20 +79,72 @@ FieldAccumulatorKernel extends FramedKernel
 	pushResetBetweenFrames(false);
 
 	/* Conditionals */
+
+	//Bids
 	DFEVar a_bid   = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 0)) &
 	                 frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
 			         frameIn["side"].eq(constant.var(dfeInt(32), 0));
 
 	a_bidprice = Reductions.streamHold(frameIn["price"], a_bid);
 	a_bidquant = Reductions.streamHold(frameIn["quantity"], a_bid);
+
+	DFEVar b_bid   = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 1)) &
+    				 frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
+    				 frameIn["side"].eq(constant.var(dfeInt(32), 0));
+
+	b_bidprice = Reductions.streamHold(frameIn["price"], b_bid);
+	b_bidquant = Reductions.streamHold(frameIn["quantity"], b_bid);
+
+	DFEVar ab_bid  = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 2)) &
+    				 frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
+    				 frameIn["side"].eq(constant.var(dfeInt(32), 0));
+
+	ab_bidprice = Reductions.streamHold(frameIn["price"], ab_bid);
+	ab_bidquant = Reductions.streamHold(frameIn["quantity"], ab_bid);
+
+
+	//Asks
+	DFEVar a_ask   = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 0)) &
+    				 frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
+    				 frameIn["side"].eq(constant.var(dfeInt(32), 1));
+
+
+
+	a_askprice = Reductions.streamHold(frameIn["price"], a_ask);
+	a_askquant = Reductions.streamHold(frameIn["quantity"], a_ask);
+
+	DFEVar b_ask   = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 1)) &
+					 frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
+					 frameIn["side"].eq(constant.var(dfeInt(32), 1));
+
+	b_askprice = Reductions.streamHold(frameIn["price"], b_ask);
+	b_askquant = Reductions.streamHold(frameIn["quantity"], b_ask);
+
+	DFEVar ab_ask  = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 2)) &
+	 				 frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
+	 				 frameIn["side"].eq(constant.var(dfeInt(32), 1));
+
+	ab_askprice = Reductions.streamHold(frameIn["price"], ab_ask);
+	ab_askquant = Reductions.streamHold(frameIn["quantity"], ab_ask);
+
 	popResetBetweenFrames();
+
+
+	// Math time
+	//implied numbers
+    DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+    DFEVar impliedBidPrice = a_bidprice - b_askprice;
+
+    debug.simPrintf("%d \n", impliedQuantity);
+    /* Output Parameters */
+    DFEVar delta = ab_askprice - impliedBidPrice;
+    DFEVar spread_quantity = ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 
 	/* Declare Frame Out */
 	FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new UDPOneToOneTXType());
 
-	frameOut["spread_delta"]    <== a_bidprice; // ab_askprice - impliedBidPrice;
-	frameOut["spread_quantity"] <== a_bidquant; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
-
+	frameOut["spread_delta"]    <== delta; // ab_askprice - impliedBidPrice;
+	frameOut["spread_quantity"] <== spread_quantity; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 	frameOut.linkfield[UDPOneToOneTXType.SOCKET] <==
 		frameIn.linkfield[UDPOneToOneRXType.SOCKET];
 
