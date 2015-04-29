@@ -1,0 +1,9 @@
+*** After kernel graph-pass 'Init Graph' ***
+node "&" (ID 77) has unconnected outputs: [result]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+	com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:169)
+	com.maxeler.networking.v1.framed_kernels.FrameIO.frameInput(FrameIO.java:78)
+	fieldaccumulator.FieldAccumulatorKernel.<init>(FieldAccumulatorKernel.maxj:57)
+	fieldaccumulator.FieldAccumulatorManager.main(FieldAccumulatorManager.maxj:19)
+	
