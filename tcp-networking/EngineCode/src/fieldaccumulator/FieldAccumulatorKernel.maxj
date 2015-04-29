@@ -51,7 +51,7 @@ FieldAccumulatorKernel extends FramedKernel
         DFEVar ab_bidprice = dfeInt(32).newInstance(this);
         DFEVar ab_bidquant = dfeInt(32).newInstance(this);
 
-        //Ask Registers
+        // Ask Registers
         DFEVar a_askprice  = dfeInt(32).newInstance(this);
         DFEVar a_askquant  = dfeInt(32).newInstance(this);
         DFEVar b_askprice  = dfeInt(32).newInstance(this);
@@ -59,7 +59,7 @@ FieldAccumulatorKernel extends FramedKernel
         DFEVar ab_askprice = dfeInt(32).newInstance(this);
         DFEVar ab_askquant = dfeInt(32).newInstance(this);
 
-        /* Declare Frame In */
+        // Declare Frame In
         FrameData<DataIn> frameIn = io.frameInput("frameIn", new DataIn(), new UDPOneToOneRXType());
 
         pushResetBetweenFrames(false);
