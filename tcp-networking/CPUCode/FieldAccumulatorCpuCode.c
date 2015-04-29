@@ -26,7 +26,7 @@ struct input_data
 };
 
 static void calculateDeltas(int, struct input_data *);
-static void validateData(struct input_data *, struct output_data *)
+static void validateData(struct input_data *, struct output_data *);
 
 static int create_cpu_udp_socket(struct in_addr *local_ip, struct in_addr *remote_ip, int port) {
 	int sock = socket(AF_INET, SOCK_DGRAM, 0);
