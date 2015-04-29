@@ -26,6 +26,7 @@ struct input_data
 };
 
 static void calculateDeltas(int, struct input_data *);
+static void validateData(struct input_data *, struct output_data *)
 
 static int create_cpu_udp_socket(struct in_addr *local_ip, struct in_addr *remote_ip, int port) {
 	int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -161,12 +162,12 @@ validateData(struct input_data *in, struct output_data *out)
     static int32_t ab_askquant = 0;
 
     // Update Correct Register
-    if(in->instrument_id==0 && in->side==0 && in->level==0) { a_bidprice = data->price;  a_bidquant = data->quantity; }
-    if(in->instrument_id==0 && in->side==1 && in->level==0) { a_askprice = data->price;  a_askquant = data->quantity; }
-    if(in->instrument_id==1 && in->side==0 && in->level==0) { b_bidprice = data->price;  b_bidquant = data->quantity; }
-    if(in->instrument_id==1 && in->side==1 && in->level==0) { b_askprice = data->price;  b_askquant = data->quantity; }
-    if(in->instrument_id==2 && in->side==0 && in->level==0) { ab_bidprice = data->price; ab_bidquant = data->quantity; }
-    if(in->instrument_id==2 && in->side==1 && in->level==0) { ab_askprice = data->price; ab_askquant = data->quantity; }
+    if(in->instrument_id==0 && in->side==0 && in->level==0) { a_bidprice = in->price;  a_bidquant = in->quantity; }
+    if(in->instrument_id==0 && in->side==1 && in->level==0) { a_askprice = in->price;  a_askquant = in->quantity; }
+    if(in->instrument_id==1 && in->side==0 && in->level==0) { b_bidprice = in->price;  b_bidquant = in->quantity; }
+    if(in->instrument_id==1 && in->side==1 && in->level==0) { b_askprice = in->price;  b_askquant = in->quantity; }
+    if(in->instrument_id==2 && in->side==0 && in->level==0) { ab_bidprice = in->price; ab_bidquant = in->quantity; }
+    if(in->instrument_id==2 && in->side==1 && in->level==0) { ab_askprice = in->price; ab_askquant = in->quantity; }
 
     // Implied AB Bid
     int32_t impliedBidPrice = a_bidprice - b_askprice;
