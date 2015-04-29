@@ -13,7 +13,7 @@
 typedef struct output_data
 {
     int32_t spread_quantity;
-    int32_t delta;
+    int32_t spread_delta;
 } __attribute__ ((__packed__)) frame_t;
 
 struct input_data
@@ -110,7 +110,7 @@ main(int argc, char *argv[])
     calculateDeltas(cpu_socket, &data);
 
 
-	max_udp_close(dfe_socket);
+    max_udp_close(dfe_socket);
     max_unload(engine);
     max_file_free(maxfile);
     
@@ -124,14 +124,55 @@ calculateDeltas(int sock, struct input_data *data)
     send(sock, data, sizeof(struct input_data), 0);
 
     /* Receive Data from Engine via TCP */
-    frame_t data_received;
-
+    frame_t data_received, data_expected;
+    validateData(data, &data_expected);
     int e = recv(sock, &data_received, sizeof(struct output_data), 0);
 
-    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.delta);
+    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.spread_delta);
+    printf("Expected: Quantity = %d, Delta = %d\n", data_expected.spread_quantity, data_expected.spread_delta);
     if (e == -1)
     {
     	printf("No bytes recv\n");
     	exit(0);
     }
+}
+
+static void
+validateData(struct input_data *in, struct output_data *out)
+{
+    /* -------- Expected Value, Calculated in Software -------- */
+
+    // Instrument A
+    static int32_t a_bidprice = 0;
+    static int32_t a_bidquant = 0;
+    static int32_t a_askprice = 0;
+    static int32_t a_askquant = 0;
+
+    // Instrument B
+    static int32_t b_bidprice = 0;
+    static int32_t b_bidquant = 0;
+    static int32_t b_askprice = 0;
+    static int32_t b_askquant = 0;
+
+    // Instrument A-B Spread
+    static int32_t ab_bidprice = 0;
+    static int32_t ab_bidquant = 0;
+    static int32_t ab_askprice = 0;
+    static int32_t ab_askquant = 0;
+
+    // Update Correct Register
+    if(data->instrument_id==0 && data->side==0 && data->level==0) { a_bidprice = data->price;  a_bidquant = data->quantity; }
+    if(data->instrument_id==0 && data->side==1 && data->level==0) { a_askprice = data->price;  a_askquant = data->quantity; }
+    if(data->instrument_id==1 && data->side==0 && data->level==0) { b_bidprice = data->price;  b_bidquant = data->quantity; }
+    if(data->instrument_id==1 && data->side==1 && data->level==0) { b_askprice = data->price;  b_askquant = data->quantity; }
+    if(data->instrument_id==2 && data->side==0 && data->level==0) { ab_bidprice = data->price; ab_bidquant = data->quantity; }
+    if(data->instrument_id==2 && data->side==1 && data->level==0) { ab_askprice = data->price; ab_askquant = data->quantity; }
+
+    // Implied AB Bid
+    int32_t impliedBidPrice = a_bidprice - b_askprice;
+    int32_t impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+
+    /* Output Parameters */
+    out->spread_delta = regABaskprice - impliedBidPrice;
+    out->spread_quantity = ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 }

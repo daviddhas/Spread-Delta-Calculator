@@ -29,8 +29,6 @@ FieldAccumulatorKernel extends FramedKernel
 	}
     }
 
-
-
     static class
     DataOut extends FrameFormat
     {
@@ -77,8 +75,6 @@ FieldAccumulatorKernel extends FramedKernel
 
 
 	pushResetBetweenFrames(false);
-
-	/* Conditionals */
 
 	//Bids
 	DFEVar a_bid   = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 0)) &
