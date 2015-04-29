@@ -86,10 +86,10 @@ FieldAccumulatorKernel extends FramedKernel
                         frameIn["side"].eq(constant.var(dfeInt(32), 1));
 
         DFEVar ab_ask = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 2)) &
-	                frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
+                        frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
                         frameIn["side"].eq(constant.var(dfeInt(32), 1));
 
-	// Update Register Value
+        // Update Register Value
         a_bidprice  = Reductions.streamHold(frameIn["price"], a_bid);
         a_bidquant  = Reductions.streamHold(frameIn["quantity"], a_bid);
         b_bidprice  = Reductions.streamHold(frameIn["price"], b_bid);
@@ -106,19 +106,19 @@ FieldAccumulatorKernel extends FramedKernel
         popResetBetweenFrames();
 
         // Math Time
-	DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
-	DFEVar impliedBidPrice = a_bidprice - b_askprice;
+        DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+        DFEVar impliedBidPrice = a_bidprice - b_askprice;
 
-	// Output Parameters
-	DFEVar delta = ab_askprice - impliedBidPrice;
-	DFEVar spread_quantity = ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
+        // Output Parameters
+        DFEVar delta = ab_askprice - impliedBidPrice;
+        DFEVar spread_quantity = ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 
-        /* Declare Frame Out */
+        // Declare Frame Out
         FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new UDPOneToOneTXType());
 
-        frameOut["spread_delta"]    <== delta; // ab_askprice - impliedBidPrice;
-        frameOut["spread_quantity"] <== spread_quantity; // ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
-	frameOut.linkfield[UDPOneToOneTXType.SOCKET] <== frameIn.linkfield[UDPOneToOneRXType.SOCKET];
+        frameOut["spread_delta"] <== delta;
+        frameOut["spread_quantity"] <== spread_quantity;
+        frameOut.linkfield[UDPOneToOneTXType.SOCKET] <== frameIn.linkfield[UDPOneToOneRXType.SOCKET];
 
         io.frameOutput("frameOut", frameOut);
     }
