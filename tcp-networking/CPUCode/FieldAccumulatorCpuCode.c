@@ -161,18 +161,18 @@ validateData(struct input_data *in, struct output_data *out)
     static int32_t ab_askquant = 0;
 
     // Update Correct Register
-    if(data->instrument_id==0 && data->side==0 && data->level==0) { a_bidprice = data->price;  a_bidquant = data->quantity; }
-    if(data->instrument_id==0 && data->side==1 && data->level==0) { a_askprice = data->price;  a_askquant = data->quantity; }
-    if(data->instrument_id==1 && data->side==0 && data->level==0) { b_bidprice = data->price;  b_bidquant = data->quantity; }
-    if(data->instrument_id==1 && data->side==1 && data->level==0) { b_askprice = data->price;  b_askquant = data->quantity; }
-    if(data->instrument_id==2 && data->side==0 && data->level==0) { ab_bidprice = data->price; ab_bidquant = data->quantity; }
-    if(data->instrument_id==2 && data->side==1 && data->level==0) { ab_askprice = data->price; ab_askquant = data->quantity; }
+    if(in->instrument_id==0 && in->side==0 && in->level==0) { a_bidprice = data->price;  a_bidquant = data->quantity; }
+    if(in->instrument_id==0 && in->side==1 && in->level==0) { a_askprice = data->price;  a_askquant = data->quantity; }
+    if(in->instrument_id==1 && in->side==0 && in->level==0) { b_bidprice = data->price;  b_bidquant = data->quantity; }
+    if(in->instrument_id==1 && in->side==1 && in->level==0) { b_askprice = data->price;  b_askquant = data->quantity; }
+    if(in->instrument_id==2 && in->side==0 && in->level==0) { ab_bidprice = data->price; ab_bidquant = data->quantity; }
+    if(in->instrument_id==2 && in->side==1 && in->level==0) { ab_askprice = data->price; ab_askquant = data->quantity; }
 
     // Implied AB Bid
     int32_t impliedBidPrice = a_bidprice - b_askprice;
     int32_t impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
 
     /* Output Parameters */
-    out->spread_delta = regABaskprice - impliedBidPrice;
+    out->spread_delta = ab_askprice - impliedBidPrice;
     out->spread_quantity = ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 }
