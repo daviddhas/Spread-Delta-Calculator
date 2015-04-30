@@ -90,6 +90,9 @@ main(int argc, char *argv[])
     printf("number of lines: %d\n",linum);
     */
 
+    sendDataPacket(cpu_socket,0,0,0,10,1000);
+    sendDataPacket(cpu_socket,1,0,1,15,2000);
+    sendDataPacket(cpu_socket,2,0,1,20,-900);
     sendDataPacket(cpu_socket,0,0,1,3,1293);
     sendDataPacket(cpu_socket,1,0,0,46,1140);
     sendDataPacket(cpu_socket,2,0,1,12,-231);
