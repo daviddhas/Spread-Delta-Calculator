@@ -83,7 +83,7 @@ main(int argc, char *argv[])
     	struct input_data data; 
 	parse(line, &data);
     	calculateDeltas(cpu_socket, &data);
-	linum++
+	linum++;
     }
 
     printf("number of lines: %d\n",linum);
