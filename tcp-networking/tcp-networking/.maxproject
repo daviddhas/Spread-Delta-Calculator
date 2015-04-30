@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<maxCompilerManager version="2">
-<enginePart internalEngineSubproject="tcp-networking_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/tcp-networking_EngineCode/bin" projectName="tcp-networking"/>
-<cpuPart internalCpuSubproject="tcp-networking_CPUCode"/>
-<watchedFiles/>
-</maxCompilerManager>

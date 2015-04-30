@@ -6,8 +6,8 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#define FieldAccumulatorTCP_PCIE_ALIGNMENT (16)
 #define FieldAccumulatorTCP_USE_NETWORK_MANAGER (1)
+#define FieldAccumulatorTCP_PCIE_ALIGNMENT (16)
 
 
 /*----------------------------------------------------------------------------*/
