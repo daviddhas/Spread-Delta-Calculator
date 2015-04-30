@@ -1,0 +1,27 @@
+package fieldaccumulator;
+
+import static com.maxeler.maxcompiler.v2.managers.standard.Manager.UDP;
+import static com.maxeler.maxcompiler.v2.managers.standard.Manager.link;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager.NetworkConnection;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager.UDPConnectionMode;
+
+public class
+FieldAccumulatorManager
+{
+    public static void
+    main(String[] args)
+    {
+        Manager m = new Manager(new FieldAccumulatorEngineParameters(args));
+	
+        Kernel k = new FieldAccumulatorKernel(m.makeKernelParameters("fieldAccumulatorKernel"));
+        m.setKernel(k);
+	
+        m.setIO(link("frameIn",  UDP(NetworkConnection.CH2_SFP1, UDPConnectionMode.OneToOne)),
+                link("frameOut", UDP(NetworkConnection.CH2_SFP1, UDPConnectionMode.OneToOne)));
+
+        m.build();
+    }
+}
