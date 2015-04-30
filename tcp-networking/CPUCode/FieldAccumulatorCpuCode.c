@@ -61,7 +61,14 @@ main(int argc, char *argv[])
     
     int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
     
-    FILE *stream = fopen("source_data.csv", "r");
+    FILE *stream = fopen("./inputdata.csv", "r");
+
+    if(stream == NULL)
+    {
+	printf("fopen() failed ");
+	return -1 ;
+    }
+
     char line[BUFFERSIZE];
 
     char *to_be_free = line;
@@ -69,12 +76,18 @@ main(int argc, char *argv[])
     /* Ignore Header File */
     fgets(line, BUFFERSIZE, stream);
 
-    while (fgets(line, BUFFERSIZE, stream))
+    int linum = 0;
+
+    while (fgets(line, sizeof(line), stream))
     {
     	struct input_data data; 
 	parse(line, &data);
     	calculateDeltas(cpu_socket, &data);
+	linum++
     }
+
+    printf("number of lines: %d\n",linum);
+
 
 //    /* Set Value A */
 //    data.instrument_id = 0;
