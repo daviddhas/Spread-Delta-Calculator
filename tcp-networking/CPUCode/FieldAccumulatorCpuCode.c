@@ -63,7 +63,7 @@ main(int argc, char *argv[])
     int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
     
     
-    FILE *stream = fopen("/home/demo/Desktop/source_data.csv", "r");
+    FILE *stream = fopen("source_data.csv", "r");
     char line[BUFFERSIZE];
 
 
