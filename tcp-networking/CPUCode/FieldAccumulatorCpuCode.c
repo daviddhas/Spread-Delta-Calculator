@@ -238,5 +238,5 @@ sendDataPacket(int sock, int32_t f1, int32_t f2, int32_t f3, int32_t f4, int32_t
     data.side          = f3;
     data.quantity      = f4;
     data.price         = f5;
-    calculateDeltas(cpu_socket, &data);
+    calculateDeltas(sock, &data);
 }
