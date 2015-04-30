@@ -10,7 +10,6 @@
 #include <MaxSLiCInterface.h>
 #include "FieldAccumulatorTCP.h"
 
-
 #define BUFFERSIZE 1024
 #define FIELDS 5
 
@@ -32,7 +31,7 @@ struct input_data
 static void calculateDeltas(int, struct input_data *);
 static void validateData(struct input_data *, struct output_data *);
 static int create_cpu_udp_socket(struct in_addr *, struct in_addr *, int);
-static struct input_data parse(char*);
+static void parse(char *, struct input_data *);
 
 int 
 main(int argc, char *argv[]) 
@@ -62,24 +61,21 @@ main(int argc, char *argv[])
     
     int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
     
-    
     FILE *stream = fopen("source_data.csv", "r");
     char line[BUFFERSIZE];
 
+    char *to_be_free = line;
 
     /* Ignore Header File */
     fgets(line, BUFFERSIZE, stream);
 
     while (fgets(line, BUFFERSIZE, stream))
     {
-    	struct input_data data = parse(line);
-
+    	struct input_data data; 
+	parse(line, &data);
     	calculateDeltas(cpu_socket, &data);
-
     }
-    
 
-    
 //    /* Set Value A */
 //    data.instrument_id = 0;
 //    data.level         = 0;
@@ -111,7 +107,6 @@ main(int argc, char *argv[])
 //    data.quantity      = 7;
 //    data.price         = 8;
 //    calculateDeltas(cpu_socket, &data);
-
     
     max_udp_close(dfe_socket);
     max_unload(engine);
@@ -120,33 +115,26 @@ main(int argc, char *argv[])
     return 0;
 }
 
-struct input_data
-parse(char* line)
+static void
+parse(char *line, struct input_data *in)
 {
-		struct input_data data;
-
-		int i;
-
-		char *tmp = strdup(line);
-	    int fv[FIELDS];
-        char *element = strtok(line, ",");
-        fv[0] = atof(element);
-
-        for (i=1; i<FIELDS; i++)
-        {
-        	char *element = strtok(NULL, ",");
-        	fv[i] = atof(element);
-        }
-
-        data.instrument_id = fv[0];
-        data.level = fv[1];
-        data.side = fv[2];
-        data.quantity =fv[3];
-        data.price = fv[4];
-
-        free(tmp);
-
-        return data;
+    int i;
+    int fv[FIELDS];
+    
+    char *element = strtok(line, ",");
+    fv[0] = atoi(element);
+    
+    for (i=1; i<FIELDS; i++)
+    {
+	char *element = strtok(NULL, ",");
+	fv[i] = atoi(element);
+    }
+    
+    in->instrument_id = fv[0];
+    in->level         = fv[1];
+    in->side          = fv[2];
+    in->quantity      = fv[3];
+    in->price         = fv[4];
 }
 
 static void
