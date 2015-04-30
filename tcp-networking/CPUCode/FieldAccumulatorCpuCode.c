@@ -31,7 +31,7 @@ struct input_data
 static void calculateDeltas(int, struct input_data *);
 static void validateData(struct input_data *, struct output_data *);
 static int create_cpu_udp_socket(struct in_addr *, struct in_addr *, int);
-static void parse(char *, struct input_data *);
+//static void parse(char *, struct input_data *);
 static void sendDataPacket(int sock, int32_t f1, int32_t f2, int32_t f3, int32_t f4, int32_t f5);
 
 int 
@@ -127,10 +127,11 @@ main(int argc, char *argv[])
     max_udp_close(dfe_socket);
     max_unload(engine);
     max_file_free(maxfile);
-    
+
     return 0;
 }
 
+/*
 static void
 parse(char *line, struct input_data *in)
 {
@@ -152,6 +153,7 @@ parse(char *line, struct input_data *in)
     in->quantity      = fv[3];
     in->price         = fv[4];
 }
+*/
 
 static void
 calculateDeltas(int sock, struct input_data *data)
