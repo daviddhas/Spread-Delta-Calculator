@@ -61,17 +61,18 @@ main(int argc, char *argv[])
     
     int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
     
-    FILE *stream = fopen("source_data.csv", "r");
+    FILE *stream = fopen("source_data1.csv", "r");
     char line[BUFFERSIZE];
 
-    char *to_be_free = line;
+   // char *to_be_free = line;
 
     /* Ignore Header File */
     fgets(line, BUFFERSIZE, stream);
 
     while (fgets(line, BUFFERSIZE, stream))
     {
-    	struct input_data data; 
+    	struct input_data data;
+    	printf("\n Instrument id = %d \n level = %d \n side = %d \n Quantity = %d \n Price = %d",data.instrument_id,data.level,data.side,data.quantity,data.price);
 	parse(line, &data);
     	calculateDeltas(cpu_socket, &data);
     }
@@ -145,11 +146,11 @@ calculateDeltas(int sock, struct input_data *data)
 
     // Receive Data from Engine via TCP
     frame_t data_received, data_expected;
-    validateData(data, &data_expected);
+   // validateData(data, &data_expected);
     int e = recv(sock, &data_received, sizeof(struct output_data), 0);
 
-    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.spread_delta);
-    printf("Expected: Quantity = %d, Delta = %d\n", data_expected.spread_quantity, data_expected.spread_delta);
+    printf("\nReceived: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.spread_delta);
+    //printf("Expected: Quantity = %d, Delta = %d\n", data_expected.spread_quantity, data_expected.spread_delta);
     if (e == -1)
     {
         printf("No bytes recv\n");
