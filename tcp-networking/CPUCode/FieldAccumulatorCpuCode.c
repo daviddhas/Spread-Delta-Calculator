@@ -10,6 +10,10 @@
 #include <MaxSLiCInterface.h>
 #include "FieldAccumulatorTCP.h"
 
+
+#define BUFFERSIZE 1024
+#define FIELDS 5
+
 typedef struct output_data
 {
     int32_t spread_quantity;
@@ -28,6 +32,7 @@ struct input_data
 static void calculateDeltas(int, struct input_data *);
 static void validateData(struct input_data *, struct output_data *);
 static int create_cpu_udp_socket(struct in_addr *, struct in_addr *, int);
+static struct input_data parse(char*);
 
 int 
 main(int argc, char *argv[]) 
@@ -58,46 +63,90 @@ main(int argc, char *argv[])
     int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
     
     
-    /* Send data */
-    struct input_data data;
+    FILE *stream = fopen("source_data.csv", "r");
+    char line[BUFFERSIZE];
+
+
+    /* Ignore Header File */
+    fgets(line, BUFFERSIZE, stream);
+
+    while (fgets(line, BUFFERSIZE, stream))
+    {
+    	struct input_data data = parse(line);
+
+    	calculateDeltas(cpu_socket, &data);
+
+    }
     
-    /* Set Value A */
-    data.instrument_id = 0;
-    data.level         = 0;
-    data.side          = 0;
-    data.quantity      = 5;
-    data.price         = 10;
-    calculateDeltas(cpu_socket, &data);
+
     
-    /* Set B*/
-    data.instrument_id = 1;
-    data.level         = 0;
-    data.side          = 1;
-    data.quantity      = 3;
-    data.price         = 4;
-    calculateDeltas(cpu_socket, &data);
-    
-    /* Hold */
-    data.instrument_id = 1;
-    data.level         = 0;
-    data.side          = 1;
-    data.quantity      = 5;
-    data.price         = 6;
-    calculateDeltas(cpu_socket, &data);
-    
-    /* Set AB */
-    data.instrument_id = 2;
-    data.level         = 0;
-    data.side          = 1;
-    data.quantity      = 7;
-    data.price         = 8;
-    calculateDeltas(cpu_socket, &data);
+//    /* Set Value A */
+//    data.instrument_id = 0;
+//    data.level         = 0;
+//    data.side          = 0;
+//    data.quantity      = 5;
+//    data.price         = 10;
+//    calculateDeltas(cpu_socket, &data);
+//
+//    /* Set B*/
+//    data.instrument_id = 1;
+//    data.level         = 0;
+//    data.side          = 1;
+//    data.quantity      = 3;
+//    data.price         = 4;
+//    calculateDeltas(cpu_socket, &data);
+//
+//    /* Hold */
+//    data.instrument_id = 1;
+//    data.level         = 0;
+//    data.side          = 1;
+//    data.quantity      = 5;
+//    data.price         = 6;
+//    calculateDeltas(cpu_socket, &data);
+//
+//    /* Set AB */
+//    data.instrument_id = 2;
+//    data.level         = 0;
+//    data.side          = 1;
+//    data.quantity      = 7;
+//    data.price         = 8;
+//    calculateDeltas(cpu_socket, &data);
+
     
     max_udp_close(dfe_socket);
     max_unload(engine);
     max_file_free(maxfile);
     
     return 0;
+}
+
+struct input_data
+parse(char* line)
+{
+		struct input_data data;
+
+		int i;
+
+		char *tmp = strdup(line);
+	    int fv[FIELDS];
+        char *element = strtok(line, ",");
+        fv[0] = atof(element);
+
+        for (i=1; i<FIELDS; i++)
+        {
+        	char *element = strtok(NULL, ",");
+        	fv[i] = atof(element);
+        }
+
+        data.instrument_id = fv[0];
+        data.level = fv[1];
+        data.side = fv[2];
+        data.quantity =fv[3];
+        data.price = fv[4];
+
+        free(tmp);
+
+        return data;
 }
 
 static void
