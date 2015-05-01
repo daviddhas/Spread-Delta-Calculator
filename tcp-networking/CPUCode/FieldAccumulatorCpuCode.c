@@ -31,7 +31,8 @@ struct input_data
 static void calculateDeltas(int, struct input_data *);
 static void validateData(struct input_data *, struct output_data *);
 static int create_cpu_udp_socket(struct in_addr *, struct in_addr *, int);
-static void parse(char *, struct input_data *);
+//static void parse(char *, struct input_data *);
+static void sendDataPacket(int sock, int32_t f1, int32_t f2, int32_t f3, int32_t f4, int32_t f5);
 
 int 
 main(int argc, char *argv[]) 
@@ -61,8 +62,8 @@ main(int argc, char *argv[])
     
     int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
     
+    /*
     FILE *stream = fopen("./inputdata.csv", "r");
-
     if(stream == NULL)
     {
 	printf("fopen() failed ");
@@ -73,7 +74,7 @@ main(int argc, char *argv[])
 
     char *to_be_free = line;
 
-    /* Ignore Header File */
+    // Ignore Header File 
     fgets(line, BUFFERSIZE, stream);
 
     int linum = 0;
@@ -87,47 +88,50 @@ main(int argc, char *argv[])
     }
 
     printf("number of lines: %d\n",linum);
+    */
 
+    sendDataPacket(cpu_socket,0,0,0,10,1000);
+    sendDataPacket(cpu_socket,1,0,1,15,2000);
+    sendDataPacket(cpu_socket,2,0,1,20,-900);
+    sendDataPacket(cpu_socket,0,0,1,3,1293);
+    sendDataPacket(cpu_socket,1,0,0,46,1140);
+    sendDataPacket(cpu_socket,2,0,1,12,-231);
+    sendDataPacket(cpu_socket,0,0,1,21,1229);
+    sendDataPacket(cpu_socket,1,0,0,19,1496);
+    sendDataPacket(cpu_socket,2,0,1,49,228);
+    sendDataPacket(cpu_socket,0,0,1,25,1272);
+    sendDataPacket(cpu_socket,1,0,0,49,1470);
+    sendDataPacket(cpu_socket,2,0,1,15,-242);
+    sendDataPacket(cpu_socket,0,0,1,13,1114);
+    sendDataPacket(cpu_socket,1,0,0,40,1159);
+    sendDataPacket(cpu_socket,2,0,1,16,63);
+    sendDataPacket(cpu_socket,0,0,1,48,1229);
+    sendDataPacket(cpu_socket,1,0,0,34,1325);
+    sendDataPacket(cpu_socket,2,0,1,19,365);
+    sendDataPacket(cpu_socket,0,0,1,41,1153);
+    sendDataPacket(cpu_socket,1,0,0,28,1481);
+    sendDataPacket(cpu_socket,2,0,1,16,-162);
+    sendDataPacket(cpu_socket,0,0,1,34,1151);
+    sendDataPacket(cpu_socket,1,0,0,0,1246);
+    sendDataPacket(cpu_socket,2,0,1,18,165);
+    sendDataPacket(cpu_socket,0,0,1,2,1276);
+    sendDataPacket(cpu_socket,1,0,0,10,1371);
+    sendDataPacket(cpu_socket,2,0,1,48,-530);
+    sendDataPacket(cpu_socket,0,0,1,48,1477);
+    sendDataPacket(cpu_socket,1,0,0,32,1336);
+    sendDataPacket(cpu_socket,2,0,1,31,-142);
+    sendDataPacket(cpu_socket,0,0,1,34,1135);
+    sendDataPacket(cpu_socket,1,0,0,29,1315);
+    sendDataPacket(cpu_socket,2,0,1,1,-296);
 
-//    /* Set Value A */
-//    data.instrument_id = 0;
-//    data.level         = 0;
-//    data.side          = 0;
-//    data.quantity      = 5;
-//    data.price         = 10;
-//    calculateDeltas(cpu_socket, &data);
-//
-//    /* Set B*/
-//    data.instrument_id = 1;
-//    data.level         = 0;
-//    data.side          = 1;
-//    data.quantity      = 3;
-//    data.price         = 4;
-//    calculateDeltas(cpu_socket, &data);
-//
-//    /* Hold */
-//    data.instrument_id = 1;
-//    data.level         = 0;
-//    data.side          = 1;
-//    data.quantity      = 5;
-//    data.price         = 6;
-//    calculateDeltas(cpu_socket, &data);
-//
-//    /* Set AB */
-//    data.instrument_id = 2;
-//    data.level         = 0;
-//    data.side          = 1;
-//    data.quantity      = 7;
-//    data.price         = 8;
-//    calculateDeltas(cpu_socket, &data);
-    
     max_udp_close(dfe_socket);
     max_unload(engine);
     max_file_free(maxfile);
-    
+
     return 0;
 }
 
+/*
 static void
 parse(char *line, struct input_data *in)
 {
@@ -149,6 +153,7 @@ parse(char *line, struct input_data *in)
     in->quantity      = fv[3];
     in->price         = fv[4];
 }
+*/
 
 static void
 calculateDeltas(int sock, struct input_data *data)
@@ -227,4 +232,16 @@ create_cpu_udp_socket(struct in_addr *local_ip, struct in_addr *remote_ip, int p
     connect(sock, (const struct sockaddr*) &cpu, sizeof(cpu));
     
     return sock;
+}
+
+static void
+sendDataPacket(int sock, int32_t f1, int32_t f2, int32_t f3, int32_t f4, int32_t f5)
+{
+    struct input_data data;
+    data.instrument_id = f1;
+    data.level         = f2;
+    data.side          = f3;
+    data.quantity      = f4;
+    data.price         = f5;
+    calculateDeltas(sock, &data);
 }
