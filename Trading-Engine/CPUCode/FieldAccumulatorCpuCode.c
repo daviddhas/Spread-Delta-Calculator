@@ -7,8 +7,8 @@
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 
+#include "Maxfiles.h"
 #include <MaxSLiCInterface.h>
-#include "FieldAccumulatorTCP.h"
 
 #define BUFFERSIZE 1024
 #define FIELDS 5
@@ -51,10 +51,11 @@ main(int argc, char *argv[])
     const int port = 5008;
     
     /* Create DFE Socket, then listen */
-    max_file_t *maxfile = FieldAccumulatorTCP_init();
+    max_file_t *maxfile = FieldAccumulator_init();
     max_engine_t *engine = max_load(maxfile, "*");
-    max_ip_config(engine, MAX_NET_CONNECTION_CH2_SFP1, &dfe_ip, &netmask);
     
+    max_ip_config(engine, MAX_NET_CONNECTION_QSFP_TOP_10G_PORT1, &dfe_ip, &netmask);
+
     max_udp_socket_t *dfe_socket = max_udp_create_socket(engine, "udp_ch2_sfp1");
     max_udp_bind(dfe_socket, port);
     max_udp_connect(dfe_socket, &cpu_ip, port);
