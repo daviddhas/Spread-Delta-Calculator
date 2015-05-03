@@ -196,8 +196,8 @@ calculateDeltas(int sock, struct input_data *data)
     //     exit(0);
     // }
 
-    printf("leg A: Quantity = %d, Price = %d, Side = %d, Level = %d", instruments.a.quantity, instruments.a.price, instruments.a.side, instruments.a.level);
-    printf("leg A implied: Quantity = %d, Price = %d, Side = %d, Level = %d", instruments.ai.quantity, instruments.ai.price, instruments.ai.side, instruments.ai.level);
+    printf("Instrument A:  Q = %d, Price = %d\n", instruments.a.quantity, instruments.a.price);
+    printf("Instrument Ai: Q = %d, Price = %d\n", instruments.ai.quantity, instruments.ai.price);
     // printf("leg B: Quantity = %d, Price = %d, Side = %d, Level = %d", data_B.quantity, data_B.price, data_B.side, data_B.level);
     // printf("leg B implied: Quantity = %d, Price = %d, Side = %d, Level = %d", data_B_implied.quantity, data_B_implied.price, data_B_implied.side, data_B_implied.level);
     // printf("leg AB: Quantity = %d, Price = %d, Side = %d, Level = %d", data_AB.quantity, data_AB.price, data_AB.side, data_AB.level);
@@ -239,12 +239,12 @@ validateData(struct input_data *in, struct output_data *out)
     if(in->instrument_id==2 && in->side==1 && in->level==0) { ab_askprice = in->price; ab_askquant = in->quantity; }
 
     // Implied AB Bid
-    int32_t impliedBidPrice = a_bidprice - b_askprice;
-    int32_t impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+    // int32_t impliedBidPrice = a_bidprice - b_askprice;
+    // int32_t impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
 
     // Output Parameters
-    out->spread_delta = ab_askprice - impliedBidPrice;
-    out->spread_quantity = ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
+    // out->spread_delta = ab_askprice - impliedBidPrice;
+    // out->spread_quantity = ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
 }
 
 static int 
