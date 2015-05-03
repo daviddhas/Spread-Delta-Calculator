@@ -15,8 +15,11 @@
 
 typedef struct output_data
 {
-    int32_t spread_quantity;
-    int32_t spread_delta;
+    int32_t instrument_id;
+    int32_t level;
+    int32_t side;             // 0 is Bidding, 1 is Asking
+    int32_t quantity;
+    int32_t price;
 } __attribute__ ((__packed__)) frame_t;
 
 struct input_data
@@ -62,7 +65,7 @@ main(int argc, char *argv[])
     
     int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
     
-    FILE *stream = fopen("./inputdata.csv", "r");
+    FILE *stream = fopen("./source_data1.csv", "r");
 
     if(stream == NULL)
     {
@@ -72,8 +75,6 @@ main(int argc, char *argv[])
 
     char line[BUFFERSIZE];
 
-    char *to_be_free = line;
-
     /* Ignore Header File */
     fgets(line, BUFFERSIZE, stream);
 
@@ -82,9 +83,9 @@ main(int argc, char *argv[])
     while (fgets(line, sizeof(line), stream))
     {
     	struct input_data data; 
-	parse(line, &data);
+    	parse(line, &data);
     	calculateDeltas(cpu_socket, &data);
-	linum++;
+    	linum++;
     }
 
     printf("number of lines: %d\n",linum);
@@ -154,21 +155,58 @@ parse(char *line, struct input_data *in)
 static void
 calculateDeltas(int sock, struct input_data *data)
 {
+
     // Send Data to Engine via TCP
     send(sock, data, sizeof(struct input_data), 0);
 
     // Receive Data from Engine via TCP
-    frame_t data_received, data_expected;
-    validateData(data, &data_expected);
-    int e = recv(sock, &data_received, sizeof(struct output_data), 0);
-
-    printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.spread_delta);
-    printf("Expected: Quantity = %d, Delta = %d\n", data_expected.spread_quantity, data_expected.spread_delta);
-    if (e == -1)
+    frame_t data_A, data_A_implied, data_B, data_B_implied, data_AB, data_AB_implied;
+    //validateData(data, &data_expected);
+    if (recv(sock, &data_A, sizeof(struct output_data), 0) == -1)
     {
         printf("No bytes recv\n");
         exit(0);
     }
+
+    if (recv(sock, &data_A_implied, sizeof(struct output_data), 0) == -1)
+    {
+        printf("No bytes recv\n");
+        exit(0);
+    }
+
+    if (recv(sock, &data_B, sizeof(struct output_data), 0) == -1)
+    {
+        printf("No bytes recv\n");
+        exit(0);
+    }
+
+    if (recv(sock, &data_B_implied, sizeof(struct output_data), 0) == -1)
+    {
+        printf("No bytes recv\n");
+        exit(0);
+    }
+
+    if (recv(sock, &data_AB, sizeof(struct output_data), 0) == -1)
+    {
+        printf("No bytes recv\n");
+        exit(0);
+    }
+
+    if (recv(sock, &data_AB_implied, sizeof(struct output_data), 0) == -1)
+    {
+        printf("No bytes recv\n");
+        exit(0);
+    }
+
+    printf("leg A: Quantity = %d, Price = %d, Side = %d, Level = %d", data_A.quantity, data_A.price, data_A.side, data_A.level);
+    printf("leg A implied: Quantity = %d, Price = %d, Side = %d, Level = %d", data_A_implied.quantity, data_A_implied.price, data_A_implied.side, data_A_implied.level);
+    printf("leg B: Quantity = %d, Price = %d, Side = %d, Level = %d", data_B.quantity, data_B.price, data_B.side, data_B.level);
+    printf("leg B implied: Quantity = %d, Price = %d, Side = %d, Level = %d", data_B_implied.quantity, data_B_implied.price, data_B_implied.side, data_B_implied.level);
+    printf("leg AB: Quantity = %d, Price = %d, Side = %d, Level = %d", data_AB.quantity, data_AB.price, data_AB.side, data_AB.level);
+    printf("leg AB implied: Quantity = %d, Price = %d, Side = %d, Level = %d", data_AB_implied.quantity, data_AB_implied.price, data_AB_implied.side, data_AB_implied.level);
+
+    //printf("Received: Quantity = %d, Delta = %d\n", data_received.spread_quantity, data_received.spread_delta);
+    //printf("Expected: Quantity = %d, Delta = %d\n", data_expected.spread_quantity, data_expected.spread_delta);
 }
 
 static void

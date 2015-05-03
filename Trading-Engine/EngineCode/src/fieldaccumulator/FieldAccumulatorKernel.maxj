@@ -27,15 +27,49 @@ FieldAccumulatorKernel extends FramedKernel
             addField("price", dfeInt(32));
         }
     }
-    
+
     static class
     DataOut extends FrameFormat
     {
         DataOut()
         {
             super(ByteOrder.LITTLE_ENDIAN);
-            addField("spread_quantity", dfeInt(32));
-            addField("spread_delta", dfeInt(32));
+            addField("instrument_id", dfeInt(32));
+            addField("level", dfeInt(32));
+            addField("side", dfeInt(32));
+            addField("quantity", dfeInt(32));
+            addField("price", dfeInt(32));
+
+            addField("instrument_id_A", dfeInt(32));
+            addField("level_A", dfeInt(32));
+            addField("side", dfeInt(32));
+            addField("quantity", dfeInt(32));
+            addField("price", dfeInt(32));
+
+            addField("instrument_id", dfeInt(32));
+            addField("level", dfeInt(32));
+            addField("side", dfeInt(32));
+            addField("quantity", dfeInt(32));
+            addField("price", dfeInt(32));
+
+            addField("instrument_id", dfeInt(32));
+            addField("level", dfeInt(32));
+            addField("side", dfeInt(32));
+            addField("quantity", dfeInt(32));
+            addField("price", dfeInt(32));
+
+            addField("instrument_id", dfeInt(32));
+            addField("level", dfeInt(32));
+            addField("side", dfeInt(32));
+            addField("quantity", dfeInt(32));
+            addField("price", dfeInt(32));
+
+            addField("instrument_id", dfeInt(32));
+            addField("level", dfeInt(32));
+            addField("side", dfeInt(32));
+            addField("quantity", dfeInt(32));
+            addField("price", dfeInt(32));
+
         }
     }
 
@@ -64,7 +98,7 @@ FieldAccumulatorKernel extends FramedKernel
 
         pushResetBetweenFrames(false);
 
-        // Conditional 
+        // Conditional
         DFEVar a_bid  = frameIn["instrument_id"].eq(constant.var(dfeInt(32), 0)) &
                         frameIn["level"].eq(constant.var(dfeInt(32), 0)) &
                         frameIn["side"].eq(constant.var(dfeInt(32), 0));
