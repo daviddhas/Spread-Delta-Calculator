@@ -1,0 +1,17 @@
+# --- User's custom definitions
+USE_SLIC:=1
+# ---
+
+MAXCOMPILER_QUOTE   := $(shell printf %q "$(MAXCOMPILERDIR)")
+
+RUNRULE_ARGS        := 169.254.10.2 169.254.10.1 255.255.255.0
+RUNRULE_RUNENV      := LD_LIBRARY_PATH="$(MAXELEROSDIR)/lib:$(LD_LIBRARY_PATH)" 
+RUNRULE_MAXFILES    := FieldAccumulator.max  
+RUNRULE_MAXFILES_H  := FieldAccumulator.h 
+RUNRULE_CFLAGS      := 
+RUNRULE_LDFLAGS     := 
+
+TARGET_EXEC         := FieldAccumulator
+TARGET_LIBRARY      := 
+
+

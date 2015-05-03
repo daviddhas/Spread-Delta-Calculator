@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<buildProfile>
+<common>
+<boardModel type="ISCA"/>
+<simulation enabled="true"/>
+<enableMPCX enabled="false"/>
+</common>
+<maxFiles>
+<maxFile buildName="FieldAccumulator" buildOrUseExisting="build">
+<runConfiguration askBeforeAutoBuild="false">
+<mainClass>fieldaccumulator.FieldAccumulatorManager</mainClass>
+<maxHeapSize>2</maxHeapSize>
+</runConfiguration>
+<selectEngineTarget enabled="false">VECTIS</selectEngineTarget>
+<overrideEnableMPCX enabled="false" value="false"/>
+</maxFile>
+</maxFiles>
+<cpuCode targetType="executable">
+<libraryName/>
+<exeName>FieldAccumulator</exeName>
+<skin>
+<ancillaryReleaseInformation enabled="false">
+<dir name=""/>
+</ancillaryReleaseInformation>
+</skin>
+<arguments>169.254.10.2 169.254.10.1 255.255.255.0</arguments>
+<remoteExecution enabled="false">
+<remoteMachineName/>
+<scriptName/>
+</remoteExecution>
+<customDefinitions>USE_SLIC:=1</customDefinitions>
+</cpuCode>
+<simulator>
+<deleteDRAM enabled="false"/>
+<maxDRAMSize enabled="false"/>
+<DRAMFile enabled="false"/>
+<socketName>FieldAccumulat</socketName>
+<startStopScript enabled="false"/>
+<numberOfDevices>1</numberOfDevices>
+<ethernetOneEnabled enabled="false"/>
+<ipAddressOne>169.254.10.1</ipAddressOne>
+<netmaskOne>255.255.255.0</netmaskOne>
+<pcapFileOne/>
+<ethernetTwoEnabled enabled="false"/>
+<ipAddressTwo/>
+<netmaskTwo/>
+<pcapFileTwo/>
+<max4v1net enabled="true">
+<max4v1Qsfp key="TOP" name="TOP">
+<max4v1Port index="1" pcapFile="" tapIpAddress="169.254.10.1" tapNetmask="255.255.255.0" type="Type10G"/>
+</max4v1Qsfp>
+</max4v1net>
+</simulator>
+</buildProfile>

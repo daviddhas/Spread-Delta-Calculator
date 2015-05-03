@@ -1,0 +1,40 @@
+package fieldaccumulator;
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.managers.BuildConfig;
+import com.maxeler.maxcompiler.v2.managers.custom.blocks.KernelBlock;
+import com.maxeler.networking.v1.managers.NetworkManager;
+import com.maxeler.networking.v1.managers.netlib.Max4NetworkConnection;
+import com.maxeler.networking.v1.managers.netlib.UDPChecksumMode;
+import com.maxeler.networking.v1.managers.netlib.UDPConnectionMode;
+import com.maxeler.networking.v1.managers.netlib.UDPStream;
+
+public class
+FieldAccumulatorManager extends NetworkManager
+{
+
+	public FieldAccumulatorManager(EngineParameters configuration) {
+		super(configuration);
+
+		UDPStream frameIn = addUDPStream("udp_ch2_sfp1", Max4NetworkConnection.QSFP_TOP_10G_PORT1, UDPConnectionMode.OneToOne, UDPChecksumMode.DropBadFrames);
+		UDPStream frameOut = addUDPStream("frameOut", Max4NetworkConnection.QSFP_TOP_10G_PORT1, UDPConnectionMode.OneToOne, UDPChecksumMode.DropBadFrames);
+
+		KernelBlock kernel = addKernel(new FieldAccumulatorKernel(makeKernelParameters("fieldSwapKernel")));
+		kernel.getInput("frameIn") <== frameIn.getReceiveStream();
+		frameOut.getTransmitStream() <== kernel.getOutput("frameOut");
+
+	}
+    public static void
+    main(String[] args)
+    {
+    FieldAccumulatorEngineParameters params =	new FieldAccumulatorEngineParameters(args);
+	FieldAccumulatorManager m = new FieldAccumulatorManager(params);
+
+	BuildConfig buildConfig = m.getBuildConfig();
+	buildConfig.setMPPRCostTableSearchRange(params.getMPPRStartCT(), params.getMPPREndCT());
+	buildConfig.setMPPRParallelism(params.getMPPRThreads());
+	buildConfig.setMPPRRetryNearMissesThreshold(params.getMPPRRetryThreshold());
+
+	m.build();
+    }
+}

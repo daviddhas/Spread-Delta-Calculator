@@ -40,3 +40,4 @@
 # Maxconfig files
 .metadata-MaxIDE-3.0/
 .metadata
+*.DS_Store
