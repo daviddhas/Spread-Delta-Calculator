@@ -69,8 +69,8 @@ main(int argc, char *argv[])
 
     if(stream == NULL)
     {
-	printf("fopen() failed ");
-	return -1 ;
+        printf("fopen() failed ");
+        return -1 ;
     }
 
     char line[BUFFERSIZE];
@@ -82,10 +82,10 @@ main(int argc, char *argv[])
 
     while (fgets(line, sizeof(line), stream))
     {
-    	struct input_data data; 
-    	parse(line, &data);
-    	calculateDeltas(cpu_socket, &data);
-    	linum++;
+        struct input_data data; 
+        parse(line, &data);
+        calculateDeltas(cpu_socket, &data);
+        linum++;
     }
 
     printf("number of lines: %d\n",linum);
@@ -141,8 +141,8 @@ parse(char *line, struct input_data *in)
     
     for (i=1; i<FIELDS; i++)
     {
-	char *element = strtok(NULL, ",");
-	fv[i] = atoi(element);
+        char *element = strtok(NULL, ",");
+        fv[i] = atoi(element);
     }
     
     in->instrument_id = fv[0];
