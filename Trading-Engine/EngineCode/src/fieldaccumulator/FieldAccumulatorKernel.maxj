@@ -34,42 +34,41 @@ FieldAccumulatorKernel extends FramedKernel
         DataOut()
         {
             super(ByteOrder.LITTLE_ENDIAN);
-            addField("instrument_id", dfeInt(32));
-            addField("level", dfeInt(32));
-            addField("side", dfeInt(32));
-            addField("quantity", dfeInt(32));
-            addField("price", dfeInt(32));
+            addField("a_instrument_id", dfeInt(32));
+            addField("a_level", dfeInt(32));
+            addField("a_side", dfeInt(32));
+            addField("a_quantity", dfeInt(32));
+            addField("a_price", dfeInt(32));
 
-            addField("instrument_id_A", dfeInt(32));
-            addField("level_A", dfeInt(32));
-            addField("side", dfeInt(32));
-            addField("quantity", dfeInt(32));
-            addField("price", dfeInt(32));
+            addField("ai_instrument_id", dfeInt(32));
+            addField("ai_level", dfeInt(32));
+            addField("ai_side", dfeInt(32));
+            addField("ai_quantity", dfeInt(32));
+            addField("ai_price", dfeInt(32));
 
-            addField("instrument_id", dfeInt(32));
-            addField("level", dfeInt(32));
-            addField("side", dfeInt(32));
-            addField("quantity", dfeInt(32));
-            addField("price", dfeInt(32));
+            // addField("b_instrument_id", dfeInt(32));
+            // addField("b_level", dfeInt(32));
+            // addField("b_side", dfeInt(32));
+            // addField("b_quantity", dfeInt(32));
+            // addField("b_price", dfeInt(32));
 
-            addField("instrument_id", dfeInt(32));
-            addField("level", dfeInt(32));
-            addField("side", dfeInt(32));
-            addField("quantity", dfeInt(32));
-            addField("price", dfeInt(32));
+            // addField("bi_instrument_id", dfeInt(32));
+            // addField("bi_level", dfeInt(32));
+            // addField("bi_side", dfeInt(32));
+            // addField("bi_quantity", dfeInt(32));
+            // addField("bi_price", dfeInt(32));
 
-            addField("instrument_id", dfeInt(32));
-            addField("level", dfeInt(32));
-            addField("side", dfeInt(32));
-            addField("quantity", dfeInt(32));
-            addField("price", dfeInt(32));
+            // addField("ab_instrument_id", dfeInt(32));
+            // addField("ab_level", dfeInt(32));
+            // addField("ab_side", dfeInt(32));
+            // addField("ab_quantity", dfeInt(32));
+            // addField("ab_price", dfeInt(32));
 
-            addField("instrument_id", dfeInt(32));
-            addField("level", dfeInt(32));
-            addField("side", dfeInt(32));
-            addField("quantity", dfeInt(32));
-            addField("price", dfeInt(32));
-
+            // addField("abi_instrument_id", dfeInt(32));
+            // addField("abi_level", dfeInt(32));
+            // addField("abi_side", dfeInt(32));
+            // addField("abi_quantity", dfeInt(32));
+            // addField("abi_price", dfeInt(32));
         }
     }
 
@@ -139,19 +138,31 @@ FieldAccumulatorKernel extends FramedKernel
 
         popResetBetweenFrames();
 
-        // Math Time
-        DFEVar impliedQuantity = a_bidquant < b_askquant ? a_bidquant : b_askquant;
-        DFEVar impliedBidPrice = a_bidprice - b_askprice;
-
-        // Output Parameters
-        DFEVar delta = ab_askprice - impliedBidPrice;
-        DFEVar spread_quantity = ab_askquant < impliedQuantity ? ab_askquant : impliedQuantity;
+        // Calculate Implied Prices and Quantites
+        DFEVar ai_bidquant = ab_bidquant < b_askquant ? ab_bidquant : b_askquant;
+        DFEVar ai_bidprice = ab_bidprice + b_askprice;
+        // DFEVar bi_askquant = a_bidquant < ab_bidquant ? a_bidquant : ab_bidquant;
+        // DFEVar bi_askprice = a_bidprice - ab_bidprice;
+        // DFEVar abi_bidquant = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+        // DFEVar abi_impliedBidPrice = a_bidprice - b_askprice;        
 
         // Declare Frame Out
         FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new UDPOneToOneTXType());
 
-        frameOut["spread_delta"] <== delta;
-        frameOut["spread_quantity"] <== spread_quantity;
+        frameOut["a_"] <== delta;
+
+        frameOut["a_instrument_id"] <= constant.var(dfeInt(32), 0);
+        frameOut["a_level"] <= constant.var(dfeInt(32), 0);
+        frameOut["a_side"] <= constant.var(dfeInt(32), 0); // Bidding
+        frameOut["a_quantity"] <= a_bidquant;
+        frameOut["a_price"] <= a_bidprice;
+
+        frameOut["ai_instrument_id"] <= constant.var(dfeInt(32), 0);
+        frameOut["ai_level"] <= constant.var(dfeInt(32), 0);
+        frameOut["ai_side"] <= constant.var(dfeInt(32), 0); // Bidding
+        frameOut["ai_quantity"] <= ai_bidquant;
+        frameOut["ai_price"] <= ai_bidprice;
+
         frameOut.linkfield[UDPOneToOneTXType.SOCKET] <== frameIn.linkfield[UDPOneToOneRXType.SOCKET];
 
         io.frameOutput("frameOut", frameOut);
