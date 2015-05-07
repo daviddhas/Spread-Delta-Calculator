@@ -7,8 +7,7 @@ levels = [0]
 sides = [0, 1]
 spreads = [2]
 
-print("instrument_id,level,side,price,quantity")
-
+print("instrument_id,level,side,quantity,price")
 
 for i in range(NUMLINES):
 
@@ -22,4 +21,4 @@ for i in range(NUMLINES):
     if instrument_id in spreads:
         price = random.randint(-5000, 5000)
 
-    print("{},{},{},{},{}".format(instrument_id, level, side, price, quantity))
+    print("{},{},{},{},{}".format(instrument_id, level, side, quantity, price))
