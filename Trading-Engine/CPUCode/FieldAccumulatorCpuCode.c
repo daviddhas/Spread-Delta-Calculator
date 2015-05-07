@@ -12,7 +12,6 @@
 
 #define BUFFERSIZE 1024
 #define FIELDS 5
-#define INSTRUMENTS 2
 
 struct input_data
 {
@@ -76,7 +75,6 @@ main(int argc, char *argv[])
     fgets(line, BUFFERSIZE, stream);
 
     int linum = 0;
-
     while (fgets(line, sizeof(line), stream))
     {
         struct input_data data; 
@@ -84,7 +82,6 @@ main(int argc, char *argv[])
         calculateDeltas(cpu_socket, &data);
         linum++;
     }
-
 
     printf("number of lines: %d\n",linum);
     
@@ -116,16 +113,16 @@ parse(char *line, struct input_data *in)
     in->quantity      = fv[3];
     in->price         = fv[4];
 
-
 //    printf(">>> Sending: id=%d, side=%d, level=%d, q=%d, p=%d\n",in->instrument_id,in->side,in->level,in->quantity, in->price);
-
 }
 
 static void
 calculateDeltas(int sock, struct input_data *data)
 {
     frame_t instruments, instruments_exp;
-	int32_t bytesRecv;
+	int32_t bytesRecv, num_instr;
+
+	num_instr = (int32_t)sizeof(struct output_data) / (int32_t)sizeof(struct input_data);
 
     // Send Data to Engine via TCP
     send(sock, data, sizeof(struct input_data), 0);
@@ -145,7 +142,7 @@ calculateDeltas(int sock, struct input_data *data)
 
     printf("===== Bytes Received: %d =====\n", bytesRecv);
 
-    char valid [INSTRUMENTS];
+    char valid [num_instr];
 
     valid[0] = isEqual(&instruments.a, &instruments_exp.a) ? 'v' : 'x';
     valid[1] = isEqual(&instruments.ai, &instruments_exp.ai) ? 'v' :'x';
