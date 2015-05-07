@@ -34,41 +34,41 @@ FieldAccumulatorKernel extends FramedKernel
         DataOut()
         {
             super(ByteOrder.LITTLE_ENDIAN);
-            addField("a_instrument_id", dfeInt(32));
-            addField("a_level", dfeInt(32));
-            addField("a_side", dfeInt(32));
-            addField("a_quantity", dfeInt(32));
-            addField("a_price", dfeInt(32));
+            addField("a_bid_instrument_id", dfeInt(32));
+            addField("a_bid_level", dfeInt(32));
+            addField("a_bid_side", dfeInt(32));
+            addField("a_bid_quantity", dfeInt(32));
+            addField("a_bid_price", dfeInt(32));
 
-            addField("ai_instrument_id", dfeInt(32));
-            addField("ai_level", dfeInt(32));
-            addField("ai_side", dfeInt(32));
-            addField("ai_quantity", dfeInt(32));
-            addField("ai_price", dfeInt(32));
+            addField("ai_bid_instrument_id", dfeInt(32));
+            addField("ai_bid_level", dfeInt(32));
+            addField("ai_bid_side", dfeInt(32));
+            addField("ai_bid_quantity", dfeInt(32));
+            addField("ai_bid_price", dfeInt(32));
 
-            // addField("b_instrument_id", dfeInt(32));
-            // addField("b_level", dfeInt(32));
-            // addField("b_side", dfeInt(32));
-            // addField("b_quantity", dfeInt(32));
-            // addField("b_price", dfeInt(32));
+            addField("b_ask_instrument_id", dfeInt(32));
+            addField("b_ask_level", dfeInt(32));
+            addField("b_ask_side", dfeInt(32));
+            addField("b_ask_quantity", dfeInt(32));
+            addField("b_ask_price", dfeInt(32));
 
-            // addField("bi_instrument_id", dfeInt(32));
-            // addField("bi_level", dfeInt(32));
-            // addField("bi_side", dfeInt(32));
-            // addField("bi_quantity", dfeInt(32));
-            // addField("bi_price", dfeInt(32));
+            addField("bi_ask_instrument_id", dfeInt(32));
+            addField("bi_ask_level", dfeInt(32));
+            addField("bi_ask_side", dfeInt(32));
+            addField("bi_ask_quantity", dfeInt(32));
+            addField("bi_ask_price", dfeInt(32));
 
-            // addField("ab_instrument_id", dfeInt(32));
-            // addField("ab_level", dfeInt(32));
-            // addField("ab_side", dfeInt(32));
-            // addField("ab_quantity", dfeInt(32));
-            // addField("ab_price", dfeInt(32));
+            addField("ab_bid_instrument_id", dfeInt(32));
+            addField("ab_bid_level", dfeInt(32));
+            addField("ab_bid_side", dfeInt(32));
+            addField("ab_bid_quantity", dfeInt(32));
+            addField("ab_bid_price", dfeInt(32));
 
-            // addField("abi_instrument_id", dfeInt(32));
-            // addField("abi_level", dfeInt(32));
-            // addField("abi_side", dfeInt(32));
-            // addField("abi_quantity", dfeInt(32));
-            // addField("abi_price", dfeInt(32));
+            addField("abi_bid_instrument_id", dfeInt(32));
+            addField("abi_bid_level", dfeInt(32));
+            addField("abi_bid_side", dfeInt(32));
+            addField("abi_bid_quantity", dfeInt(32));
+            addField("abi_bid_price", dfeInt(32));
         }
     }
 
@@ -141,25 +141,49 @@ FieldAccumulatorKernel extends FramedKernel
         // Calculate Implied Prices and Quantities
         DFEVar ai_bidquant = ab_bidquant < b_askquant ? ab_bidquant : b_askquant;
         DFEVar ai_bidprice = ab_bidprice + b_askprice;
-        // DFEVar bi_askquant = a_bidquant < ab_bidquant ? a_bidquant : ab_bidquant;
-        // DFEVar bi_askprice = a_bidprice - ab_bidprice;
-        // DFEVar abi_bidquant = a_bidquant < b_askquant ? a_bidquant : b_askquant;
-        // DFEVar abi_impliedBidPrice = a_bidprice - b_askprice;
+        DFEVar bi_askquant = a_bidquant < ab_bidquant ? a_bidquant : ab_bidquant;
+        DFEVar bi_askprice = a_bidprice - ab_bidprice;
+        DFEVar abi_bidquant = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+        DFEVar abi_impliedBidPrice = a_bidprice - b_askprice;
 
         // Declare Frame Out
         FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new UDPOneToOneTXType());
 
-        frameOut["a_instrument_id"] <== constant.var(dfeInt(32), 0);
-        frameOut["a_level"] <== constant.var(dfeInt(32), 0);
-        frameOut["a_side"] <== constant.var(dfeInt(32), 0); // Bidding
-        frameOut["a_quantity"] <== a_bidquant;
-        frameOut["a_price"] <== a_bidprice;
+        frameOut["a_bid_instrument_id"] <== constant.var(dfeInt(32), 0);
+        frameOut["a_bid_level"] <== constant.var(dfeInt(32), 0);
+        frameOut["a_bid_side"] <== constant.var(dfeInt(32), 0); // Bidding
+        frameOut["a_bid_quantity"] <== a_bidquant;
+        frameOut["a_bid_price"] <== a_bidprice;
 
-        frameOut["ai_instrument_id"] <== constant.var(dfeInt(32), 0);
-        frameOut["ai_level"] <== constant.var(dfeInt(32), 0);
-        frameOut["ai_side"] <== constant.var(dfeInt(32), 0); // Bidding
-        frameOut["ai_quantity"] <== ai_bidquant;
-        frameOut["ai_price"] <== ai_bidprice;
+        frameOut["ai_bid_instrument_id"] <== constant.var(dfeInt(32), 0);
+        frameOut["ai_bid_level"] <== constant.var(dfeInt(32), 0);
+        frameOut["ai_bid_side"] <== constant.var(dfeInt(32), 0); // Bidding
+        frameOut["ai_bid_quantity"] <== ai_bidquant;
+        frameOut["ai_bid_price"] <== ai_bidprice;
+
+        frameOut["b_ask_instrument_id"] <== constant.var(dfeInt(32), 1);
+        frameOut["b_ask_level"] <== constant.var(dfeInt(32), 0);
+        frameOut["b_ask_side"] <== constant.var(dfeInt(32), 1); // Bidding
+        frameOut["b_ask_quantity"] <== b_askquant;
+        frameOut["b_ask_price"] <== b_askprice;
+
+        frameOut["bi_ask_instrument_id"] <== constant.var(dfeInt(32), 1);
+        frameOut["bi_ask_level"] <== constant.var(dfeInt(32), 0);
+        frameOut["bi_ask_side"] <== constant.var(dfeInt(32), 1); // Bidding
+        frameOut["bi_ask_quantity"] <== bi_askquant;
+        frameOut["bi_ask_price"] <== bi_askprice;
+
+        frameOut["ab_bid_instrument_id"] <== constant.var(dfeInt(32), 2);
+        frameOut["ab_bid_level"] <== constant.var(dfeInt(32), 0);
+        frameOut["ab_bid_side"] <== constant.var(dfeInt(32), 0); // Bidding
+        frameOut["ab_bid_quantity"] <== ab_bidquant;
+        frameOut["ab_bid_price"] <== ab_bidprice;
+
+        frameOut["abi_bid_instrument_id"] <== constant.var(dfeInt(32), 2);
+        frameOut["abi_bid_level"] <== constant.var(dfeInt(32), 0);
+        frameOut["abi_bid_side"] <== constant.var(dfeInt(32), 0); // Bidding
+        frameOut["abi_bid_quantity"] <== abi_bidquant;
+        frameOut["abi_bid_price"] <== abi_bidprice;
 
         frameOut.linkfield[UDPOneToOneTXType.SOCKET] <== frameIn.linkfield[UDPOneToOneRXType.SOCKET];
 

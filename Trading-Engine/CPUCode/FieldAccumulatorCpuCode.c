@@ -24,8 +24,12 @@ struct input_data
 
 typedef struct output_data
 {
-    struct input_data a;
-    struct input_data ai;
+    struct input_data a_bid;
+    struct input_data ai_bid;
+    struct input_data b_ask;
+    struct input_data bi_ask;
+    struct input_data ab_bid;
+    struct input_data abi_bid;
 } __attribute__ ((__packed__)) frame_t;
 
 static void calculateDeltas(int, struct input_data *);
@@ -43,13 +47,13 @@ main(int argc, char *argv[])
         return 1;
     }
 
-    struct in_addr dfe_ip;
-    inet_aton(argv[1], &dfe_ip);
-    struct in_addr cpu_ip;
-    inet_aton(argv[2], &cpu_ip);
-    struct in_addr netmask;
-    inet_aton(argv[3], &netmask);
+    struct in_addr dfe_ip, spu_id, netmask;
     const int port = 5008;
+    char line[BUFFERSIZE];
+
+    inet_aton(argv[1], &dfe_ip);
+    inet_aton(argv[2], &cpu_ip);
+    inet_aton(argv[3], &netmask);
     
     /* Create DFE Socket, then listen */
     max_file_t *maxfile = FieldAccumulator_init();
@@ -68,8 +72,6 @@ main(int argc, char *argv[])
         printf("fopen() failed ");
         return -1 ;
     }
-
-    char line[BUFFERSIZE];
 
     /* Ignore Header File */
     fgets(line, BUFFERSIZE, stream);
@@ -144,11 +146,19 @@ calculateDeltas(int sock, struct input_data *data)
 
     char valid [num_instr];
 
-    valid[0] = isEqual(&instruments.a, &instruments_exp.a) ? 'v' : 'x';
-    valid[1] = isEqual(&instruments.ai, &instruments_exp.ai) ? 'v' :'x';
+    valid[0] = isEqual(&instruments.a_bid, &instruments_exp.a_bid) ?     'v' : 'x';
+    valid[1] = isEqual(&instruments.ai_bid, &instruments_exp.ai_bid) ?   'v' : 'x';
+    valid[2] = isEqual(&instruments.b_ask, &instruments_exp.b_ask) ?     'v' : 'x';
+    valid[3] = isEqual(&instruments.bi_ask, &instruments_exp.bi_ask) ?   'v' : 'x';
+    valid[4] = isEqual(&instruments.ab_bid, &instruments_exp.ab_bid) ?   'v' : 'x';
+    valid[5] = isEqual(&instruments.abi_bid, &instruments_exp.abi_bid) ? 'v' : 'x';
 
-    printf("[%c] Instrument A:   Q = %d, Price = %d\n", valid[0], instruments.a.quantity, instruments.a.price);
-    printf("[%c] Instrument Ai:  Q = %d, Price = %d\n", valid[1], instruments.ai.quantity, instruments.ai.price);
+    printf("[%c] Instr A   BID:  Q = %d, Price = %d\n", valid[0], instruments.a_bid.quantity, instruments.a_bid.price);
+    printf("[%c] Instr Ai  BID:  Q = %d, Price = %d\n", valid[1], instruments.ai_bid.quantity, instruments.ai_bid.price);
+    printf("[%c] Instr B   ASK:  Q = %d, Price = %d\n", valid[2], instruments.b_ask.quantity, instruments.b_ask.price);
+    printf("[%c] Instr Bi  ASK:  Q = %d, Price = %d\n", valid[3], instruments.bi_ask.quantity, instruments.bi_ask.price);
+    printf("[%c] Instr AB  BID:  Q = %d, Price = %d\n", valid[4], instruments.ab_bid.quantity, instruments.ab_bid.price);
+    printf("[%c] Instr ABi BID:  Q = %d, Price = %d\n", valid[5], instruments.abi_bid.quantity, instruments.abi_bid.price);
 }
 
 static void
@@ -187,17 +197,41 @@ validateData(struct input_data *in, struct output_data *out)
     int32_t ai_bidprice = ab_bidprice + b_askprice;
 
     // Output Parameters
-    out->a.instrument_id = 0;
-    out->a.level = 0;
-    out->a.side = 0;
-    out->a.quantity = a_bidquant;
-    out->a.price = a_bidprice;
+    out->a_bid.instrument_id = 0;
+    out->a_bid.level = 0;
+    out->a_bid.side = 0;
+    out->a_bid.quantity = a_bidquant;
+    out->a_bid.price = a_bidprice;
 
-    out->ai.instrument_id = 0;
-    out->ai.level = 0;
-    out->ai.side = 0;
-    out->ai.quantity = ai_bidquant;
-    out->ai.price = ai_bidprice;
+    out->ai_bid.instrument_id = 0;
+    out->ai_bid.level = 0;
+    out->ai_bid.side = 0;
+    out->ai_bid.quantity = ai_bidquant;
+    out->ai_bid.price = ai_bidprice;
+
+    out->b_ask.instrument_id = 1;
+    out->b_ask.level = 0;
+    out->b_ask.side = 1;
+    out->b_ask.quantity = b_askquant;
+    out->b_ask.price = b_askprice;
+
+    out->bi_ask.instrument_id = 0;
+    out->bi_ask.level = 0;
+    out->bi_ask.side = 1;
+    out->bi_ask.quantity = bi_askquant;
+    out->bi_ask.price = bi_askprice;
+
+    out->ab_bid.instrument_id = 2;
+    out->ab_bid.level = 0;
+    out->ab_bid.side = 0;
+    out->ab_bid.quantity = ab_bidquant;
+    out->ab_bid.price = ab_bidprice;
+
+    out->abi_bid.instrument_id = 2;
+    out->abi_bid.level = 0;
+    out->abi_bid.side = 0;
+    out->abi_bid.quantity = abi_bidquant;
+    out->abi_bid.price = abi_bidprice;
 }
 
 static int 
