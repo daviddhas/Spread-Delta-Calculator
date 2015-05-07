@@ -47,7 +47,7 @@ main(int argc, char *argv[])
         return 1;
     }
 
-    struct in_addr dfe_ip, spu_id, netmask;
+    struct in_addr dfe_ip, cpu_id, netmask;
     const int port = 5008;
     char line[BUFFERSIZE];
 
@@ -66,16 +66,16 @@ main(int argc, char *argv[])
     int cpu_socket = create_cpu_udp_socket(&cpu_ip, &dfe_ip, port);
     
     FILE *stream = fopen("./source_data2.csv", "r");
-
+    
     if(stream == NULL)
     {
         printf("fopen() failed ");
         return -1 ;
     }
-
+    
     /* Ignore Header File */
     fgets(line, BUFFERSIZE, stream);
-
+    
     int linum = 0;
     while (fgets(line, sizeof(line), stream))
     {
@@ -122,10 +122,10 @@ static void
 calculateDeltas(int sock, struct input_data *data)
 {
     frame_t instruments, instruments_exp;
-	int32_t bytesRecv, num_instr;
-
-	num_instr = (int32_t)sizeof(struct output_data) / (int32_t)sizeof(struct input_data);
-
+    int32_t bytesRecv, num_instr;
+    
+    num_instr = (int32_t)sizeof(struct output_data) / (int32_t)sizeof(struct input_data);
+    
     // Send Data to Engine via TCP
     send(sock, data, sizeof(struct input_data), 0);
 
@@ -139,7 +139,7 @@ calculateDeltas(int sock, struct input_data *data)
     }
     else if (bytesRecv < (int32_t)sizeof(struct output_data))
     {
-    	printf("WARNING: Received less bytes than expected");
+        printf("WARNING: Received less bytes than expected");
     }
 
     printf("===== Bytes Received: %d =====\n", bytesRecv);
@@ -195,6 +195,10 @@ validateData(struct input_data *in, struct output_data *out)
     // Implied Instrument
     int32_t ai_bidquant = ab_bidquant < b_askquant ? ab_bidquant : b_askquant;
     int32_t ai_bidprice = ab_bidprice + b_askprice;
+    int32_t bi_askquant = a_bidquant < ab_bidquant ? a_bidquant : ab_bidquant;
+    int32_t bi_askprice = a_bidprice - ab_bidprice;
+    int32_t abi_bidquant = a_bidquant < b_askquant ? a_bidquant : b_askquant;
+    int32_t abi_impliedBidPrice = a_bidprice - b_askprice;
 
     // Output Parameters
     out->a_bid.instrument_id = 0;
@@ -256,31 +260,30 @@ create_cpu_udp_socket(struct in_addr *local_ip, struct in_addr *remote_ip, int p
 static int
 isEqual(struct input_data *a, struct input_data *b)
 {
-	if (a->instrument_id != b->instrument_id)
-	{
-		//printf("ID MISMATCH\n");
-		return 0;
-	}
-	else if (a->level != b->level)
-	{
-		//printf("LEVEL MISMATCH\n");
-		return 0;
-	}
-	else if (a->side != b->side)
-	{
-		//printf("SIDE MISMATCH\n");
-		return 0;
-	}
-	else if (a->quantity != b->quantity)
-	{
-		//printf("QUANTITY MISMATCH\n");
-		return 0;
-	}
-	else if (a->price != b->price)
-	{
-		//printf("PRICE MISMATCH\n");
-		return 0;
-	}
-	return 1;
+    if (a->instrument_id != b->instrument_id)
+    {
+        //printf("ID MISMATCH\n");
+        return 0;
+    }
+    else if (a->level != b->level)
+    {
+        //printf("LEVEL MISMATCH\n");
+        return 0;
+    }
+    else if (a->side != b->side)
+    {
+        //printf("SIDE MISMATCH\n");
+        return 0;
+    }
+    else if (a->quantity != b->quantity)
+    {
+        //printf("QUANTITY MISMATCH\n");
+        return 0;
+    }
+    else if (a->price != b->price)
+    {
+        //printf("PRICE MISMATCH\n");
+        return 0;
+    }
+    return 1;
 }
-
