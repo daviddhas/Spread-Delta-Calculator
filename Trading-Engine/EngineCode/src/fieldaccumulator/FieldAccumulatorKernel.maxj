@@ -144,7 +144,7 @@ FieldAccumulatorKernel extends FramedKernel
         DFEVar bi_askquant = a_bidquant < ab_bidquant ? a_bidquant : ab_bidquant;
         DFEVar bi_askprice = a_bidprice - ab_bidprice;
         DFEVar abi_bidquant = a_bidquant < b_askquant ? a_bidquant : b_askquant;
-        DFEVar abi_impliedBidPrice = a_bidprice - b_askprice;
+        DFEVar abi_bidprice = a_bidprice - b_askprice;
 
         // Declare Frame Out
         FrameData<DataOut> frameOut = new FrameData<DataOut>(this, new DataOut(), new UDPOneToOneTXType());

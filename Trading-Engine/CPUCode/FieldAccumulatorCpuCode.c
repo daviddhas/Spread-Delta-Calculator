@@ -47,7 +47,7 @@ main(int argc, char *argv[])
         return 1;
     }
 
-    struct in_addr dfe_ip, cpu_id, netmask;
+    struct in_addr dfe_ip, cpu_ip, netmask;
     const int port = 5008;
     char line[BUFFERSIZE];
 
@@ -139,7 +139,7 @@ calculateDeltas(int sock, struct input_data *data)
     }
     else if (bytesRecv < (int32_t)sizeof(struct output_data))
     {
-        printf("WARNING: Received less bytes than expected");
+        printf("WARNING: Received less bytes than expected\n");
     }
 
     printf("===== Bytes Received: %d =====\n", bytesRecv);
@@ -198,7 +198,7 @@ validateData(struct input_data *in, struct output_data *out)
     int32_t bi_askquant = a_bidquant < ab_bidquant ? a_bidquant : ab_bidquant;
     int32_t bi_askprice = a_bidprice - ab_bidprice;
     int32_t abi_bidquant = a_bidquant < b_askquant ? a_bidquant : b_askquant;
-    int32_t abi_impliedBidPrice = a_bidprice - b_askprice;
+    int32_t abi_bidprice = a_bidprice - b_askprice;
 
     // Output Parameters
     out->a_bid.instrument_id = 0;
@@ -219,7 +219,7 @@ validateData(struct input_data *in, struct output_data *out)
     out->b_ask.quantity = b_askquant;
     out->b_ask.price = b_askprice;
 
-    out->bi_ask.instrument_id = 0;
+    out->bi_ask.instrument_id = 1;
     out->bi_ask.level = 0;
     out->bi_ask.side = 1;
     out->bi_ask.quantity = bi_askquant;
